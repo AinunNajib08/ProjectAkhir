@@ -121,6 +121,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/buttonlog"
         android:layout_marginLeft="-20dp"
         android:layout_marginTop="20dp"
         android:text="Masuk"
@@ -131,7 +132,6 @@
         android:layout_gravity="center"
         android:background="@drawable/buttondata"
         android:layout_width="196dp"
-        android:layout_height="48dp"
-        android:onClick="login"/>
+        android:layout_height="48dp" />
 
 </LinearLayout>
