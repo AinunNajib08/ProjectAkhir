@@ -10,7 +10,7 @@ public interface BaseApiService {
 
     // Fungsi ini untuk memanggil API http://10.0.2.2/mahasiswa/login.php
     @FormUrlEncoded
-    @POST("login.php")
+    @POST("login")
     Call<ResponseBody> loginRequest(@Field("email") String email,
                                     @Field("password") String password);
 
