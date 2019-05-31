@@ -6,7 +6,7 @@ class Belajardata extends CI_Controller
 
     function dataipa()
     {
-        $this->load->view("admin/head");
-        $this->load->view("admin/dataipa");
+        $this->load->view("index");
+        // $this->load->view("admin/dataipa");
     }
 }
