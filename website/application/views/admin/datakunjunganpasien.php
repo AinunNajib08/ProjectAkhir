@@ -389,11 +389,11 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        <?php foreach ($pasien as $pasien); ?>
+                                        <?php foreach ($kunjungan_pasien as $kunjungan_pasien); ?>
                                         <tr>
-                                            <td><?php echo $pasien->no_rm ?></td>
-                                            <td><?php echo $pasien->nama_pasien ?></td>
-                                            <td><?php echo $pasien->usia ?></td>
+                                            <td><?php echo $kunjungan_pasien->id_kunjungan ?></td>
+                                            <td><?php echo $kunjungan_pasien->jenis_kunjungan ?></td>
+                                            <td><?php echo $kunjungan_pasien->no_rm ?></td>
                                         </tr>
                                     </tbody>
                                 </table>
