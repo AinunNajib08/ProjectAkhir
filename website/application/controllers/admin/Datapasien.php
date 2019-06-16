@@ -7,12 +7,17 @@ class Datapasien extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        if ( ! $this->session->logged_in) {
+            redirect('login_controler');
+            
+        }
         $this->load->model("Mdatapasien");
         $this->load->library('form_validation');
     }
 
     public function index()
     {
+
         $data["pasien"] = $this->Mdatapasien->getAll();
         $this->load->view("admin/datapasien", $data);
     }

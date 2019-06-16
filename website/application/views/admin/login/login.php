@@ -71,17 +71,19 @@
         <div class="col-lg-5 col-md-7">
           <div class="card bg-secondary shadow border-0">
             <div class="card-body px-lg-5 py-lg-5">
-              <form role="form" method="POST" action="<?php echo site_url('login_controler/proses_login'); ?>">
+              <?= $this->session->flashdata('message'); ?>
+              <form role="form" method="post" action="<?php echo site_url('login_controler/index'); ?>">
                 <div class="Login mb-5" style="margin-left: 40%;">
                   <h1>Login</h1>
                 </div>
                 <div class="form-group mb-3">
                   <div class="input-group input-group-alternative">
-                    <div class="input-group-prepend">
+                    <div class="input-gr oup-prepend">
                       <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Username" type="username" id="username" name="username">
+                    <input class="form-control" placeholder="Username" type="username" id="username" name="username" >
                   </div>
+                  <?php echo form_error('username', '<small class="text-danger-pl-3">', '</small>'); ?>
                 </div>
                 <div class="form-group">
                   <div class="input-group input-group-alternative">
@@ -90,6 +92,7 @@
                     </div>
                     <input class="form-control" placeholder="Password" type="password" id="password" name="password">
                   </div>
+                  <?php echo form_error('password', '<small class="text-danger-pl-3">', '</small>'); ?>
                 </div>
                 <div class="text-center">
                   <button type="submit" class="btn btn-primary my-4">Sign in</button>
@@ -98,7 +101,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>  
     </div>
   </div>
 
