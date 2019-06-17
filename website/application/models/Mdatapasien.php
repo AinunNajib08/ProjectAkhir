@@ -100,8 +100,8 @@ class Mdatapasien extends CI_Model
         $this->db->update($this->_table, $this, array('no_rm' => $post['no_rm']));
     }
 
-    public function delete($id)
+    public function delete($no_rm)
     {
-        return $this->db->delete($this->_table, array("product_id" => $id));
+        return $this->db->delete($this->_table, array("no_rm" => $no_rm));
     }
 }

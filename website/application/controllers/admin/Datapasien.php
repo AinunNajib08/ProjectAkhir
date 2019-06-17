@@ -7,9 +7,8 @@ class Datapasien extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        if ( ! $this->session->logged_in) {
+        if (!$this->session->logged_in) {
             redirect('login_controler');
-            
         }
         $this->load->model("Mdatapasien");
         $this->load->library('form_validation');
@@ -57,11 +56,11 @@ class Datapasien extends CI_Controller
         $this->load->view("admin/editpasien", $data);
     }
 
-    public function delete($id = null)
+    public function delete($no_rm = null)
     {
-        if (!isset($id)) show_404();
+        if (!isset($no_rm)) show_404();
 
-        if ($this->product_model->delete($id)) {
+        if ($this->Mdatapasien->delete($no_rm)) {
             redirect(site_url('admin/products'));
         }
     }
