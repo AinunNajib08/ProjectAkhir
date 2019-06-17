@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Datakunjunganpasien extends CI_Controller
+class Datakunjungan extends CI_Controller
 {
     public function __construct()
     {
