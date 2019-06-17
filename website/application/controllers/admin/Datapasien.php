@@ -24,35 +24,37 @@ class Datapasien extends CI_Controller
 
     public function add()
     {
-        $product = $this->product_model;
+        $pasien = $this->Mdatapasien;
         $validation = $this->form_validation;
-        $validation->set_rules($product->rules());
+        $validation->set_rules($pasien->rules());
 
         if ($validation->run()) {
-            $product->save();
+            $pasien->save();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
+        } else {
+            $this->session->set_flashdata('error', 'Error');
         }
 
-        $this->load->view("admin/product/new_form");
+        $this->load->view("admin/tambahpasien");
     }
 
-    public function edit($id = null)
+    public function edit($no_rm = null)
     {
-        if (!isset($id)) redirect('admin/products');
+        if (!isset($no_rm)) redirect('admin/datapasien');
 
-        $product = $this->product_model;
+        $pasien = $this->Mdatapasien;
         $validation = $this->form_validation;
-        $validation->set_rules($product->rules());
+        $validation->set_rules($pasien->rules());
 
         if ($validation->run()) {
-            $product->update();
+            $pasien->update();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
         }
 
-        $data["product"] = $product->getById($id);
-        if (!$data["product"]) show_404();
+        $data["pasien"] = $pasien->getById($no_rm);
+        if (!$data["pasien"]) show_404();
 
-        $this->load->view("admin/product/edit_form", $data);
+        $this->load->view("admin/editpasien", $data);
     }
 
     public function delete($id = null)
