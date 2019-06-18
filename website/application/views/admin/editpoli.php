@@ -221,7 +221,7 @@
 
                                     <form action="<?php base_url('admin/datapasien/edit') ?>" method="post" enctype="multipart/form-data">
                                         <div class="row">
-                                            <div class="col-4">
+                                            <div class="col-sm-4">
                                                 <div class="form-group">
                                                     <label for="id_poli">No Poli</label>
                                                     <input class="form-control" type="text" name="id_poli" value="<?php echo $poli->id_poli ?>" />
@@ -229,7 +229,7 @@
                                             </div>
 
                                         <div class="row">
-                                            <div class="col-4">
+                                            <div class="col-sm-4">
                                                 <div class="form-group">
                                                     <label for="poli">Poli</label>
                                                     <input class="form-control" type="text" name="poli" placeholder="Poli" value="<?php echo $poli->poli ?>" />
