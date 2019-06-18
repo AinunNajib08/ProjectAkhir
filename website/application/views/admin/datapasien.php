@@ -301,9 +301,9 @@
                             <table class="table align-items-center table-dark table-flush">
                                 <thead class="thead-dark">
                                     <tr>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Office</th>
+                                        <th>No Rekam Medis</th>
+                                        <th>Nama Pasien</th>
+                                        <th>Usia</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
