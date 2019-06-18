@@ -218,18 +218,16 @@
                     <th scope="col">poli</th>
                     <th scope="col">pilihan</th>
                   </tr>
-         <!--        <?php
-                $no = 1 + $this->uri->segment(3);
-                foreach ($record->result() as $r) {
-                    echo "<tr>
-					            <td width='10'>$no</td>
-					            <td>$r->nama_kategori</td>
-					            <td width='10'>" . anchor('index.php/kategori/edit/' . $r->id_kategori, 'Edit',array('class'=>'btn btn-info')) . "</td>
-					            <td width='10'>" . anchor('index.php/kategori/delete/' . $r->id_kategori, 'Delete',array('class'=>'btn btn-danger')) . "</td>
-					            </tr>";
-                    $no++;
-                }
-                ?> -->
+                  <?php foreach ($poli as $poli) : ?>
+                                        <tr>
+                                            <td><?php echo $poli->id_poli ?></td>
+                                            <td><?php echo $poli->poli ?></td>
+                                            <td>
+                                                <a href="<?php echo site_url('admin/datapasien/edit/' . $poli->id_poli) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
+                                                <a onclick="deleteConfirm" href="<?php echo site_url('admin/datapasien/delete/' . $poli->poli) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i>Hapus</a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
                 </thead>
                 <tbody>
                   <tr>
@@ -241,16 +239,6 @@
         </div>
       </div>
       <!-- Footer -->
-      <footer class="footer mt-5">
-        <div class="row align-items-center justify-content-xl-between">
-          <div class="col">
-            <div class="copyright text-center text-xl-left text-muted">
-              &copy; 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">The Hoax Team</a>
-            </div>
-        </div>
-      </footer>
-    </div>
-  </div>
   <!-- Argon Scripts -->
   <!-- Core -->
   <script src="<?= base_url('assets/vendor/jquery/dist/jquery.min.js'); ?>"></script>
