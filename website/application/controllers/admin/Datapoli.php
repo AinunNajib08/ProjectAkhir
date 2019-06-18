@@ -1,60 +1,66 @@
 <?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 class Datapoli extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
+        if (!$this->session->logged_in) {
+            redirect('login_controler');
+        }
         $this->load->model("Mdatapoli");
         $this->load->library('form_validation');
     }
 
     public function index()
     {
+
         $data["poli"] = $this->Mdatapoli->getAll();
         $this->load->view("admin/datapoli", $data);
     }
 
     public function add()
     {
-        $product = $this->product_model;
+        $pasien = $this->Mdatapoli;
         $validation = $this->form_validation;
-        $validation->set_rules($product->rules());
+		$validation->set_rules($poli->rules());
 
         if ($validation->run()) {
-            $product->save();
+            $pasien->save();
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+        } else {
+            $this->session->set_flashdata('error', 'Error');
+        }
+
+        $this->load->view("admin/tambahpasien");
+    }
+
+    public function edit($id_poli = null)
+    {
+        if (!isset($id_poli)) redirect('admin/datapasien');
+
+        $pasien = $this->Mdatapoli;
+        $validation = $this->form_validation;
+        $validation->set_rules($poli->rules());
+
+        if ($validation->run()) {
+            $poli->update();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
         }
 
-        $this->load->view("admin/product/new_form");
+        $data["poli"] = $poli->getById($id_poli);
+        if (!$data["poli"]) show_404();
+
+        $this->load->view("admin/editpasien", $data);
     }
 
-    public function edit($id = null)
+    public function delete($id_poli = null)
     {
-        if (!isset($id)) redirect('admin/products');
-       
-        $product = $this->product_model;
-        $validation = $this->form_validation;
-        $validation->set_rules($product->rules());
+        if (!isset($id_poli)) show_404();
 
-        if ($validation->run()) {
-            $product->update();
-            $this->session->set_flashdata('success', 'Berhasil disimpan');
-        }
-
-        $data["product"] = $product->getById($id);
-        if (!$data["product"]) show_404();
-        
-        $this->load->view("admin/product/edit_form", $data);
-    }
-
-    public function delete($id=null)
-    {
-        if (!isset($id)) show_404();
-        
-        if ($this->product_model->delete($id)) {
+        if ($this->Mdatapoli->delete($id_poli)) {
             redirect(site_url('admin/products'));
         }
     }

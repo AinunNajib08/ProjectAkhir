@@ -111,12 +111,12 @@
         <!-- Navigation -->
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="../index.html">
+            <a class="nav-link" href="../admin/datapasien">
               <i class="ni ni-tv-2 text-primary"></i> View Data Pasien
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../examples/icons.html">
+            <a class="nav-link" href="../admin/datakunjungan">
               <i class="ni ni-bullet-list-67 text-blue"></i> View Data Kunjungan Pasien
             </a>
           </li>
@@ -202,6 +202,8 @@
     <div class="container-fluid mt--7">
       <!-- Table -->
       <!-- Dark table -->
+      <br>
+           <br>
       <div class="row mt-5">
         <div class="col">
           <div class="card bg-default shadow">
@@ -212,9 +214,20 @@
               <table class="table align-items-center table-dark table-flush">
                 <thead class="thead-dark">
                   <tr>
-                    <th scope="col">id_poli</th>
+                    <th scope="col">No</th>
                     <th scope="col">poli</th>
+                    <th scope="col">pilihan</th>
                   </tr>
+                  <?php foreach ($poli as $poli) : ?>
+                                        <tr>
+                                            <td><?php echo $poli->id_poli ?></td>
+                                            <td><?php echo $poli->poli ?></td>
+                                            <td>
+                                                <a href="<?php echo site_url('admin/datapasien/edit/' . $poli->id_poli) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
+                                                <a onclick="deleteConfirm" href="<?php echo site_url('admin/datapasien/delete/' . $poli->poli) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i>Hapus</a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
                 </thead>
                 <tbody>
                   <tr>
@@ -226,16 +239,6 @@
         </div>
       </div>
       <!-- Footer -->
-      <footer class="footer mt-5">
-        <div class="row align-items-center justify-content-xl-between">
-          <div class="col">
-            <div class="copyright text-center text-xl-left text-muted">
-              &copy; 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">The Hoax Team</a>
-            </div>
-        </div>
-      </footer>
-    </div>
-  </div>
   <!-- Argon Scripts -->
   <!-- Core -->
   <script src="<?= base_url('assets/vendor/jquery/dist/jquery.min.js'); ?>"></script>
