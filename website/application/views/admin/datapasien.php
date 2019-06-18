@@ -110,21 +110,21 @@
                 </form>
                 <!-- Navigation -->
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.html">
-                            <i class="ni ni-tv-2 text-primary"></i> View Data Pasien
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/project/website/admin/Datakunjungan">
-                            <i class="ni ni-bullet-list-67 text-blue"></i> View Data Kunjungan Pasien
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../examples/maps.html">
-                            <i class="ni ni-shop text-orange"></i> View Poliklinik
-                        </a>
-                    </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../admin/datapasien">
+              <i class="ni ni-tv-2 text-primary"></i> View Data Pasien
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../admin/datakunjungan">
+              <i class="ni ni-bullet-list-67 text-blue"></i> View Data Kunjungan Pasien
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../admin/datapoli">
+              <i class="ni ni-shop text-orange"></i> View Poliklinik
+            </a>
+          </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../examples/profile.html">
                             <i class="ni ni-single-02 text-yellow"></i>
