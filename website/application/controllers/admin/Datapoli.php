@@ -34,14 +34,14 @@ class Datapoli extends CI_Controller
             $this->session->set_flashdata('error', 'Error');
         }
 
-        $this->load->view("admin/tambahpasien");
+        $this->load->view("admin/tambahpoli");
     }
 
     public function edit($id_poli = null)
     {
-        if (!isset($id_poli)) redirect('admin/datapasien');
+        if (!isset($id_poli)) redirect('admin/datapoli');
 
-        $pasien = $this->Mdatapoli;
+        $poli = $this->Mdatapoli;
         $validation = $this->form_validation;
         $validation->set_rules($poli->rules());
 
@@ -53,7 +53,7 @@ class Datapoli extends CI_Controller
         $data["poli"] = $poli->getById($id_poli);
         if (!$data["poli"]) show_404();
 
-        $this->load->view("admin/editpasien", $data);
+        $this->load->view("admin/editpoli", $data);
     }
 
     public function delete($id_poli = null)

@@ -223,16 +223,16 @@
                                         <div class="row">
                                             <div class="col-4">
                                                 <div class="form-group">
-                                                    <label for="no_rm">No Poli</label>
-                                                    <input class="form-control" type="text" name="no_rm" value="<?php echo $poli->id_poli ?>" />
+                                                    <label for="id_poli">No Poli</label>
+                                                    <input class="form-control" type="text" name="id_poli" value="<?php echo $poli->id_poli ?>" />
                                                 </div>
                                             </div>
 
                                         <div class="row">
-                                            <div class="col-3">
+                                            <div class="col-4">
                                                 <div class="form-group">
-                                                    <label for="usia">Poli</label>
-                                                    <input class="form-control" type="text" name="usia" placeholder="Nomor Rekam Medik" value="<?php echo $poli->poli ?>" />
+                                                    <label for="poli">Poli</label>
+                                                    <input class="form-control" type="text" name="poli" placeholder="Poli" value="<?php echo $poli->poli ?>" />
                                                 </div>
                                             </div>
 
