@@ -65,7 +65,7 @@ public class ActivityLogin extends AppCompatActivity {
 
     public void requestLogin(){
 
-            mbaseApiService.loginRequest(username.getText().toString(), username.getText().toString())
+            mbaseApiService.loginRequest(username.getText().toString(), password.getText().toString())
                     .enqueue(new Callback<ResponseBody>() {
                         @Override
                         public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
@@ -78,8 +78,8 @@ public class ActivityLogin extends AppCompatActivity {
                                         for (int i=0; i <data.length(); i++) {
                                             JSONObject jsonObject = data.getJSONObject(i);
 
-                                            int id = jsonObject.getInt("id");
-                                            String nama = jsonObject.getString("nama");
+                                            int id = jsonObject.getInt("id_akun");
+                                            String nama = jsonObject.getString("username");
                                             Toast.makeText(mcontext, "BERHASIL LOGIN", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(mcontext, ActivityDashboard.class);
                                             intent.putExtra("hasil_nama", nama);

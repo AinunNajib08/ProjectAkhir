@@ -11,13 +11,13 @@ public interface BaseApiService {
     // Fungsi ini untuk memanggil API http://10.0.2.2/mahasiswa/login.php
     @FormUrlEncoded
     @POST("login")
-    Call<ResponseBody> loginRequest(@Field("email") String email,
+    Call<ResponseBody> loginRequest(@Field("username") String username,
                                     @Field("password") String password);
 
     // Fungsi ini untuk memanggil API http://10.0.2.2/mahasiswa/register.php
     @FormUrlEncoded
     @POST("register.php")
-    Call<ResponseBody> registerRequest(@Field("nama") String nama,
-                                       @Field("email") String email,
-                                       @Field("password") String password);
+    Call<ResponseBody> registerRequest(@Field("nama") String username,
+                                       @Field("email") String password,
+                                       @Field("password") String email);
 }
