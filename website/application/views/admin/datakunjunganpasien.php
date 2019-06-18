@@ -312,7 +312,6 @@
                             <table class="table align-items-center table-dark table-flush">
                                 <thead class="thead-dark">
                                     <tr>
-                                        <th scope="col">id_kunjungan</th>
                                         <th scope="col">No_urutkunjungan</th>
                                         <th scope="col">Tanggal</th>
                                         <th scope="col">No_antrian</th>
@@ -323,16 +322,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($kunjungan_pasien as $kunjungan_pasien); ?>
                                     <tr>
-                                        <td><?php echo $kunjungan_pasien->id_kunjungan ?></td>
-                                        <td><?php echo $kunjungan_pasien->No_urutkunjungan ?></td>
-                                        <td><?php echo $kunjungan_pasien->tanggal ?></td>
-                                        <td><?php echo $kunjungan_pasien->No_antrian ?></td>
-                                        <td><?php echo $kunjungan_pasien->Keluhan ?></td>
-                                        <td><?php echo $kunjungan_pasien->Jenis_kunjungan ?></td>
-                                        <td><?php echo $kunjungan_pasien->Kode_tujuan ?></td>
-                                        <td><?php echo $kunjungan_pasien->no_rm ?></td>
                                     </tr>
                                 </tbody>
                             </table>
