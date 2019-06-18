@@ -30,14 +30,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="48dp">
-    <TextView
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/robotobold"
-        android:text="Selamat Datang di"
-        android:textAlignment="textStart"
-        android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="362dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/robotobold"
+            android:text="Selamat Datang di"
+            android:textAlignment="textStart"
+            android:textSize="20dp" />
 
     <TextView
         android:layout_marginTop="0dp"
@@ -51,7 +52,7 @@
 
     <TextView
         android:layout_marginTop="9dp"
-        android:text="Username"
+        android:text="Nomor Rekam Medik *"
         android:fontFamily="@font/robotoregular"
         android:textSize="16dp"
         android:textStyle="bold"
@@ -60,7 +61,7 @@
         android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/no_rm"
         android:padding="10dp"
         android:layout_marginTop="0dp"
         android:layout_width="match_parent"
@@ -71,7 +72,7 @@
     <TextView
         android:textStyle="bold"
         android:layout_marginTop="9dp"
-        android:text="Password"
+        android:text="Tanggal Lahir *"
         android:fontFamily="@font/robotoregular"
         android:textSize="16dp"
         android:textAlignment="textStart"
@@ -80,7 +81,7 @@
 
     <EditText
         android:inputType="textPassword"
-        android:id="@+id/password"
+        android:id="@+id/tgl"
         android:padding="10dp"
         android:layout_marginTop="0dp"
         android:layout_width="match_parent"
@@ -133,7 +134,7 @@
         android:id="@+id/buttonlog"
         android:layout_marginLeft="-20dp"
         android:layout_marginTop="20dp"
-        android:text="Masuk"
+        android:text="Lanjut"
         android:textSize="22dp"
         android:textAllCaps="false"
         android:textColor="@android:color/white"

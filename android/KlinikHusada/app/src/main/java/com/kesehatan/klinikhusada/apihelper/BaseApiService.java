@@ -17,7 +17,10 @@ public interface BaseApiService {
     // Fungsi ini untuk memanggil API http://10.0.2.2/mahasiswa/register.php
     @FormUrlEncoded
     @POST("register.php")
-    Call<ResponseBody> registerRequest(@Field("nama") String username,
-                                       @Field("email") String password,
-                                       @Field("password") String email);
+    Call<ResponseBody> registerRequest(@Field("username") String username,
+                                       @Field("password") String password,
+                                       @Field("email") String email);
+
+
+
 }

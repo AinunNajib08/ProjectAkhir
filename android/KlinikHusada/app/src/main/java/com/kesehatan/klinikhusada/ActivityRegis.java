@@ -27,7 +27,7 @@ import retrofit2.Response;
 
 public class ActivityRegis extends AppCompatActivity {
 
-    EditText username, password;
+    EditText no_rm, password;
     Button btnlogin;
     Context mcontext;
     BaseApiService mbaseApiService;
@@ -38,8 +38,8 @@ public class ActivityRegis extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_regis);
 
-        username = (EditText) findViewById(R.id.username);
-        password = (EditText) findViewById(R.id.password);
+        no_rm = (EditText) findViewById(R.id.no_rm);
+        password = (EditText) findViewById(R.id.tgl);
         btnlogin = (Button) findViewById(R.id.buttonlog);
 
         mcontext = this;
@@ -62,7 +62,7 @@ public class ActivityRegis extends AppCompatActivity {
 
     public void requestLogin(){
 
-            mbaseApiService.loginRequest(username.getText().toString(), password.getText().toString())
+            mbaseApiService.loginRequest(no_rm.getText().toString(), password.getText().toString())
                     .enqueue(new Callback<ResponseBody>() {
                         @Override
                         public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
