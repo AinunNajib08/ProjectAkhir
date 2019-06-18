@@ -239,13 +239,25 @@
           </div>
         </div>
       </div>
-      <!-- Footer -->
+      </body>
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white mt-3">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; The Hoax Team 2019</span>
+                </div>
+            </div>
+        </footer>
+        </div>
+        </div>
+        <!-- End of Footer -->
+
   <!-- Argon Scripts -->
   <!-- Core -->
   <script src="<?= base_url('assets/vendor/jquery/dist/jquery.min.js'); ?>"></script>
   <script src="<?= base_url('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js'); ?>"></script>
   <!-- Argon JS -->
   <script src="<?= base_url('assets/js/argon.js?v=1.0.0'); ?>"></script>
-</body>
+
 
 </html>
