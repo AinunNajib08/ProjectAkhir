@@ -326,12 +326,12 @@
                                     <?php foreach ($kunjungan_pasien as $kunjungan_pasien); ?>
                                     <tr>
                                         <td><?php echo $kunjungan_pasien->id_kunjungan ?></td>
-                                        <td><?php echo $kunjungan_pasien->No_urutkunjungan ?></td>
+                                        <td><?php echo $kunjungan_pasien->no_urutkunjungan ?></td>
                                         <td><?php echo $kunjungan_pasien->tanggal ?></td>
-                                        <td><?php echo $kunjungan_pasien->No_antrian ?></td>
-                                        <td><?php echo $kunjungan_pasien->Keluhan ?></td>
-                                        <td><?php echo $kunjungan_pasien->Jenis_kunjungan ?></td>
-                                        <td><?php echo $kunjungan_pasien->Kode_tujuan ?></td>
+                                        <td><?php echo $kunjungan_pasien->no_antrian ?></td>
+                                        <td><?php echo $kunjungan_pasien->keluhan ?></td>
+                                        <td><?php echo $kunjungan_pasien->jenis_kunjungan ?></td>
+                                        <td><?php echo $kunjungan_pasien->kode_tujuan ?></td>
                                         <td><?php echo $kunjungan_pasien->no_rm ?></td>
                                     </tr>
                                 </tbody>
