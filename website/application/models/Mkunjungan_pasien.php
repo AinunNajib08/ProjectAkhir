@@ -55,43 +55,33 @@ class Mkunjungan_pasien extends CI_Model
         return $this->db->get($this->_table)->result();
     }
     
-    public function getById($id_kunjungan)
+    public function getById($id)
     {
-        return $this->db->get_where($this->_table, ["id_kunjungan" => $id_kunjungan])->row();
+        return $this->db->get_where($this->_table, ["product_id" => $id])->row();
     }
 
     public function save()
     {
         $post = $this->input->post();
-        $this->id_kunjungan = uniqid();
-        $this->no_urutkunjungan = $post["no_urut"];
-        $this->tanggal = $post["tgl"];
-        $this->no_antrian = $post["no_antrian"];
-        $this->keluhan = $post["keluhan"];
-        $this->jenis_kunjungan = $post["jns_kunjungan"];
-        $this->kode_tujuan = $post["kode_tujuan"];
-        $this->no_rm = $post["no_rm"];
-
+        $this->product_id = uniqid();
+        $this->name = $post["name"];
+        $this->price = $post["price"];
+        $this->description = $post["description"];
         $this->db->insert($this->_table, $this);
     }
 
     public function update()
     {
         $post = $this->input->post();
-        $this->id_kunjungan = uniqid();
-        $this->no_urutkunjungan = $post["no_urut"];
-        $this->tanggal = $post["tgl"];
-        $this->no_antrian = $post["no_antrian"];
-        $this->keluhan = $post["keluhan"];
-        $this->jenis_kunjungan = $post["jns_kunjungan"];
-        $this->kode_tujuan = $post["kode_tujuan"];
-        $this->no_rm = $post["no_rm"];
-
-        $this->db->update($this->_table, $this, array('id_kunjungan' => $post['id_kunjungan']));
+        $this->product_id = $post["id"];
+        $this->name = $post["name"];
+        $this->price = $post["price"];
+        $this->description = $post["description"];
+        $this->db->update($this->_table, $this, array('product_id' => $post['id']));
     }
 
-    public function delete($id_kunjungan)
+    public function delete($id)
     {
-        return $this->db->delete($this->_table, array("id_kunjungan" => $id_kunjungan));
+        return $this->db->delete($this->_table, array("product_id" => $id));
     }
 }

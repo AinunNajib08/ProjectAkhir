@@ -1,22 +1,26 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
 
 class Mdatapoli extends CI_Model
 {
     private $_table = "poli";
-
     public $id_poli;
     public $poli;
 
     public function rules()
     {
+        
         return [
-            ['field' => 'id_poli',
-            'label' => 'id_poli',
-            'rules' => 'required'],
+            [
+                'field' => 'id_poli',
+                'label' => 'id_poli',
+                'rules' => 'required'
+            ],
 
-            ['field' => 'poli',
-            'label' => 'poli',
-            'rules' => 'required']
+            [
+                'field' => 'poli',
+                'label' => 'poli',
+                'rules' => 'required'
+            ]
         ];
     }
 
@@ -24,34 +28,33 @@ class Mdatapoli extends CI_Model
     {
         return $this->db->get($this->_table)->result();
     }
-    
-    public function getById($id)
+
+    public function getById($id_poli)
     {
-        return $this->db->get_where($this->_table, ["product_id" => $id])->row();
+        return $this->db->get_where($this->_table, ["id_poli" => $id_poli])->row();
     }
 
     public function save()
     {
+        $usiadata = "12";
         $post = $this->input->post();
-        $this->product_id = uniqid();
-        $this->name = $post["name"];
-        $this->price = $post["price"];
-        $this->description = $post["description"];
+        $this->id_poli = $post["id_poli"];
+        $this->poli = $post["poli"];
+
         $this->db->insert($this->_table, $this);
     }
 
     public function update()
     {
         $post = $this->input->post();
-        $this->product_id = $post["id"];
-        $this->name = $post["name"];
-        $this->price = $post["price"];
-        $this->description = $post["description"];
-        $this->db->update($this->_table, $this, array('product_id' => $post['id']));
+        $this->id_poli = $post["id_poli"];
+        $this->poli = $post["poli"];
+
+        $this->db->update($this->_table, $this, array('id_poli' => $post['id_poli']));
     }
 
-    public function delete($id)
+    public function delete($no_rm)
     {
-        return $this->db->delete($this->_table, array("product_id" => $id));
+        return $this->db->delete($this->_table, array("id_poli" => $id_poli));
     }
 }

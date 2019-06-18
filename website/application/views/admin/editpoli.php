@@ -223,119 +223,18 @@
                                         <div class="row">
                                             <div class="col-4">
                                                 <div class="form-group">
-                                                    <label for="no_rm">No Rekam Medik*</label>
-                                                    <input class="form-control" type="text" name="no_rm" value="<?php echo $pasien->no_rm ?>" />
+                                                    <label for="id_poli">No Poli</label>
+                                                    <input class="form-control" type="text" name="id_poli" value="<?php echo $poli->id_poli ?>" />
                                                 </div>
                                             </div>
-                                            <div class="col-4">
-                                                <div class="form-group">
-                                                    <label for="no_al">No Asuransi Lainnya*</label>
-                                                    <input class="form-control" type="text" name="no_al" placeholder="Nomor Asuransi Lainnya" value="<?php echo $pasien->no_asuransilain ?>" />
-                                                </div>
-                                            </div>
-                                            <div class=" col-4">
-                                                <div class="form-group">
-                                                    <label for="nama">Nama Pasien*</label>
-                                                    <input class="form-control" type="text" name="nama" placeholder="Nama Pasien" value="<?php echo $pasien->nama_pasien ?>" />
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-3">
-                                                <div class="form-group">
-                                                    <label for="usia">Usia*</label>
-                                                    <input class="form-control" type="text" name="usia" placeholder="Nomor Rekam Medik" value="<?php echo $pasien->usia ?>" />
-                                                </div>
-                                            </div>
-                                            <div class="col-3">
-                                                <div class="form-group">
-                                                    <label for="tgl_lahir">Tanggal Lahir*</label>
-                                                    <input class="form-control" type="text" name="tgl_lahir" placeholder="Nomor Rekam Medik" value="<?php echo $pasien->tanggal_lahir ?>" />
-                                                </div>
-                                            </div>
-                                            <div class="col-3">
-                                                <div class="form-group">
-                                                    <label for="jenis_kelamin">Jenis Kelamin*</label>
-                                                    <input class="form-control" type="text" name="jenis_kelamin" placeholder="Nomor Asuransi Lainnya" value="<?php echo $pasien->jenis_kelamin ?>" />
-                                                </div>
-                                            </div>
-                                            <div class="col-3">
-                                                <div class="form-group">
-                                                    <label for="agama">Agama*</label>
-                                                    <input class="form-control" type="text" name="agama" placeholder="Nama Pasien" value="<?php echo $pasien->agama ?>" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-3">
-                                                <div class="form-group">
-                                                    <label for="alamat">Alamat*</label>
-                                                    <input class="form-control" type="text" name="alamat" placeholder="Nomor Rekam Medik" value="<?php echo $pasien->alamat ?>" />
-                                                </div>
-                                            </div>
-                                            <div class="col-3">
-                                                <div class="form-group">
-                                                    <label for="kota">Kota*</label>
-                                                    <input class="form-control" type="text" name="kota" placeholder="Nomor Rekam Medik" value="<?php echo $pasien->kota ?>" />
-                                                </div>
-                                            </div>
-                                            <div class="col-3">
-                                                <div class="form-group">
-                                                    <label for="provinsi">Provinsi*</label>
-                                                    <input class="form-control" type="text" value="<?php echo $pasien->provinsi ?>" name="provinsi" placeholder="Nomor Asuransi Lainnya" />
-                                                </div>
-                                            </div>
-                                            <div class="col-3">
-                                                <div class="form-group">
-                                                    <label for="telepon">Telepon*</label>
-                                                    <input class="form-control" type="text" name="telepon" value="<?php echo $pasien->telepon ?>" placeholder="Nama Pasien" />
-                                                </div>
-                                            </div>
-                                        </div>
 
                                         <div class="row">
                                             <div class="col-4">
                                                 <div class="form-group">
-                                                    <label for="pekerjaan">Pekerjaan*</label>
-                                                    <input class="form-control" type="text" name="pekerjaan" value="<?php echo $pasien->pekerjaan ?>" placeholder="Nomor Rekam Medik" />
+                                                    <label for="poli">Poli</label>
+                                                    <input class="form-control" type="text" name="poli" placeholder="Poli" value="<?php echo $poli->poli ?>" />
                                                 </div>
                                             </div>
-                                            <div class="col-4">
-                                                <div class="form-group">
-                                                    <label for="foto">Foto*</label>
-                                                    <input class="form-control" type="text" name="foto" value="<?php echo $pasien->foto ?>" placeholder="Nomor Asuransi Lainnya" />
-                                                </div>
-                                            </div>
-                                            <div class="col-4">
-                                                <div class="form-group">
-                                                    <label for="email">Email*</label>
-                                                    <input value="<?= date("Y-m-d") ?>" class="form-control" value="<?php echo $pasien->email ?>" type="text" name="email" placeholder="Nama Pasien" />
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <div class="form-group">
-                                                    <label for="org_tua">Orang Tua*</label>
-                                                    <input class="form-control" type="text" name="org_tua" value="<?php echo $pasien->orang_tua ?>" placeholder="Nomor Rekam Medik" />
-                                                </div>
-                                            </div>
-                                            <div class="col-4">
-                                                <div class="form-group">
-                                                    <label for="status_kawin">Status Kawin*</label>
-                                                    <input class="form-control" type="text" name="status_kawin" value="<?php echo $pasien->status_kawin ?>" placeholder="Nomor Asuransi Lainnya" />
-                                                </div>
-                                            </div>
-                                            <div class="col-4">
-                                                <div class="form-group">
-                                                    <label for="status_tinggal">Status Tinggal*</label>
-                                                    <input class="form-control" type="text" name="status_tinggal" value="<?php echo $pasien->status_tinggal ?>" placeholder="Nama Pasien" />
-                                                </div>
-                                            </div>
-                                        </div>
-
 
 
                                         <input class="btn btn-success" type="submit" name="btn" value="Save" />
