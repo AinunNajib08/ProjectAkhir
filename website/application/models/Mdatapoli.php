@@ -36,7 +36,6 @@ class Mdatapoli extends CI_Model
 
     public function save()
     {
-        $usiadata = "12";
         $post = $this->input->post();
         $this->id_poli = $post["id_poli"];
         $this->poli = $post["poli"];
@@ -53,7 +52,7 @@ class Mdatapoli extends CI_Model
         $this->db->update($this->_table, $this, array('id_poli' => $post['id_poli']));
     }
 
-    public function delete($no_rm)
+    public function delete($id_poli)
     {
         return $this->db->delete($this->_table, array("id_poli" => $id_poli));
     }

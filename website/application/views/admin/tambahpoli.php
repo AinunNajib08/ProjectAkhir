@@ -215,16 +215,16 @@
 
                             <div class="card mb-3">
                                 <div class="card-header">
-                                    <a href="<?php echo site_url('admin/datapasien/') ?>"><i class="fas fa-arrow-left"></i> Back</a>
+                                    <a href="<?php echo site_url('admin/Datapoli/') ?>"><i class="fas fa-arrow-left"></i> Back</a>
                                 </div>
                                 <div class="card-body">
 
-                                    <form action="<?php base_url('admin/datapasien/edit') ?>" method="post" enctype="multipart/form-data">
+                                    <form action="<?php base_url('admin/Datapoli/add') ?>" method="post" enctype="multipart/form-data">
                                         <div class="row">
                                             <div class="col-4">
                                                 <div class="form-group">
                                                     <label for="id_poli">No Poli</label>
-                                                    <input class="form-control" type="text" name="id_poli" value="<?php echo $poli->id_poli ?>" />
+                                                    <input type="text" class="form-control" placeholder="No Poli" type="text" name="id_poli"  />
                                                 </div>
                                             </div>
                                         
@@ -232,12 +232,12 @@
                                             <div class="col-4">
                                                 <div class="form-group">
                                                     <label for="poli">Poli</label>
-                                                    <input class="form-control" type="text" name="poli" placeholder="Poli" value="<?php echo $poli->poli ?>" />
+                                                    <input class="form-control" type="text" name="poli" placeholder="Poli"  />
                                                 </div>
                                             </div>
                                             </div>
 
-                                        <input class="btn btn-success" type="submit" name="btn" value="Save" />
+                                        <input class="btn btn-success" type="submit" name="btn" value="Tambah" />
                                     </form>
 
                                 </div>

@@ -23,13 +23,13 @@ class Datapoli extends CI_Controller
 
     public function add()
     {
-        $pasien = $this->Mdatapoli;
+        $poli = $this->Mdatapoli;
         $validation = $this->form_validation;
 		$validation->set_rules($poli->rules());
 
         if ($validation->run()) {
-            $pasien->save();
-            $this->session->set_flashdata('success', 'Berhasil disimpan');
+            $poli->save();
+            $this->session->set_flashdata('success', 'Berhasil Ditambah');
         } else {
             $this->session->set_flashdata('error', 'Error');
         }
@@ -61,7 +61,7 @@ class Datapoli extends CI_Controller
         if (!isset($id_poli)) show_404();
 
         if ($this->Mdatapoli->delete($id_poli)) {
-            redirect(site_url('admin/products'));
+            redirect(site_url('admin/Datapoli'));
         }
     }
 }

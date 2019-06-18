@@ -223,9 +223,9 @@
                                             <td><?php echo $poli->id_poli ?></td>
                                             <td><?php echo $poli->poli ?></td>
                                             <td>
-                                                <a href="<?php echo site_url('admin/datapoli/edit/' . $poli->id_poli) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-                                                <a href="<?php echo site_url('admin/datapoli/tambah/' . $poli->id_poli) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Tambah</a>
-                                                <a onclick="deleteConfirm" href="<?php echo site_url('admin/datapasien/delete/' . $poli->poli) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i>Hapus</a>
+                                                <a href="<?php echo site_url('admin/Datapoli/edit/' . $poli->id_poli) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
+                                                <a href="<?php echo site_url('admin/datapoli/add/' . $poli->id_poli) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Tambah</a>
+                                                <a onclick="deleteConfirm" href="<?php echo site_url('admin/Datapoli/delete/' . $poli->id_poli) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i>Hapus</a>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
