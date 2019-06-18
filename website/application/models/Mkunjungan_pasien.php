@@ -20,8 +20,28 @@ class Mkunjungan_pasien extends CI_Model
             'label' => 'id_kunjungan',
             'rules' => 'required'],
 
+            ['field' => 'no_urutkunjungan',
+            'label' => 'no_urutkunjungan',
+            'rules' => 'required'],
+            
+            ['field' => 'tanggal',
+            'label' => 'tanggal',
+            'rules' => 'required'],
+
+            ['field' => 'no_antrian',
+            'label' => 'no_antrian',
+            'rules' => 'required'],
+
+            ['field' => 'keluhan',
+            'label' => 'keluhan',
+            'rules' => 'required'],
+
             ['field' => 'jenis_kunjungan',
             'label' => 'jenis_kunjungan',
+            'rules' => 'required'],
+
+            ['field' => 'kede_tujuan',
+            'label' => 'kode_tujuan',
             'rules' => 'required'],
             
             ['field' => 'no_rm',

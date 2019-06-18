@@ -118,21 +118,21 @@
                 </form>
                 <!-- Navigation -->
                 <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="../admin/datapasien">
-              <i class="ni ni-tv-2 text-primary"></i> View Data Pasien
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../admin/datakunjungan">
-              <i class="ni ni-bullet-list-67 text-blue"></i> View Data Kunjungan Pasien
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../admin/datapoli">
-              <i class="ni ni-shop text-orange"></i> View Poliklinik
-            </a>
-          </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../admin/datapasien">
+                            <i class="ni ni-tv-2 text-primary"></i> View Data Pasien
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../admin/datakunjungan">
+                            <i class="ni ni-bullet-list-67 text-blue"></i> View Data Kunjungan Pasien
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../admin/datapoli">
+                            <i class="ni ni-shop text-orange"></i> View Poliklinik
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../examples/profile.html">
                             <i class="ni ni-single-02 text-yellow"></i>
@@ -322,7 +322,16 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php foreach ($kunjungan_pasien as $kunjungan_pasien); ?>
                                     <tr>
+                                        <td><?php echo $kunjungan_pasien->id_kunjungan ?></td>
+                                        <td><?php echo $kunjungan_pasien->no_urutkunjungan ?></td>
+                                        <td><?php echo $kunjungan_pasien->tanggal ?></td>
+                                        <td><?php echo $kunjungan_pasien->no_antrian ?></td>
+                                        <td><?php echo $kunjungan_pasien->keluhan ?></td>
+                                        <td><?php echo $kunjungan_pasien->jenis_kunjungan ?></td>
+                                        <td><?php echo $kunjungan_pasien->kode_tujuan ?></td>
+                                        <td><?php echo $kunjungan_pasien->no_rm ?></td>
                                     </tr>
                                 </tbody>
                             </table>
