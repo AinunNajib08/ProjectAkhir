@@ -273,7 +273,7 @@
                                                     <label for="keluhan">Keluhan*</label>
                                                     <input class="form-control" type="text" name="keluhan"
                                                         placeholder="Keluhan"
-                                                        value="<?php echo $kunjungan_pasien->Keluhan ?>" />
+                                                        value="<?php echo $kunjungan_pasien->keluhan ?>" />
                                                 </div>
                                             </div>
                                             <div class="col-3">

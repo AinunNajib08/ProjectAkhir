@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
     <meta name="author" content="Creative Tim">
-    <title>Data Pasien</title>
+    <title>Data Kunjungan</title>
     <!-- Favicon -->
     <link href="<?= base_url('assets/img/brand/icon.png'); ?>" rel="icon" type="image/png">
     <!-- Fonts -->
@@ -335,10 +335,10 @@
                                         <td><?php echo $kunjungan_pasien->kode_tujuan ?></td>
                                         <td><?php echo $kunjungan_pasien->no_rm ?></td>
                                         <td>
-                                            <a href="<?php echo site_url('admin/datakunjunganpasien/edit/' . $kunjungan_pasien->id_kunjungan) ?>"
+                                            <a href="<?php echo site_url('admin/Datakunjungan/edit/' . $kunjungan_pasien->id_kunjungan) ?>"
                                                 class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
                                             <a onclick="deleteConfirm"
-                                                href="<?php echo site_url('admin/datakunjunganpasien/delete/' . $kunjungan_pasien->id_kunjungan) ?>"
+                                                href="<?php echo site_url('admin/Datakunjungan/delete/' . $kunjungan_pasien->id_kunjungan) ?>"
                                                 class="btn btn-small text-danger"><i class="fas fa-trash"></i>Hapus</a>
                                         </td>
                                     </tr>
