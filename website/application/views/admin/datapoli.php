@@ -111,17 +111,17 @@
         <!-- Navigation -->
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="../admin/datapasien">
+            <a class="nav-link" href="../datapasien">
               <i class="ni ni-tv-2 text-primary"></i> View Data Pasien
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../admin/datakunjungan">
+            <a class="nav-link" href="../datakunjungan">
               <i class="ni ni-bullet-list-67 text-blue"></i> View Data Kunjungan Pasien
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../admin/datapoli">
+            <a class="nav-link" href="../datapoli">
               <i class="ni ni-shop text-orange"></i> View Poliklinik
             </a>
           </li>
@@ -223,7 +223,8 @@
                                             <td><?php echo $poli->id_poli ?></td>
                                             <td><?php echo $poli->poli ?></td>
                                             <td>
-                                                <a href="<?php echo site_url('admin/datapasien/edit/' . $poli->id_poli) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
+                                                <a href="<?php echo site_url('admin/datapoli/edit/' . $poli->id_poli) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
+                                                <a href="<?php echo site_url('admin/datapoli/tambah/' . $poli->id_poli) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Tambah</a>
                                                 <a onclick="deleteConfirm" href="<?php echo site_url('admin/datapasien/delete/' . $poli->poli) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i>Hapus</a>
                                             </td>
                                         </tr>
