@@ -19,35 +19,37 @@ class Datakunjungan extends CI_Controller
 
     public function add()
     {
-        $product = $this->product_model;
+        $pasien = $this->Mkunjungan_pasien;
         $validation = $this->form_validation;
-        $validation->set_rules($product->rules());
+        $validation->set_rules($kunjungan_pasien->rules());
 
         if ($validation->run()) {
-            $product->save();
+            $pasien->save();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
+        } else {
+            $this->session->set_flashdata('error', 'Error');
         }
 
-        $this->load->view("admin/product/new_form");
+        $this->load->view("admin/tambahkunjungan");
     }
 
-    public function edit($id = null)
+    public function edit($id_kunjungan = null)
     {
-        if (!isset($id)) redirect('admin/products');
-       
-        $product = $this->product_model;
+        if (!isset($id_kunjungan)) redirect('admin/datakunjunganpasien');
+
+        $kunjungan_pasien = $this->Mkunjungan_pasien;
         $validation = $this->form_validation;
-        $validation->set_rules($product->rules());
+        $validation->set_rules($kunjungan_pasien->rules());
 
         if ($validation->run()) {
-            $product->update();
+            $kunjungan_pasien->update();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
         }
 
-        $data["product"] = $product->getById($id);
-        if (!$data["product"]) show_404();
+        $data["kunjungan_pasien"] = $kunjungan_pasien->getById($id_kunjungan);
+        if (!$data["kunjungan_pasien"]) show_404();
         
-        $this->load->view("admin/product/edit_form", $data);
+        $this->load->view("admin/editkunjungan", $data);
     }
 
     public function delete($id=null)

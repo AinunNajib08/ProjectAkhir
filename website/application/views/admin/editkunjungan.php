@@ -119,17 +119,17 @@
                 <!-- Navigation -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="../admin/datapasien">
+                        <a class="nav-link" href="/project/website/admin/datapasien/">
                             <i class="ni ni-tv-2 text-primary"></i> View Data Pasien
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../admin/datakunjungan">
+                        <a class="nav-link" href="/project/website/admin/Datakunjungan">
                             <i class="ni ni-bullet-list-67 text-blue"></i> View Data Kunjungan Pasien
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../admin/datapoli">
+                        <a class="nav-link" href="../examples/maps.html">
                             <i class="ni ni-shop text-orange"></i> View Poliklinik
                         </a>
                     </li>
@@ -186,7 +186,7 @@
                                 </span>
                                 <div class="media-body ml-2 d-none d-lg-block">
                                     <span
-                                        class="mb-0 text-sm  font-weight-bold"><?= $this->session->userdata('username');?></span>
+                                        class="mb-0 text-sm  font-weight-bold"><?= $this->session->userdata('username'); ?></span>
                                 </div>
                             </div>
                         </a>
@@ -209,164 +209,167 @@
             <div class="container-fluid">
                 <div class="header-body">
                     <!-- Card stats -->
-                    <div class="row">
-                        <div class="col-xl-3 col-lg-6">
-                            <div class="card card-stats mb-4 mb-xl-0">
+
+                    <!-- End of Topbar -->
+
+                    <!-- Start Container Fluid -->
+
+                    <div id="content-wrapper">
+
+                        <div class="container-fluid">
+
+                            <?php if ($this->session->flashdata('success')) : ?>
+                            <div class="alert alert-success" role="alert">
+                                <?php echo $this->session->flashdata('success'); ?>
+                            </div>
+                            <?php endif; ?>
+
+                            <div class="card mb-3">
+                                <div class="card-header">
+                                    <a href="<?php echo site_url('admin/datakunjunganpasien/') ?>"><i
+                                            class="fas fa-arrow-left"></i> Back</a>
+                                </div>
                                 <div class="card-body">
-                                    <div class="row">
-                                        <div class="col">
-                                            <h5 class="card-title text-uppercase text-muted mb-0">Data Kunjungan</h5>
-                                            <span class="h2 font-weight-bold mb-0"></span>
-                                        </div>
-                                        <div class="col-auto">
-                                            <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
-                                                <i class="fas fa-chart-bar"></i>
+
+                                    <form action="<?php base_url('admin/datakunjunganpasien/edit') ?>" method="post"
+                                        enctype="multipart/form-data">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <div class="form-group">
+                                                    <label for="id_kunjungan">Id Kunjungan*</label>
+                                                    <input class="form-control" type="text" name="id_kunjungan"
+                                                        value="<?php echo $kunjungan_pasien->id_kunjungan ?>" />
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="form-group">
+                                                    <label for="no_urutkunjungan">Nomor Urut Kunjungan*</label>
+                                                    <input class="form-control" type="text" name="no_urutkunjungan"
+                                                        placeholder="Nomor Urut Kunjungan"
+                                                        value="<?php echo $kunjungan_pasien->no_urutkunjungan ?>" />
+                                                </div>
+                                            </div>
+                                            <div class=" col-4">
+                                                <div class="form-group">
+                                                    <label for="tanggal">Tanggal*</label>
+                                                    <input class="form-control" type="text" name="tanggal"
+                                                        placeholder="Tanggal"
+                                                        value="<?php echo $kunjungan_pasien->tanggal ?>" />
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <p class="mt-3 mb-0 text-muted text-sm">
-                                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i></span>
-                                        <span class="text-nowrap"></span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6">
-                            <div class="card card-stats mb-4 mb-xl-0">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col">
-                                            <h5 class="card-title text-uppercase text-muted mb-0"></h5>
-                                            <span class="h2 font-weight-bold mb-0"></span>
-                                        </div>
-                                        <div class="col-auto">
-                                            <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
-                                                <i class="fas fa-chart-pie"></i>
+
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <div class="form-group">
+                                                    <label for="no_antrian">Nomor Antrian*</label>
+                                                    <input class="form-control" type="text" name="no_antrian"
+                                                        placeholder="Nomor Antrian"
+                                                        value="<?php echo $kunjungan_pasien->no_antrian ?>" />
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <div class="form-group">
+                                                    <label for="keluhan">Keluhan*</label>
+                                                    <input class="form-control" type="text" name="keluhan"
+                                                        placeholder="Keluhan"
+                                                        value="<?php echo $kunjungan_pasien->Keluhan ?>" />
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <div class="form-group">
+                                                    <label for="jenis_kunjungan">Jenis Kunjungan*</label>
+                                                    <input class="form-control" type="text" name="jenis_kunjungan"
+                                                        placeholder="Jenis Kunjungan"
+                                                        value="<?php echo $kunjungan_pasien->jenis_kunjungan ?>" />
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <div class="form-group">
+                                                    <label for="kode_tujuan">Kode Tujuan*</label>
+                                                    <input class="form-control" type="text" name="kode_tujuan"
+                                                        placeholder="Kode Tujuan"
+                                                        value="<?php echo $kunjungan_pasien->kode_tujuan ?>" />
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <p class="mt-3 mb-0 text-muted text-sm">
-                                        <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i></span>
-                                        <span class="text-nowrap"></span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6">
-                            <div class="card card-stats mb-4 mb-xl-0">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col">
-                                            <h5 class="card-title text-uppercase text-muted mb-0"></h5>
-                                            <span class="h2 font-weight-bold mb-0"></span>
-                                        </div>
-                                        <div class="col-auto">
-                                            <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
-                                                <i class="fas fa-users"></i>
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <div class="form-group">
+                                                    <label for="no_rm">Nomor Rekam Medik*</label>
+                                                    <input class="form-control" type="text" name="no_rm"
+                                                        placeholder="Nomor Rekam Medik"
+                                                        value="<?php echo $kunjungan_pasien->no_rm ?>" />
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <p class="mt-3 mb-0 text-muted text-sm">
-                                        <span class="text-warning mr-2"><i class="fas fa-arrow-down"></i></span>
-                                        <span class="text-nowrap"></span>
-                                    </p>
+
+
+
+                                        <input class="btn btn-success" type="submit" name="btn" value="Save" />
+                                    </form>
+
                                 </div>
+
+
                             </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-6">
-                            <div class="card card-stats mb-4 mb-xl-0">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col">
-                                            <h5 class="card-title text-uppercase text-muted mb-0"></h5>
-                                            <span class="h2 font-weight-bold mb-0"></span>
-                                        </div>
-                                        <div class="col-auto">
-                                            <div class="icon icon-shape bg-info text-white rounded-circle shadow">
-                                                <i class="fas fa-percent"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="mt-3 mb-0 text-muted text-sm">
-                                        <span class="text-success mr-2"><i class="fas fa-arrow-up"></i></span>
-                                        <span class="text-nowrap"></span>
-                                    </p>
-                                </div>
-                            </div>
+                            <!-- /.container-fluid -->
+
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
-        <!-- Page content -->
-        <div class="container-fluid mt--7">
-            <!-- Table -->
-            <!-- Dark table -->
-            <div class="row mt-5">
-                <div class="col">
-                    <div class="card bg-default shadow">
-                        <div class="card-header bg-transparent border-0">
-                            <h3 class="text-white mb-0">Tabel Data Kunjungan</h3>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table align-items-center table-dark table-flush">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th scope="col">Id_kunjungan</th>
-                                        <th scope="col">No_urutkunjungan</th>
-                                        <th scope="col">Tanggal</th>
-                                        <th scope="col">No_antrian</th>
-                                        <th scope="col">Keluhan</th>
-                                        <th scope="col">Jenis_kunjungan</th>
-                                        <th scope="col">Kode_tujuan</th>
-                                        <th scope="col">No_rm</th>
-                                        <th scope="col">Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($kunjungan_pasien as $kunjungan_pasien); ?>
-                                    <tr>
-                                        <td><?php echo $kunjungan_pasien->id_kunjungan ?></td>
-                                        <td><?php echo $kunjungan_pasien->no_urutkunjungan ?></td>
-                                        <td><?php echo $kunjungan_pasien->tanggal ?></td>
-                                        <td><?php echo $kunjungan_pasien->no_antrian ?></td>
-                                        <td><?php echo $kunjungan_pasien->keluhan ?></td>
-                                        <td><?php echo $kunjungan_pasien->jenis_kunjungan ?></td>
-                                        <td><?php echo $kunjungan_pasien->kode_tujuan ?></td>
-                                        <td><?php echo $kunjungan_pasien->no_rm ?></td>
-                                        <td>
-                                            <a href="<?php echo site_url('admin/datakunjunganpasien/edit/' . $kunjungan_pasien->id_kunjungan) ?>"
-                                                class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-                                            <a onclick="deleteConfirm"
-                                                href="<?php echo site_url('admin/datakunjunganpasien/delete/' . $kunjungan_pasien->id_kunjungan) ?>"
-                                                class="btn btn-small text-danger"><i class="fas fa-trash"></i>Hapus</a>
-                                        </td>
-                                    </tr>
-                                <tbody>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white mt-3">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; The Hoax Team 2019</span>
                 </div>
             </div>
-            <!-- Footer -->
-            <footer class="footer mt-5">
-                <div class="row align-items-center justify-content-xl-between">
-                    <div class="col">
-                        <div class="copyright text-center text-xl-left text-muted">
-                            &copy; 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1"
-                                target="_blank">The Hoax Team</a>
-                        </div>
-                    </div>
-            </footer>
+        </footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
         </div>
     </div>
-    <!-- Argon Scripts -->
-    <!-- Core -->
+
+    <!-- Bootstrap core JavaScript-->
     <script src="<?= base_url('assets/vendor/jquery/dist/jquery.min.js'); ?>"></script>
     <script src="<?= base_url('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js'); ?>"></script>
     <!-- Argon JS -->
     <script src="<?= base_url('assets/js/argon.js?v=1.0.0'); ?>"></script>
+
 </body>
 
 </html>
