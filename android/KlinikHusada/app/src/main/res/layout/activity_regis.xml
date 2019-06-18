@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    tools:context=".ActivityRegis">
+
+    <TextView
+        android:layout_marginTop="15dp"
+        android:text="Vers 1.0"
+        android:fontFamily="@font/robotoregular"
+        android:textStyle="italic"
+        android:textSize="13dp"
+        android:textAlignment="textEnd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"/>
+
+        <ImageView
+            android:layout_width="340dp"
+            android:layout_height="190dp"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_undraw_add_user_ipe3" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="48dp">
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/robotobold"
+        android:text="Selamat Datang di"
+        android:textAlignment="textStart"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_marginTop="0dp"
+        android:text="Klinik Husada Mulia"
+        android:fontFamily="@font/robotoregular"
+        android:textSize="27dp"
+        android:textAlignment="textStart"
+        android:textStyle="italic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginTop="9dp"
+        android:text="Username"
+        android:fontFamily="@font/robotoregular"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:textAlignment="textStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/username"
+        android:padding="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginRight="48dp"
+        android:background="@drawable/edittext_design" />
+
+    <TextView
+        android:textStyle="bold"
+        android:layout_marginTop="9dp"
+        android:text="Password"
+        android:fontFamily="@font/robotoregular"
+        android:textSize="16dp"
+        android:textAlignment="textStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:inputType="textPassword"
+        android:id="@+id/password"
+        android:padding="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginRight="48dp"
+        android:background="@drawable/edittext_design" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginTop="0dp"
+            android:text="Belum memiliki akun ?"
+            android:fontFamily="@font/robotoregular"
+            android:textSize="12dp"
+            android:textAlignment="textStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginTop="0dp"
+            android:text="@string/daftar"
+            android:textColor="@android:color/holo_blue_dark"
+            android:fontFamily="@font/robotoregular"
+            android:textSize="12dp"
+            android:textStyle="bold|italic"
+            android:textAlignment="textStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="daftar"/>
+
+        <TextView
+            android:onClick="lupapassword"
+            android:layout_marginTop="0dp"
+            android:text="Lupa Password ?"
+            android:textColor="@android:color/darker_gray"
+            android:fontFamily="@font/robotoregular"
+            android:textSize="12dp"
+            android:layout_marginRight="5dp"
+            android:textStyle="bold|italic"
+            android:layout_marginLeft="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonlog"
+        android:layout_marginLeft="-20dp"
+        android:layout_marginTop="20dp"
+        android:text="Masuk"
+        android:textSize="22dp"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/robotoregular"
+        android:layout_gravity="center"
+        android:background="@drawable/buttondata"
+        android:layout_width="196dp"
+        android:layout_height="48dp" />
+
+    </LinearLayout>
+</LinearLayout>

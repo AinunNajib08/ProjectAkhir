@@ -3,16 +3,14 @@ package com.kesehatan.klinikhusada;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import butterknife.BindView;
 
-import com.google.gson.JsonArray;
 import com.kesehatan.klinikhusada.apihelper.BaseApiService;
 import com.kesehatan.klinikhusada.apihelper.UtilsApi;
 
@@ -23,12 +21,11 @@ import org.json.JSONObject;
 import java.io.IOException;
 
 import okhttp3.ResponseBody;
-import okhttp3.internal.http.HttpHeaders;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ActivityLogin extends AppCompatActivity {
+public class ActivityRegis extends AppCompatActivity {
 
     EditText username, password;
     Button btnlogin;
@@ -39,7 +36,7 @@ public class ActivityLogin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_regis);
 
         username = (EditText) findViewById(R.id.username);
         password = (EditText) findViewById(R.id.password);
@@ -110,8 +107,6 @@ public class ActivityLogin extends AppCompatActivity {
 
 
     public void daftar(View view) {
-        Intent daf = new Intent(ActivityLogin.this, ActivityRegis.class);
-        startActivity(daf);
     }
 
     public void lupapassword(View view) {
