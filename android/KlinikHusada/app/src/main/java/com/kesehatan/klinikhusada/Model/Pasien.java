@@ -21,26 +21,32 @@ public class Pasien {
         this.usia = usia;
     }
     public String getNo_rm() {
+
         return no_rm;
     }
 
     public void setNo_rm(String no_rm) {
+
         this.no_rm = no_rm;
     }
 
     public String getNama_pasien() {
+
         return nama_pasien;
     }
 
     public void setNama_pasien(String nama_pasien) {
+
         this.nama_pasien = nama_pasien;
     }
 
     public String getUsia() {
+
         return usia;
     }
 
     public void setUsia(String usia) {
+
         this.usia = usia;
     }
 

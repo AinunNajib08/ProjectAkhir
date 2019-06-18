@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityDashboard"></activity>
+        <activity android:name=".Model.PostPutDelPasien"></activity>
+        <activity android:name=".Model.GetPasien" />
+        <activity android:name=".ActivityDashboard" />
         <activity android:name=".ActivityLogin" />
         <activity android:name=".ActivityRegis" />
         <activity android:name=".MainActivity">
