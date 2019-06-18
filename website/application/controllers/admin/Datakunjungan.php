@@ -52,12 +52,12 @@ class Datakunjungan extends CI_Controller
         $this->load->view("admin/editkunjungan", $data);
     }
 
-    public function delete($id=null)
+    public function delete($id_kunjungan=null)
     {
-        if (!isset($id)) show_404();
+        if (!isset($id_kunjungan)) show_404();
         
-        if ($this->product_model->delete($id)) {
-            redirect(site_url('admin/products'));
+        if ($this->Mkunjungan_pasien->delete($id_kunjungan)) {
+            redirect(site_url('Datakunjungan'));
         }
     }
 }

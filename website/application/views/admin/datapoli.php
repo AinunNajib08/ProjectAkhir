@@ -252,8 +252,6 @@
                 </div>
             </div>
         </footer>
-        </div>
-        </div>
         <!-- End of Footer -->
 
   <!-- Argon Scripts -->
