@@ -202,6 +202,8 @@
     <div class="container-fluid mt--7">
       <!-- Table -->
       <!-- Dark table -->
+      <br>
+           <br>
       <div class="row mt-5">
         <div class="col">
           <div class="card bg-default shadow">
@@ -212,9 +214,22 @@
               <table class="table align-items-center table-dark table-flush">
                 <thead class="thead-dark">
                   <tr>
-                    <th scope="col">id_poli</th>
+                    <th scope="col">No</th>
                     <th scope="col">poli</th>
+                    <th scope="col">pilihan</th>
                   </tr>
+         <!--        <?php
+                $no = 1 + $this->uri->segment(3);
+                foreach ($record->result() as $r) {
+                    echo "<tr>
+					            <td width='10'>$no</td>
+					            <td>$r->nama_kategori</td>
+					            <td width='10'>" . anchor('index.php/kategori/edit/' . $r->id_kategori, 'Edit',array('class'=>'btn btn-info')) . "</td>
+					            <td width='10'>" . anchor('index.php/kategori/delete/' . $r->id_kategori, 'Delete',array('class'=>'btn btn-danger')) . "</td>
+					            </tr>";
+                    $no++;
+                }
+                ?> -->
                 </thead>
                 <tbody>
                   <tr>
