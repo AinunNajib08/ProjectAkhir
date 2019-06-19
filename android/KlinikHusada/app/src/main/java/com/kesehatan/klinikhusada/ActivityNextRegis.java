@@ -2,6 +2,7 @@ package com.kesehatan.klinikhusada;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class ActivityNextRegis extends AppCompatActivity {
@@ -21,5 +22,9 @@ public class ActivityNextRegis extends AppCompatActivity {
         String tgl = getIntent().getStringExtra(EXTRA_TGL);
 
         datas.setText(tgl);
+    }
+
+    public void Simpan(View view) {
+
     }
 }
