@@ -53,7 +53,7 @@ class Datapasien extends CI_Controller
         $data["pasien"] = $pasien->getById($no_rm);
         if (!$data["pasien"]) show_404();
 
-        $this->load->view("admin/editkunjungan", $data);
+        $this->load->view("admin/editpasien", $data);
     }
 
     public function delete($no_rm = null)

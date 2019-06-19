@@ -15,20 +15,30 @@ import retrofit2.http.PUT;
 
 public class ApiInterface extends AppCompatActivity {
     @GET("pasien_android")
-    Call<GetPasien> getPasien();
+    Call<GetPasien> getPasien() {
+        return null;
+    }
+
     @FormUrlEncoded
     @POST("pasien")
     Call<PostPutDelPasien> postPasien(@Field("nama_pasien") String nama_pasien,
-                                      @Field("usia") String usia);
+                                      @Field("usia") String usia) {
+        return null;
+    }
 
     @FormUrlEncoded
     @PUT("pasien")
     Call<PostPutDelPasien> putPasien(@Field("no_rm") String no_rm,
                                      @Field("nama_pasien") String nama_pasien,
-                                     @Field("usia") String usia);
+                                     @Field("usia") String usia) {
+        return null;
+    }
+
     @FormUrlEncoded
     @HTTP(method = "DELETE", path = "pasien", hasBody = true)
-    Call<PostPutDelPasien> deletePasien(@Field("no_rm") String no_rm);
+    Call<PostPutDelPasien> deletePasien(@Field("no_rm") String no_rm) {
+        return null;
+    }
 
 
     @Override

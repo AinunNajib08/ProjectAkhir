@@ -132,16 +132,16 @@
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="../examples/tables.html">
-              <i class="ni ni-bullet-list-67 text-red"></i> 
+              <i class="ni ni-bullet-list-67 text-red"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../examples/login.html">
-              <i class="ni ni-key-25 text-info"></i> 
+              <i class="ni ni-key-25 text-info"></i>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../examples/register.html">
-              <i class="ni ni-circle-08 text-pink"></i> 
+              <i class="ni ni-circle-08 text-pink"></i>
             </a>
           </li>
         </ul>
@@ -175,7 +175,7 @@
                   <img alt="Image placeholder" src="<?= base_url('assets/img/brand/usericon.png'); ?>">
                 </span>
                 <div class="media-body ml-2 d-none d-lg-block">
-                  <span class="mb-0 text-sm  font-weight-bold"><?= $this->session->userdata('username');?></span>
+                  <span class="mb-0 text-sm  font-weight-bold"><?= $this->session->userdata('username'); ?></span>
                 </div>
               </div>
             </a>
@@ -184,7 +184,7 @@
                 <h6 class="text-overflow m-0">Selamat Datang!</h6>
               </div>
               <div class="dropdown-divider"></div>
-              <a href="#!" class="dropdown-item">
+              <a href="<?= base_url('login_controler/logout'); ?>" class="dropdown-item">
                 <i class="ni ni-user-run"></i>
                 <span>Logout</span>
               </a>
@@ -197,69 +197,69 @@
     <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
       <div class="container-fluid">
         <div class="header-body">
-          
-    <!-- Page content -->
-    <div class="container-fluid mt--7">
-      <!-- Table -->
-      <!-- Dark table -->
-      <br>
-           <br>
-      <div class="row mt-5">
-        <div class="col">
-          <div class="card bg-default shadow">
-            <div class="card-header bg-transparent border-0">
-              <h3 class="text-white mb-0">Tabel Poliklinik</h3>
-            </div>
-            <div class="table-responsive">
-              <table class="table align-items-center table-dark table-flush">
-                <thead class="thead-dark">
-                  <tr>
-                    <th scope="col">No</th>
-                    <th scope="col">poli</th>
-                    <th scope="col">pilihan</th>
-                  </tr>
-                  <?php foreach ($poli as $poli) : ?>
-                                        <tr>
-                                            <td><?php echo $poli->id_poli ?></td>
-                                            <td><?php echo $poli->poli ?></td>
-                                            <td>
-                                                <a href="<?php echo site_url('admin/Datapoli/edit/' . $poli->id_poli) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-                                                <a href="<?php echo site_url('admin/datapoli/add/' . $poli->id_poli) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Tambah</a>
-                                                <a onclick="deleteConfirm" href="<?php echo site_url('admin/Datapoli/delete/' . $poli->id_poli) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i>Hapus</a>
-                                            </td>
-                                        </tr>
-                                    <?php endforeach; ?>
-                </thead>
-                <tbody>
-                  <tr>
-                  </tr>
-                </tbody>
-              </table>
+
+          <!-- Page content -->
+          <div class="container-fluid mt--7">
+            <!-- Table -->
+            <!-- Dark table -->
+            <br>
+            <br>
+            <div class="row mt-5">
+              <div class="col">
+                <div class="card bg-default shadow">
+                  <div class="card-header bg-transparent border-0">
+                    <h3 class="text-white mb-0">Tabel Poliklinik</h3>
+                  </div>
+                  <div class="table-responsive">
+                    <table class="table align-items-center table-dark table-flush">
+                      <thead class="thead-dark">
+                        <tr>
+                          <th scope="col">No</th>
+                          <th scope="col">poli</th>
+                          <th scope="col">pilihan</th>
+                        </tr>
+                        <?php foreach ($poli as $poli) : ?>
+                          <tr>
+                            <td><?php echo $poli->id_poli ?></td>
+                            <td><?php echo $poli->poli ?></td>
+                            <td>
+                              <a href="<?php echo site_url('admin/Datapoli/edit/' . $poli->id_poli) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
+                              <a href="<?php echo site_url('admin/datapoli/add/' . $poli->id_poli) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Tambah</a>
+                              <a onclick="deleteConfirm" href="<?php echo site_url('admin/Datapoli/delete/' . $poli->id_poli) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i>Hapus</a>
+                            </td>
+                          </tr>
+                        <?php endforeach; ?>
+                      </thead>
+                      <tbody>
+                        <tr>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-      </div>
+</body>
+<!-- Footer -->
+<footer class="sticky-footer bg-white mt-3">
+  <div class="container my-auto">
+    <div class="copyright text-center my-auto">
+      <span>Copyright &copy; The Hoax Team 2019</span>
     </div>
-      </body>
-        <!-- Footer -->
-        <footer class="sticky-footer bg-white mt-3">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; The Hoax Team 2019</span>
-                </div>
-            </div>
-        </footer>
-        <!-- End of Footer -->
+  </div>
+</footer>
+<!-- End of Footer -->
 
-  <!-- Argon Scripts -->
-  <!-- Core -->
-  <script src="<?= base_url('assets/vendor/jquery/dist/jquery.min.js'); ?>"></script>
-  <script src="<?= base_url('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js'); ?>"></script>
-  <!-- Argon JS -->
-  <script src="<?= base_url('assets/js/argon.js?v=1.0.0'); ?>"></script>
+<!-- Argon Scripts -->
+<!-- Core -->
+<script src="<?= base_url('assets/vendor/jquery/dist/jquery.min.js'); ?>"></script>
+<script src="<?= base_url('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js'); ?>"></script>
+<!-- Argon JS -->
+<script src="<?= base_url('assets/js/argon.js?v=1.0.0'); ?>"></script>
 
 
 </html>
