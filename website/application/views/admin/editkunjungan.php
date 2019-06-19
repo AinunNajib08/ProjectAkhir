@@ -135,7 +135,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../examples/profile.html">
-                            <i class="ni ni-single-02 text-yellow"></i>
+                            <i class="ni ni-single-02 text-yellow"></i> View Tujuan Pelayanan
                         </a>
                     </li>
                     <li class="nav-item">
@@ -226,7 +226,7 @@
 
                             <div class="card mb-3">
                                 <div class="card-header">
-                                    <a href="<?php echo site_url('admin/datakunjunganpasien/') ?>"><i
+                                    <a href="<?php echo site_url('admin/datakunjungan/') ?>"><i
                                             class="fas fa-arrow-left"></i> Back</a>
                                 </div>
                                 <div class="card-body">

@@ -126,9 +126,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../examples/profile.html">
-              <i class="ni ni-single-02 text-yellow"></i>
-            </a>
+             <a class="nav-link" href="../examples/profile.html">
+                <i class="ni ni-single-02 text-yellow"></i> View Tujuan Pelayanan
+              </a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="../examples/tables.html">
@@ -224,8 +224,8 @@
                             <td><?php echo $poli->poli ?></td>
                             <td>
                               <a href="<?php echo site_url('admin/Datapoli/edit/' . $poli->id_poli) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-                              <a href="<?php echo site_url('admin/datapoli/add/' . $poli->id_poli) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Tambah</a>
-                              <a onclick="deleteConfirm" href="<?php echo site_url('admin/Datapoli/delete/' . $poli->id_poli) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i>Hapus</a>
+                              <a href="<?php echo site_url('admin/datapoli/add/' . $poli->id_poli) ?>" class="btn btn-small"><i class="fas fa-plus-circle"></i> Tambah</a>
+                              <a onclick="deleteConfirm" href="<?php echo site_url('admin/Datapoli/delete/' . $poli->id_poli) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
                             </td>
                           </tr>
                         <?php endforeach; ?>
