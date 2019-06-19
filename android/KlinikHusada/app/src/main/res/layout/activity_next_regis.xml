@@ -28,7 +28,7 @@
         <TextView
             android:layout_width="362dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="60dp"
             android:fontFamily="@font/robotobold"
             android:text="Silahkan"
             android:textAlignment="textStart"
@@ -85,13 +85,14 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textviewdatefornocallspage"
+        android:id="@+id/uniq"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Test"
+        android:textStyle="italic"
         android:layout_marginTop="9dp"
-        android:textSize="25sp" />
+        android:textSize="35sp" />
 
     <LinearLayout
         android:orientation="vertical"
