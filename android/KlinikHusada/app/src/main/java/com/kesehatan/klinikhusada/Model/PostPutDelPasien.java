@@ -3,6 +3,7 @@ package com.kesehatan.klinikhusada.Model;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.google.gson.annotations.SerializedName;
+import com.kesehatan.klinikhusada.R;
 
 public class PostPutDelPasien extends AppCompatActivity {
     public class PostPutDelKontak {
