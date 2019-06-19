@@ -90,13 +90,15 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Test"
+        android:layout_marginTop="9dp"
         android:textSize="25sp" />
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="48dp">
+        android:paddingLeft="48dp"
+        android:fontFamily="@font/robotoregular">
 
         <TextView
             android:textStyle="bold"
