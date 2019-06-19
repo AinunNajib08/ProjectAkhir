@@ -80,7 +80,6 @@
         android:layout_height="wrap_content" />
 
     <EditText
-        android:inputType="textPassword"
         android:id="@+id/tgl"
         android:padding="10dp"
         android:layout_marginTop="0dp"
