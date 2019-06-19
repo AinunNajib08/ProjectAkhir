@@ -52,7 +52,6 @@ public class ActivityRegis extends AppCompatActivity {
 
         mcontext = this;
         mbaseApiService = UtilsApi.getAPIService();
-        initComponents();
 
         dateFormatter = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
 
@@ -63,19 +62,6 @@ public class ActivityRegis extends AppCompatActivity {
             }
         });
 
-    }
-
-    public void initComponents(){
-
-
-
-        btnlogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loading = ProgressDialog.show(mcontext,null , "Harap Tunggu ...", true, false);
-                requestLogin();
-            }
-        });
     }
 
     private void showDateDialog(){
@@ -96,52 +82,9 @@ public class ActivityRegis extends AppCompatActivity {
         datePickerDialog.show();
     }
 
-    public void requestLogin(){
-
-            mbaseApiService.loginRequest(no_rm.getText().toString(), tanggal.getText().toString())
-                    .enqueue(new Callback<ResponseBody>() {
-                        @Override
-                        public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                            if (response.isSuccessful()){
-                                loading.dismiss();
-                                try {
-                                    JSONObject jsonRESULTS = new JSONObject(response.body().string());
-                                    if (jsonRESULTS.getString("status").equals("true")){
-                                        JSONArray data = jsonRESULTS.getJSONArray("data");
-                                        for (int i=0; i <data.length(); i++) {
-                                            JSONObject jsonObject = data.getJSONObject(i);
-
-                                            int id = jsonObject.getInt("id_akun");
-                                            String nama = jsonObject.getString("username");
-                                            Toast.makeText(mcontext, "BERHASIL LOGIN", Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(mcontext, ActivityDashboard.class);
-                                            intent.putExtra("hasil_nama", nama);
-                                            startActivity(intent);
-                                        }
-
-                                    } else {
-                                        String error_message = jsonRESULTS.getString("message");
-                                        Toast.makeText(mcontext, error_message, Toast.LENGTH_SHORT).show();
-                                    }
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                }
-                            } else {
-                                loading.dismiss();
-                            }
-                        }
-
-                        @Override
-                        public void onFailure(Call<ResponseBody> call, Throwable t) {
-                            Log.e("debug", "onFailure: ERROR > " + t.toString());
-                            loading.dismiss();
-                        }
-                    });
-        }
-
     public void lanjut(View view) {
-        Intent next = new Intent(ActivityRegis.this, )
+        Intent next = new Intent(ActivityRegis.this, ActivityNextRegis.class);
+        next.putExtra(ActivityNextRegis.EXTRA_NORM, no_rm.getText().toString());
+        next.putExtra(ActivityNextRegis.EXTRA_NORM, no_rm.getText().toString());
     }
 }
