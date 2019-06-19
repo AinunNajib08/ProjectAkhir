@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityNextRegis"></activity>
+        <activity android:name=".PasienActivity"></activity>
+        <activity android:name=".PasienAdapter" />
+        <activity android:name=".ActivityNextRegis" />
         <activity android:name=".Model.PostPutDelPasien" />
         <activity android:name=".Model.GetPasien" />
         <activity android:name=".ActivityDashboard" />
