@@ -126,9 +126,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../examples/profile.html">
-              <i class="ni ni-single-02 text-yellow"></i>
-            </a>
+             <a class="nav-link" href="../examples/profile.html">
+                <i class="ni ni-single-02 text-yellow"></i> View Tujuan Pelayanan
+              </a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="../examples/tables.html">
