@@ -1,14 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
     tools:context=".ActivityNextRegis">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Vers 1.0"
+        android:fontFamily="@font/robotoregular"
+        android:textStyle="italic"
+        android:textSize="13dp"
+        android:textAlignment="textEnd"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/no_rm"/>
+        android:layout_marginRight="15dp"/>
 
-</RelativeLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="48dp">
+
+        <TextView
+            android:layout_width="362dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/robotobold"
+            android:text="Silahkan"
+            android:textAlignment="textStart"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_marginTop="0dp"
+            android:text="Verifikasi Pendaftaran"
+            android:fontFamily="@font/robotoregular"
+            android:textSize="27dp"
+            android:textAlignment="textStart"
+            android:textStyle="italic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginTop="9dp"
+            android:text="Masukan Password *"
+            android:fontFamily="@font/robotoregular"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textAlignment="textStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/pass"
+            android:padding="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginRight="48dp"
+            android:background="@drawable/edittext_design" />
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginTop="9dp"
+            android:text="Masukan Ulang Password *"
+            android:fontFamily="@font/robotoregular"
+            android:textSize="16dp"
+            android:textAlignment="textStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/pass1"
+            android:padding="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginRight="48dp"
+            android:background="@drawable/edittext_design" />
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginTop="9dp"
+            android:text="Verifikasi *"
+            android:fontFamily="@font/robotoregular"
+            android:textSize="16dp"
+            android:textAlignment="textStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/verif"
+            android:padding="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginRight="48dp"
+            android:background="@drawable/edittext_design" />
+
+        <Button
+            android:id="@+id/buttonlog"
+            android:onClick="lanjut"
+            android:layout_marginLeft="-20dp"
+            android:layout_marginTop="20dp"
+            android:text="Lanjut"
+            android:textSize="22dp"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/robotoregular"
+            android:layout_gravity="center"
+            android:background="@drawable/buttondata"
+            android:layout_width="196dp"
+            android:layout_height="48dp" />
+
+    </LinearLayout>
+</LinearLayout>
