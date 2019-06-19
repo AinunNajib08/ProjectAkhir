@@ -15,9 +15,8 @@ import android.widget.Toast;
 import com.kesehatan.klinikhusada.PasienAdapter;
 import com.kesehatan.klinikhusada.Model.GetPasien;
 import com.kesehatan.klinikhusada.Model.Pasien;
-import com.kesehatan.klinikhusada.apihelper.BaseApiService;
+import com.kesehatan.klinikhusada.Rest.ApiInterface;
 import com.kesehatan.klinikhusada.Rest.ApiClient;
-import com.kesehatan.klinikhusada.apihelper.UtilsApi;
 
 import java.util.List;
 
@@ -26,11 +25,11 @@ import retrofit2.Callback;
 import retrofit2.Response;
 public class PasienActivity extends AppCompatActivity {
     Button btIns;
-    ApiClient mApiInterface;
+    ApiInterface mApiInterface;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    public static MainActivity ma;
+    public static PasienActivity ma;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,13 +47,13 @@ public class PasienActivity extends AppCompatActivity {
     mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
     mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
-    mApiInterface = ApiClient.getClient().create(BaseApiService.class);
+    mApiInterface = (ApiInterface) ApiClient.getClient().create(ApiInterface.class);
     ma=this;
     refresh();
 }
 
     public void refresh() {
-        Call<GetPasien> pasienCall = mApiInterface.GetPasien();
+        Call<GetPasien> pasienCall = mApiInterface.getPasien();
         pasienCall.enqueue(new Callback<GetPasien>() {
             @Override
             public void onResponse(Call<GetPasien> call, Response<GetPasien>

@@ -59,4 +59,3 @@ public class PasienAdapter extends RecyclerView.Adapter<PasienAdapter.MyViewHold
         }
     }
 }
-}
