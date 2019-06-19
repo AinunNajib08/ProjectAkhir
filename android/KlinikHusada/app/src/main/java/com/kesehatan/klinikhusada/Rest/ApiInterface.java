@@ -11,7 +11,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 
 public interface ApiInterface {
-    @GET("pasien_android")
+    @GET("Datapasien")
     Call<GetPasien> getPasien();
     @FormUrlEncoded
     @POST("pasien")

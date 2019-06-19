@@ -116,4 +116,9 @@ public class ActivityLogin extends AppCompatActivity {
 
     public void lupapassword(View view) {
     }
+
+    public void bawik(View view) {
+        Intent daf = new Intent(ActivityLogin.this, PasienActivity.class);
+        startActivity(daf);
+    }
 }
