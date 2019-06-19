@@ -85,6 +85,7 @@ public class ActivityRegis extends AppCompatActivity {
     public void lanjut(View view) {
         Intent next = new Intent(ActivityRegis.this, ActivityNextRegis.class);
         next.putExtra(ActivityNextRegis.EXTRA_NORM, no_rm.getText().toString());
-        next.putExtra(ActivityNextRegis.EXTRA_NORM, no_rm.getText().toString());
+        next.putExtra(ActivityNextRegis.EXTRA_TGL, tanggal.getText().toString());
+        startActivity(next);
     }
 }
