@@ -15,7 +15,7 @@ class Datapasien extends REST_Controller
     }
 
     //Menampilkan data kontak
-    function index_post($request, $response)
+    function index_get()
     {
         $id = $this->get('no_rm');
         if ($id == '') {
