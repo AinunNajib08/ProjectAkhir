@@ -110,21 +110,21 @@
                 </form>
                 <!-- Navigation -->
                 <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="../">
-              <i class="ni ni-tv-2 text-primary"></i> View Data Pasien
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../">
-              <i class="ni ni-bullet-list-67 text-blue"></i> View Data Kunjungan Pasien
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../">
-              <i class="ni ni-shop text-orange"></i> View Poliklinik
-            </a>
-          </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../">
+                            <i class="ni ni-tv-2 text-primary"></i> View Data Pasien
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../">
+                            <i class="ni ni-bullet-list-67 text-blue"></i> View Data Kunjungan Pasien
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../">
+                            <i class="ni ni-shop text-orange"></i> View Poliklinik
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../examples/profile.html">
                             <i class="ni ni-single-02 text-yellow"></i>
@@ -184,7 +184,7 @@
                                 <h6 class="text-overflow m-0">Selamat Datang!</h6>
                             </div>
                             <div class="dropdown-divider"></div>
-                            <a href="#!" class="dropdown-item">
+                            <a href="<?= base_url('login_controler/logout'); ?>" class="dropdown-item">
                                 <i class="ni ni-user-run"></i>
                                 <span>Logout</span>
                             </a>
@@ -227,15 +227,15 @@
                                                     <input class="form-control" type="text" name="id_poli" value="<?php echo $poli->id_poli ?>" />
                                                 </div>
                                             </div>
-                                        
-                                            
+
+
                                             <div class="col-4">
                                                 <div class="form-group">
                                                     <label for="poli">Poli</label>
                                                     <input class="form-control" type="text" name="poli" placeholder="Poli" value="<?php echo $poli->poli ?>" />
                                                 </div>
                                             </div>
-                                            </div>
+                                        </div>
 
                                         <input class="btn btn-success" type="submit" name="btn" value="Save" />
                                     </form>

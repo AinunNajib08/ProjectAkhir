@@ -12,7 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ActivityNextRegis"></activity>
-        <activity android:name=".Model.ApiInterface" />
         <activity android:name=".Model.PostPutDelPasien" />
         <activity android:name=".Model.GetPasien" />
         <activity android:name=".ActivityDashboard" />
