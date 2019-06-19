@@ -1,12 +1,15 @@
 <?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 class Datakunjungan extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
+        if (!$this->session->logged_in) {
+            redirect('login_controler');
+        }
         $this->load->model("Mkunjungan_pasien");
         $this->load->library('form_validation');
     }
@@ -48,14 +51,14 @@ class Datakunjungan extends CI_Controller
 
         $data["kunjungan_pasien"] = $kunjungan_pasien->getById($id_kunjungan);
         if (!$data["kunjungan_pasien"]) show_404();
-        
+
         $this->load->view("admin/editkunjungan", $data);
     }
 
-    public function delete($id_kunjungan=null)
+    public function delete($id_kunjungan = null)
     {
         if (!isset($id_kunjungan)) show_404();
-        
+
         if ($this->Mkunjungan_pasien->delete($id_kunjungan)) {
             redirect(site_url('Datakunjungan'));
         }

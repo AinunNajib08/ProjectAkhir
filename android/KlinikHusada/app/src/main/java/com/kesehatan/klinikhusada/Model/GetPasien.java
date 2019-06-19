@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.google.gson.annotations.SerializedName;
 import java.util.List;
+import com.kesehatan.klinikhusada.R;
 
 public class GetPasien extends AppCompatActivity {
     @SerializedName("no_rm")
