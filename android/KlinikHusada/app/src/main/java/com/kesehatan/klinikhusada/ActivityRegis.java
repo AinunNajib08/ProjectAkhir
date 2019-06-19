@@ -141,10 +141,7 @@ public class ActivityRegis extends AppCompatActivity {
                     });
         }
 
-
-    public void daftar(View view) {
-    }
-
-    public void lupapassword(View view) {
+    public void lanjut(View view) {
+        Intent next = new Intent(ActivityRegis.this, )
     }
 }
