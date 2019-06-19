@@ -20,6 +20,6 @@ public class ActivityNextRegis extends AppCompatActivity {
         String data = getIntent().getStringExtra(EXTRA_NORM);
         String tgl = getIntent().getStringExtra(EXTRA_TGL);
 
-        datas.setText(data);
+        datas.setText(tgl);
     }
 }
