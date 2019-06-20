@@ -3,6 +3,7 @@ package com.kesehatan.klinikhusada;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +16,7 @@ import butterknife.BindView;
 import com.google.gson.JsonArray;
 import com.kesehatan.klinikhusada.apihelper.BaseApiService;
 import com.kesehatan.klinikhusada.apihelper.UtilsApi;
+import com.kesehatan.klinikhusada.utils.SharedPrefManager;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -36,10 +38,20 @@ public class ActivityLogin extends AppCompatActivity {
     BaseApiService mbaseApiService;
     ProgressDialog loading;
 
+    SharedPrefManager sharedPrefManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        sharedPrefManager = new SharedPrefManager(this);
+
+        if (sharedPrefManager.getSPSudahLogin()){
+            startActivity(new Intent(ActivityLogin.this, ActivityDashboard.class)
+                    .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
+            finish();
+        }
 
         username = (EditText) findViewById(R.id.username);
         password = (EditText) findViewById(R.id.password);
@@ -64,7 +76,7 @@ public class ActivityLogin extends AppCompatActivity {
     }
 
     public void requestLogin(){
-
+            sharedPrefManager.saveSPBoolean(SharedPrefManager.SP_SUDAH_LOGIN, true);
             mbaseApiService.loginRequest(username.getText().toString(), password.getText().toString())
                     .enqueue(new Callback<ResponseBody>() {
                         @Override
@@ -81,6 +93,7 @@ public class ActivityLogin extends AppCompatActivity {
                                             int id = jsonObject.getInt("id_akun");
                                             String nama = jsonObject.getString("username");
                                             Toast.makeText(mcontext, "BERHASIL LOGIN", Toast.LENGTH_SHORT).show();
+                                            sharedPrefManager.saveSPString(SharedPrefManager.SP_USERNAMA, nama);
                                             Intent intent = new Intent(mcontext, ActivityDashboard.class);
                                             intent.putExtra("hasil_nama", nama);
                                             startActivity(intent);

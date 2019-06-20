@@ -33,8 +33,7 @@ public class ActivityDashboard extends AppCompatActivity {
         ButterKnife.bind(this);
         sharedPrefManager = new SharedPrefManager(this);
 
-        Bundle bundle = getIntent().getExtras();
-        String namasaya = bundle.getString("hasil_nama");
+        String namasaya = sharedPrefManager.getSpUsernama();
 
         tvResultNama.setText(namasaya);
 
