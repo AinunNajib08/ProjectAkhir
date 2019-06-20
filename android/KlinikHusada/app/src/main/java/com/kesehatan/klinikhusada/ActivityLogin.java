@@ -131,7 +131,7 @@ public class ActivityLogin extends AppCompatActivity {
     }
 
     public void bawik(View view) {
-        Intent daf = new Intent(ActivityLogin.this, PasienActivity.class);
+        Intent daf = new Intent(ActivityLogin.this,  ActivityDash.class);
         startActivity(daf);
     }
 }
