@@ -14,7 +14,7 @@
         <activity android:name=".EditActivity"></activity>
         <activity android:name=".InsertActivity" />
         <activity android:name=".PasienActivity" />
-        <activity android:name=".PasienAdapter" />
+        <!--<activity android:name=".PasienAdapter" />-->
         <activity android:name=".ActivityNextRegis" />
         <activity android:name=".Model.PostPutDelPasien" />
         <activity android:name=".Model.GetPasien" />
