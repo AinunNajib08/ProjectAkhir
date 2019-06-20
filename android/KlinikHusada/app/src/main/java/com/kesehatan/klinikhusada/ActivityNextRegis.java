@@ -37,25 +37,14 @@ public class ActivityNextRegis extends AppCompatActivity {
 
     public void Simpan(View view) {
         if (pass.getText().toString().isEmpty() || pass1.getText().toString().isEmpty()) {
-
-
-
+            Toast.makeText(getApplicationContext(), "Skuy", Toast.LENGTH_SHORT).show();
+        } else if (!pass.getText().toString().equals(pass1.getText().toString())){
+            Toast.makeText(getApplicationContext(), "Samakan Pass", Toast.LENGTH_SHORT).show();
+        } else if (verifikasi.getText().toString().equals("" + i1)){
+            Toast.makeText(getApplicationContext(), "Benar", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getApplicationContext(), "Salah", Toast.LENGTH_SHORT).show();
+            verifikasi.setText("" + i1);
         }
-//            if (pass.getText().toString().equals(pass1.getText().toString())) {
-//                if (verifikasi.getText().toString().equals("" + i1)) {
-//                    Toast.makeText(getApplicationContext(), "Benar", Toast.LENGTH_SHORT).show();
-//                } else {
-//                    Toast.makeText(getApplicationContext(), "Salah", Toast.LENGTH_SHORT).show();
-//                    verifikasi.setText("" + i1);
-//                }
-//            } else {
-//                Toast.makeText(getApplicationContext(), "Samakan Pass", Toast.LENGTH_SHORT).show();
-//            }
-//        } else {
-//            Toast.makeText(getApplicationContext(), "Skuy", Toast.LENGTH_SHORT).show();
-//        }
-
-
-
     }
 }
