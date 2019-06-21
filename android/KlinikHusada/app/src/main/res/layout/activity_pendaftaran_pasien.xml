@@ -112,6 +112,19 @@
             android:layout_marginRight="48dp"
             android:background="@drawable/edittext_design" />
 
+        <TextView
+            android:id="@+id/nyimpendata"
+            android:visibility="invisible"
+            android:textStyle="bold"
+            android:layout_marginTop="9dp"
+            android:text="Poli"
+            android:fontFamily="@font/robotoregular"
+            android:textSize="16dp"
+            android:textAlignment="textStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
         <Button
             android:id="@+id/buttonlog"
             android:onClick="daftarpasien"
