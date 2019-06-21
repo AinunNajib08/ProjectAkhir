@@ -17,16 +17,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ActivityDashboard extends AppCompatActivity {
-
-    @BindView(R.id.tvResultNama)
-    TextView tvResultNama;
-//    @BindView(R.id.btnLogout)
-//    Button btnLogout;
-//    @BindView(R.id.btnLihatDosen)
-//    Button btnLihatDosen;
-//    @BindView(R.id.btnLihatMatkul)
-//    Button btnLihatMatkul;
-//
     SharedPrefManager sharedPrefManager;
 
     @Override
@@ -39,22 +29,14 @@ public class ActivityDashboard extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_cointainer,
                 new DashboardFragment()).commit();
-//        ButterKnife.bind(this);
-//        sharedPrefManager = new SharedPrefManager(this);
-//
-//        String namasaya = sharedPrefManager.getSpUsernama();
-//
-//        tvResultNama.setText(namasaya);
-//
-//        btnLogout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                sharedPrefManager.saveSPBoolean(SharedPrefManager.SP_SUDAH_LOGIN, false);
-//                startActivity(new Intent(ActivityDashboard.this, ActivityLogin.class)
-//                        .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
-//                finish();
-//            }
-//        });
+
+        sharedPrefManager = new SharedPrefManager(this);
+        DashboardFragment fragment = new DashboardFragment();
+        Bundle datapasien = new Bundle();
+        String namasaya = sharedPrefManager.getSpUsernama();
+        datapasien.putString("daar", "Sugiono");
+        fragment.setArguments(datapasien);
+
 //
 //        btnLihatDosen.setOnClickListener(new View.OnClickListener() {
 //            @Override
