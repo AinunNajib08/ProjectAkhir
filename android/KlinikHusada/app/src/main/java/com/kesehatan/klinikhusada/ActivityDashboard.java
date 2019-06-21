@@ -8,7 +8,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.kesehatan.klinikhusada.utils.SharedPrefManager;
@@ -33,6 +36,14 @@ public class ActivityDashboard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+
+        LinearLayout linearLayout = findViewById(R.id.linear3);
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.bottomtoup);
+        linearLayout.startAnimation(animation);
+
+        LinearLayout linearLayout4 = findViewById(R.id.linear4);
+        Animation animation4 = AnimationUtils.loadAnimation(this, R.anim.bottomtoup2);
+        linearLayout4.startAnimation(animation4);
         ButterKnife.bind(this);
         sharedPrefManager = new SharedPrefManager(this);
 

@@ -16,6 +16,7 @@
     android:background="@drawable/backgrounddash">
 
     <LinearLayout
+        android:id="@+id/linear3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
@@ -115,9 +116,10 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/linear4"
             android:background="@drawable/setengahlingkaran"
             android:layout_width="match_parent"
-            android:paddingLeft="50dp"
+            android:paddingLeft="10dp"
             android:paddingTop="30dp"
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
@@ -130,9 +132,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Fitur"
+                android:textAlignment="center"
                 android:textSize="30dp"/>
 
             <HorizontalScrollView
+                android:background="@drawable/backgroundfitur"
+                android:paddingTop="20dp"
+                android:paddingLeft="20dp"
+                android:paddingBottom="20dp"
                 android:id="@+id/scrollView1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
