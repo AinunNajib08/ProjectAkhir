@@ -1,6 +1,7 @@
 package com.kesehatan.klinikhusada.Rest;
 import com.kesehatan.klinikhusada.Model.GetPasien;
 import com.kesehatan.klinikhusada.Model.PostPutDelPasien;
+import com.kesehatan.klinikhusada.apihelper.response.StatusResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -25,4 +26,11 @@ public interface ApiInterface {
     @FormUrlEncoded
     @HTTP(method = "DELETE", path = "kontak", hasBody = true)
     Call<PostPutDelPasien> deletePasien(@Field("id") String id);
+
+    @FormUrlEncoded
+    @POST("pendaftaran")
+    Call<StatusResponse> postItem(@Field("keluhan") String keluhan,
+                                  @Field("jenis_kunjungan") String jenis_kunjungan,
+                                  @Field("poli") String poli,
+                                  @Field("no_rm") String no_rm);
 }

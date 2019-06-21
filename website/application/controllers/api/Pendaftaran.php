@@ -29,11 +29,19 @@ class Pendaftaran extends REST_Controller
     {
         $tanggal = date('Y-m-d');
         $poli = $this->post('poli');
+        $aVar = mysqli_connect('localhost', 'root', '', 'klinik');
+        $result = mysqli_query($aVar, "SELECT count(*) as total from kunjungan_pasien WHERE tanggal='$tanggal'");
+        $hasil = mysqli_fetch_assoc($result);
+
+        $antri = mysqli_query($aVar, "SELECT count(*) as total from kunjungan_pasien WHERE tanggal='$tanggal' AND poli='$poli'");
+        $no_antrian = mysqli_fetch_assoc($antri);
+
+        $poli = $this->post('poli');
         $data = [
             'id_kunjungan' => "",
-            'no_urutkunjungan' => $no_urut_qu,
+            'no_urutkunjungan' => $hasil['total'],
             'tanggal' => $tanggal,
-            'no_antrian' => "",
+            'no_antrian' => $no_antrian['total'],
             'keluhan' => $this->post('keluhan'),
             'jenis_kunjungan' => $this->post('jenis_kunjungan'),
             'poli' => $poli,
