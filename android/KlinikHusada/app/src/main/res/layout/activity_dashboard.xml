@@ -136,6 +136,7 @@
                 android:textSize="30dp"/>
 
             <HorizontalScrollView
+                android:elevation="10dp"
                 android:background="@drawable/backgroundfitur"
                 android:paddingTop="20dp"
                 android:paddingLeft="20dp"

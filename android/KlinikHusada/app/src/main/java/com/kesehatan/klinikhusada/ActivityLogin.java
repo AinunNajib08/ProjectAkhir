@@ -92,8 +92,13 @@ public class ActivityLogin extends AppCompatActivity {
 
                                             int id = jsonObject.getInt("id_akun");
                                             String nama = jsonObject.getString("username");
+                                            String email = jsonObject.getString("email");
+                                            String no_telepon = jsonObject.getString("no_telepon");
+                                            String status = jsonObject.getString("status");
+                                            String no_rm = jsonObject.getString("no_rm");
                                             Toast.makeText(mcontext, "BERHASIL LOGIN", Toast.LENGTH_SHORT).show();
                                             sharedPrefManager.saveSPString(SharedPrefManager.SP_USERNAMA, nama);
+                                            sharedPrefManager.saveSPString(SharedPrefManager.SP_NO_RM, no_rm);
                                             Intent intent = new Intent(mcontext, ActivityDashboard.class);
                                             intent.putExtra("hasil_nama", nama);
                                             startActivity(intent);
