@@ -5,4 +5,10 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string-array name="planets_array">
+        <item>Poli Mata</item>
+        <item>Poli Des</item>
+        <item>3</item>
+        <item>Indosat</item>
+    </string-array>
 </resources>

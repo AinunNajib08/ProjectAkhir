@@ -76,4 +76,8 @@ public class ActivityDashboard extends AppCompatActivity {
 //        });
     }
 
+    public void daftar(View view) {
+        Intent intent = new Intent(ActivityDashboard.this, PendaftaranPasien.class);
+        startActivity(intent);
+    }
 }

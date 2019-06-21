@@ -59,13 +59,6 @@
                 android:layout_height="60dp"
                 android:src="@drawable/profile"/>
 
-            <Button
-                android:id="@+id/btnLogout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Button" />
-
 
         </LinearLayout>
 
@@ -153,6 +146,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
+                        android:onClick="daftar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
