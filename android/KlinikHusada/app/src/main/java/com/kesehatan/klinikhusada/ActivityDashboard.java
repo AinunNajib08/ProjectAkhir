@@ -18,8 +18,8 @@ import butterknife.ButterKnife;
 
 public class ActivityDashboard extends AppCompatActivity {
 
-//    @BindView(R.id.tvResultNama)
-//    TextView tvResultNama;
+    @BindView(R.id.tvResultNama)
+    TextView tvResultNama;
 //    @BindView(R.id.btnLogout)
 //    Button btnLogout;
 //    @BindView(R.id.btnLihatDosen)
@@ -27,7 +27,7 @@ public class ActivityDashboard extends AppCompatActivity {
 //    @BindView(R.id.btnLihatMatkul)
 //    Button btnLihatMatkul;
 //
-//    SharedPrefManager sharedPrefManager;
+    SharedPrefManager sharedPrefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
