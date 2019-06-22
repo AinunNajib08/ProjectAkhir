@@ -4,27 +4,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class M_user extends Model
 {
-    protected $table = 'pasien';
+    protected $table = 'akun_user';
     public $timestamps = false;
     protected $fillable = [
-        'no_rm',
-        'no_asuransi',
-        'nama_pasien',
-        'usia',
-        'tanggal_lahir',
-        'jenis_kelamin',
-        'agama',
-        'alamat',
-        'kota',
-        'provinsi',
-        'telepon',
-        'pekerjaan',
-        'tanggal_daftar',
-        'foto',
+        'id_akun',
+        'username',
+        'password',
         'email',
-        'orang_tua',
-        'status_kawin',
-        'status_tinggal',
-        'status'
+        'no_telepon',
+        'status',
+        'kode_verifikasi',
+        'no_rm'
     ];
 }
