@@ -17,6 +17,9 @@
             android:name=".ActivityDash"
             android:label="@string/title_activity_dash" />
         <activity android:name=".EditActivity" />
+        <activity android:name=".ActivityAtriana" />
+        <activity android:name=".ActivityAtrianb" />
+        <activity android:name=".ActivityAtrianc" />
         <activity android:name=".InsertActivity" />
         <activity android:name=".PasienActivity" /> <!-- <activity android:name=".PasienAdapter" /> -->
         <activity android:name=".ActivityNextRegis" />

@@ -4,7 +4,9 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -13,10 +15,18 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.kesehatan.klinikhusada.Model.Antrian;
 import com.kesehatan.klinikhusada.Rest.ApiClient;
 import com.kesehatan.klinikhusada.Rest.ApiInterface;
+import com.kesehatan.klinikhusada.adapter.AdapterItem;
+import com.kesehatan.klinikhusada.apihelper.response.AntrianListResponse;
+import com.kesehatan.klinikhusada.apihelper.response.ItemListResponse;
 import com.kesehatan.klinikhusada.apihelper.response.StatusResponse;
+import com.kesehatan.klinikhusada.utils.RecyclerItemClickListener;
 import com.kesehatan.klinikhusada.utils.SharedPrefManager;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -30,6 +40,10 @@ public class PendaftaranPasien extends AppCompatActivity {
     int nilaipoli = 0;
     ProgressDialog progressDialog;
     SharedPrefManager sharedPrefManager;
+    private List<Antrian> mItems = new ArrayList<>();
+    private RecyclerView mRecycler;
+    private AdapterItem mAdapter;
+    private RecyclerView.LayoutManager mManager;
 
     private String refreshFlag = "0";
     String id = "";
@@ -47,6 +61,7 @@ public class PendaftaranPasien extends AppCompatActivity {
                 R.array.planets_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         poli.setAdapter(adapter);
+        load();
 
         //Insert Data
         progressDialog = new ProgressDialog(this);
@@ -94,6 +109,7 @@ public class PendaftaranPasien extends AppCompatActivity {
 
             sharedPrefManager = new SharedPrefManager(this);
             String no_rm = sharedPrefManager.getSpNoRm();
+            sharedPrefManager.saveSPString(SharedPrefManager.SP_POLI, poli);
 
             ApiInterface api = ApiClient.getClient().create(ApiInterface.class);
             Call<StatusResponse> postItem = api.postItem(keluhan, jenis_kunjungan, poli, no_rm);
@@ -120,4 +136,27 @@ public class PendaftaranPasien extends AppCompatActivity {
             });
         }
     }
+
+    private void load() {
+        ApiInterface api = ApiClient.getClient().create(ApiInterface.class);
+        Call<AntrianListResponse> getAntrian = api.getAntrian();
+        getAntrian.enqueue(new Callback<AntrianListResponse>() {
+            @Override
+            public void onResponse(Call<AntrianListResponse> call, Response<AntrianListResponse> response) {
+                progressDialog.hide();
+                Toast.makeText(PendaftaranPasien.this, "berhasil ambil data", Toast.LENGTH_SHORT).show();
+
+            }
+
+
+            @Override
+            public void onFailure(Call<AntrianListResponse> call, Throwable t) {
+                progressDialog.hide();
+//                Toast.makeText(PendaftaranPasien.this, "gagal ambil data", Toast.LENGTH_SHORT).show();
+
+
+            }
+        });
+    }
+
 }

@@ -2,8 +2,8 @@ package com.kesehatan.klinikhusada;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -24,7 +24,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ActivityAtrian extends AppCompatActivity {
+public class ActivityAtriana extends AppCompatActivity {
 
     private RecyclerView mRecycler;
     private AdapterItem mAdapter;
@@ -35,18 +35,18 @@ public class ActivityAtrian extends AppCompatActivity {
     private static final int REQUEST_CODE_ADD = 1;
     private static final int REQUEST_CODE_EDIT = 2;
 
-    public ActivityAtrian() {
+    public ActivityAtriana() {
         // Required empty public constructor
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_atrian);
+        setContentView(R.layout.activity_atriana);
 
-        progressDialog = new ProgressDialog(ActivityAtrian.this);
+        progressDialog = new ProgressDialog(ActivityAtriana.this);
         mRecycler = findViewById(R.id.itemRecycler);
-        mManager = new LinearLayoutManager(ActivityAtrian.this, LinearLayoutManager.VERTICAL, false);
+        mManager = new LinearLayoutManager(ActivityAtriana.this, LinearLayoutManager.VERTICAL, false);
         mRecycler.setLayoutManager(mManager);
 
         load();
@@ -58,25 +58,25 @@ public class ActivityAtrian extends AppCompatActivity {
         progressDialog.show();
 
         ApiInterface api = ApiClient.getClient().create(ApiInterface.class);
-        Call<ItemListResponse> getItem = api.getItem();
+        Call<ItemListResponse> getItem = api.getItema();
         getItem.enqueue(new Callback<ItemListResponse>() {
             @Override
             public void onResponse(Call<ItemListResponse> call, Response<ItemListResponse> response) {
                 progressDialog.hide();
                 Log.d("Response", "onResponse: " + response.body().getData());
 
-                Toast.makeText(ActivityAtrian.this, "berhasil ambil data", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActivityAtriana.this, "berhasil ambil data", Toast.LENGTH_SHORT).show();
 
                 mItems = response.body().getData();
 
                 mAdapter = new AdapterItem(mItems);
                 mRecycler.setAdapter(mAdapter);
-                mRecycler.addOnItemTouchListener(new RecyclerItemClickListener(ActivityAtrian.this, new
+                mRecycler.addOnItemTouchListener(new RecyclerItemClickListener(ActivityAtriana.this, new
                         RecyclerItemClickListener.OnItemClickListener() {
                             @Override
                             public void onItemClick(View view, int position) {
                                 Item item = mAdapter.getItem(position);
-                                Intent intent = new Intent(ActivityAtrian.this, PendaftaranPasien.class);
+                                Intent intent = new Intent(ActivityAtriana.this, PendaftaranPasien.class);
                                 intent.putExtra("item", item);
                                 startActivityForResult(intent, REQUEST_CODE_EDIT);
                             }
@@ -89,7 +89,7 @@ public class ActivityAtrian extends AppCompatActivity {
             @Override
             public void onFailure(Call<ItemListResponse> call, Throwable t) {
                 progressDialog.hide();
-                Toast.makeText(ActivityAtrian.this, "gagal ambil data", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActivityAtriana.this, "gagal ambil data", Toast.LENGTH_SHORT).show();
 
 
             }

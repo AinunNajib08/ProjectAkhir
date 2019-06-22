@@ -5,7 +5,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 require APPPATH . '/libraries/REST_Controller.php';
 use Restserver\Libraries\REST_Controller;
 
-class Pendaftaran extends REST_Controller
+class Pendaftaranb extends REST_Controller
 {
 
     function __construct()
@@ -18,7 +18,7 @@ class Pendaftaran extends REST_Controller
 
     public function index_get()
     {
-        $item = $this->db->get_where('kunjungan_pasien', array('poli' => '0'))->result();
+        $item = $this->db->get_where('kunjungan_pasien', array('poli' => '2'))->result();
         $response['message'] = "success";
         $response['data'] = $item;
 

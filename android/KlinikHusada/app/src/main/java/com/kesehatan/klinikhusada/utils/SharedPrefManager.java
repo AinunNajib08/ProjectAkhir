@@ -18,6 +18,7 @@ public class SharedPrefManager {
     public static final String SP_USERNAMA = "spUsername";
     public static final String SP_NO_RM = "spNorm";
     public static final String SP_EMAIL = "spEmail";
+    public static final String SP_POLI = "spPoli";
 
     public static final String SP_SUDAH_LOGIN = "spSudahLogin";
 
@@ -49,6 +50,9 @@ public class SharedPrefManager {
     }
     public String getSpNoRm(){
         return sp.getString(SP_NO_RM, "");
+    }
+    public String getSpPoli(){
+        return sp.getString(SP_POLI, "");
     }
 
     public String getSPEmail(){
