@@ -34,9 +34,9 @@ public class AdapterItem extends RecyclerView.Adapter<AdapterItem.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Item dataItem = list.get(position);
-        holder.id.setText(dataItem.getId());
-        holder.nama.setText(dataItem.getNama());
-        holder.harga.setText(dataItem.getHarga());
+        holder.id.setText(dataItem.getId_kunjungan());
+        holder.nama.setText(dataItem.getKeluhan());
+        holder.harga.setText(dataItem.getJenis_kunjugan());
         holder.dataItem = dataItem;
     }
 

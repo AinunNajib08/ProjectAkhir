@@ -1,6 +1,7 @@
 package com.kesehatan.klinikhusada.Rest;
 import com.kesehatan.klinikhusada.Model.GetPasien;
 import com.kesehatan.klinikhusada.Model.PostPutDelPasien;
+import com.kesehatan.klinikhusada.apihelper.response.ItemListResponse;
 import com.kesehatan.klinikhusada.apihelper.response.StatusResponse;
 
 import retrofit2.Call;
@@ -12,7 +13,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 
 public interface ApiInterface {
-    @GET("Datapasien")
+    @GET("pendaftaran")
     Call<GetPasien> getPasien();
     @FormUrlEncoded
     @POST("pasien")
@@ -33,4 +34,7 @@ public interface ApiInterface {
                                   @Field("jenis_kunjungan") String jenis_kunjungan,
                                   @Field("poli") String poli,
                                   @Field("no_rm") String no_rm);
+
+    @GET("pendaftaran")
+    Call<ItemListResponse> getItem();
 }
