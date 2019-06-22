@@ -82,7 +82,19 @@ public class ActivityDashboard extends AppCompatActivity {
     }
 
     public void antrian(View view) {
-        Intent intent = new Intent(ActivityDashboard.this, ActivityAtriana.class);
-        startActivity(intent);
+        String antrian = sharedPrefManager.getSpPoli();
+        if (antrian.equals("0")){
+            Intent intent = new Intent(ActivityDashboard.this, ActivityAtrian.class);
+            startActivity(intent);
+        } else if (antrian.equals("1")){
+            Intent intent = new Intent(ActivityDashboard.this, ActivityAtriana.class);
+            startActivity(intent);
+        } else if (antrian.equals("2")){
+            Intent intent = new Intent(ActivityDashboard.this, ActivityAtrianb.class);
+            startActivity(intent);
+        } else {
+            Intent intent = new Intent(ActivityDashboard.this, ActivityAtrianc.class);
+            startActivity(intent);
+        }
     }
 }
