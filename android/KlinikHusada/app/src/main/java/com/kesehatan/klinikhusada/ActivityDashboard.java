@@ -80,4 +80,21 @@ public class ActivityDashboard extends AppCompatActivity {
         Intent intent = new Intent(ActivityDashboard.this, PendaftaranPasien.class);
         startActivity(intent);
     }
+
+    public void antrian(View view) {
+        String antrian = sharedPrefManager.getSpPoli();
+        if (antrian.equals("0")){
+            Intent intent = new Intent(ActivityDashboard.this, ActivityAtrian.class);
+            startActivity(intent);
+        } else if (antrian.equals("1")){
+            Intent intent = new Intent(ActivityDashboard.this, ActivityAtriana.class);
+            startActivity(intent);
+        } else if (antrian.equals("2")){
+            Intent intent = new Intent(ActivityDashboard.this, ActivityAtrianb.class);
+            startActivity(intent);
+        } else {
+            Intent intent = new Intent(ActivityDashboard.this, ActivityAtrianc.class);
+            startActivity(intent);
+        }
+    }
 }

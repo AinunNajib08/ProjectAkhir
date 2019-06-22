@@ -7,8 +7,8 @@
     <string name="title_notifications">Notifications</string>
     <string-array name="planets_array">
         <item>Poli Mata</item>
-        <item>Poli Des</item>
-        <item>3</item>
-        <item>Indosat</item>
+        <item>Poli Paru</item>
+        <item>Poli Saraf</item>
+        <item>Poli Bedah</item>
     </string-array>
 </resources>

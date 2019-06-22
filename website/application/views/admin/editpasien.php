@@ -304,7 +304,7 @@
                                             <div class="col-4">
                                                 <div class="form-group">
                                                     <label for="foto">Foto*</label>
-                                                    <input class="form-control" type="text" name="foto" value="<?php echo $pasien->foto ?>" placeholder="Nomor Asuransi Lainnya" />
+                                                    <input class="form-control" type="file" name="foto" value="<?php echo $pasien->foto ?>" placeholder="Nomor Asuransi Lainnya" />
                                                 </div>
                                             </div>
                                             <div class="col-4">
