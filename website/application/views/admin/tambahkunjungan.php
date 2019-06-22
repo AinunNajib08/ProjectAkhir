@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
     <meta name="author" content="Creative Tim">
-    <title>Edit Kunjungan Pasien</title>
+    <title>Tambah Kunjungan Pasien</title>
     <!-- Favicon -->
     <link href="<?= base_url('assets/img/brand/icon.png'); ?>" rel="icon" type="image/png">
     <!-- Fonts -->
@@ -213,7 +213,7 @@
                                 </div>
                                 <div class="card-body">
 
-                                    <form action="<?php base_url('admin/datakunjungan/add') ?>" method="post" enctype="multipart/form-data">
+                                    <form action="<?php echo site_url('admin/datakunjungan/tambah'); ?>" method="post" enctype="multipart/form-data">
                                         <div class="row">
                                             <div class="col-4">
                                                 <div class="form-group">
@@ -267,6 +267,7 @@
 
 
                                         <input class="btn btn-success" type="submit" name="btn" value="Save" />
+                                        <br />
                                         <?php if ($this->session->flashdata('success')) : ?>
                                             <div class="alert alert-success" role="alert">
                                                 <?php echo $this->session->flashdata('success'); ?>
