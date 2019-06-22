@@ -24,7 +24,7 @@ class Datakunjungan extends CI_Controller
     {
         $pasien = $this->Mkunjungan_pasien;
         $validation = $this->form_validation;
-        $validation->set_rules($kunjungan_pasien->rules());
+        $validation->set_rules($pasien->rules());
 
         if ($validation->run()) {
             $pasien->save();
