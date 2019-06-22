@@ -213,35 +213,29 @@
                                 </div>
                                 <div class="card-body">
 
-                                    <form action="<?php base_url('admin/datakunjunganpasien/edit') ?>" method="post" enctype="multipart/form-data">
+                                    <form action="<?php base_url('admin/datakunjungan/add') ?>" method="post" enctype="multipart/form-data">
                                         <div class="row">
                                             <div class="col-4">
                                                 <div class="form-group">
-                                                    <label for="id_kunjungan">Id Kunjungan*</label>
-                                                    <input class="form-control" type="text" name="id_kunjungan" placeholder="Id Kunjungan"/>
-                                                </div>
-                                            </div>
-                                            <div class="col-4">
-                                                <div class="form-group">
                                                     <label for="no_urutkunjungan">Nomor Urut Kunjungan*</label>
-                                                    <input class="form-control" type="text" name="no_urutkunjungan" placeholder="No Urut Kunjungan"/>
+                                                    <input class="form-control" type="text" name="no_urutkunjungan" placeholder="No Urut Kunjungan" />
                                                 </div>
                                             </div>
                                             <div class=" col-4">
                                                 <div class="form-group">
                                                     <label for="tanggal">Tanggal*</label>
-                                                    <input class="form-control" type="text" name="tanggal" placeholder="Tanggal" />
+                                                    <input class="form-control" type="date" name="tanggal" placeholder="Tanggal" />
                                                 </div>
                                             </div>
-                                        </div>
-
-                                        <div class="row">
                                             <div class="col-3">
                                                 <div class="form-group">
                                                     <label for="no_antrian">Nomor Antrian*</label>
                                                     <input class="form-control" type="text" name="no_antrian" placeholder="Nomor Antrian" />
                                                 </div>
                                             </div>
+                                        </div>
+
+                                        <div class="row">
                                             <div class="col-3">
                                                 <div class="form-group">
                                                     <label for="keluhan">Keluhan*</label>
@@ -257,7 +251,7 @@
                                             <div class="col-3">
                                                 <div class="form-group">
                                                     <label for="kode_tujuan">Kode Tujuan*</label>
-                                                    <input class="form-control" type="text" name="kode_tujuan" placeholder="Kode Tujuan"/>
+                                                    <input class="form-control" type="text" name="kode_tujuan" placeholder="Kode Tujuan" />
                                                 </div>
                                             </div>
                                         </div>
@@ -265,7 +259,7 @@
                                             <div class="col-3">
                                                 <div class="form-group">
                                                     <label for="no_rm">Nomor Rekam Medik*</label>
-                                                    <input class="form-control" type="text" name="no_rm" placeholder="Nomor Rekam Medik"/>
+                                                    <input class="form-control" type="text" name="no_rm" placeholder="Nomor Rekam Medik" />
                                                 </div>
                                             </div>
                                         </div>
@@ -273,6 +267,11 @@
 
 
                                         <input class="btn btn-success" type="submit" name="btn" value="Save" />
+                                        <?php if ($this->session->flashdata('success')) : ?>
+                                            <div class="alert alert-success" role="alert">
+                                                <?php echo $this->session->flashdata('success'); ?>
+                                            </div>
+                                        <?php endif; ?>
                                     </form>
 
                                 </div>

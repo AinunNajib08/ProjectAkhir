@@ -207,12 +207,6 @@
 
                         <div class="container-fluid">
 
-                            <?php if ($this->session->flashdata('success')) : ?>
-                                <div class="alert alert-success" role="alert">
-                                    <?php echo $this->session->flashdata('success'); ?>
-                                </div>
-                            <?php endif; ?>
-
                             <div class="card mb-3">
                                 <div class="card-header">
                                     <a href="<?php echo site_url('admin/datapasien/') ?>"><i class="fas fa-arrow-left"></i> Back</a>
@@ -251,7 +245,7 @@
                                             <div class="col-3">
                                                 <div class="form-group">
                                                     <label for="tgl_lahir">Tanggal Lahir*</label>
-                                                    <input class="form-control" type="text" name="tgl_lahir" placeholder="Tanggal Lahir" />
+                                                    <input class="form-control" type="date" name="tgl_lahir" placeholder="Tanggal Lahir" />
                                                 </div>
                                             </div>
                                             <div class="col-3">
@@ -310,7 +304,7 @@
                                             <div class="col-4">
                                                 <div class="form-group">
                                                     <label for="email">Email*</label>
-                                                    <input class="form-control" type="text" name="email" placeholder="Email" />
+                                                    <input class="form-control" type="email" name="email" placeholder="Email" />
                                                 </div>
                                             </div>
                                         </div>
@@ -339,6 +333,12 @@
 
 
                                         <input class="btn btn-success" type="submit" name="btn" value="Save" />
+                                        <br />
+                                        <?php if ($this->session->flashdata('success')) : ?>
+                                            <div class="alert alert-success" role="alert">
+                                                <?php echo $this->session->flashdata('success'); ?>
+                                            </div>
+                                        <?php endif; ?>
                                     </form>
 
                                 </div>
