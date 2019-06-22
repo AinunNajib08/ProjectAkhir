@@ -21,7 +21,7 @@ import retrofit2.Response;
 
 public class EditActivity extends AppCompatActivity {
 
-    EditText edtId, edtNama, edtNomor;
+    EditText editNo_rm, editNama_pasien, editUsia;
     Button btUpdate, btDelete, btBack;
     ApiInterface mApiInterface;
 
@@ -29,28 +29,28 @@ public class EditActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
-        edtId = (EditText) findViewById(R.id.edtId);
-        edtNama = (EditText) findViewById(R.id.edtNama);
-        edtNomor = (EditText) findViewById(R.id.edtNomor);
+        editNo_rm = (EditText) findViewById(R.id.edtId);
+        editNama_pasien = (EditText) findViewById(R.id.edtNama);
+        editUsia = (EditText) findViewById(R.id.edtNomor);
         Intent mIntent = getIntent();
-        edtId.setText(mIntent.getStringExtra("Id"));
-        edtId.setTag(edtId.getKeyListener());
-        edtId.setKeyListener(null);
-        edtNama.setText(mIntent.getStringExtra("Nama"));
-        edtNomor.setText(mIntent.getStringExtra("Nomor"));
+        editNo_rm.setText(mIntent.getStringExtra("Id"));
+        editNo_rm.setTag(editNo_rm.getKeyListener());
+        editNo_rm.setKeyListener(null);
+        editNama_pasien.setText(mIntent.getStringExtra("Nama Pasien"));
+        editUsia.setText(mIntent.getStringExtra("Usia"));
         mApiInterface = ApiClient.getClient().create(ApiInterface.class);
         btUpdate = (Button) findViewById(R.id.btUpdate2);
         btUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Call<PostPutDelPasien> updateKontakCall = mApiInterface.putpasien(
-                        edtId.getText().toString(),
-                        edtNama.getText().toString(),
-                        edtNomor.getText().toString());
-                updateKontakCall.enqueue(new Callback<PostPutDelPasien>() {
+                Call<PostPutDelPasien> updatePasienCall = mApiInterface.putpasien(
+                        editNo_rm.getText().toString(),
+                        editNama_pasien.getText().toString(),
+                        editUsia.getText().toString());
+                updatePasienCall.enqueue(new Callback<PostPutDelPasien>() {
                     @Override
                     public void onResponse(Call<PostPutDelPasien> call, Response<PostPutDelPasien> response) {
-                        PasienActivity.ma.refresh();
+                        ActivityPasien.ma.refresh();
                         finish();
                     }
 
@@ -65,12 +65,12 @@ public class EditActivity extends AppCompatActivity {
         btDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (edtId.getText().toString().trim().isEmpty()==false){
-                    Call<PostPutDelPasien> deleteKontak = mApiInterface.deletePasien(edtId.getText().toString());
+                if (editNo_rm.getText().toString().trim().isEmpty()==false){
+                    Call<PostPutDelPasien> deleteKontak = mApiInterface.deletePasien(editNo_rm.getText().toString());
                     deleteKontak.enqueue(new Callback<PostPutDelPasien>() {
                         @Override
                         public void onResponse(Call<PostPutDelPasien> call, Response<PostPutDelPasien> response) {
-                            PasienActivity.ma.refresh();
+                            ActivityPasien.ma.refresh();
                             finish();
                         }
 
@@ -88,7 +88,7 @@ public class EditActivity extends AppCompatActivity {
         btBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PasienActivity.ma.refresh();
+                ActivityPasien.ma.refresh();
                 finish();
             }
         });
