@@ -72,7 +72,7 @@
                             <span>Support</span>
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a href="#!" class="dropdown-item">
+                        <a href="<?= base_url('login_controler/logout'); ?>" class="dropdown-item">
                             <i class="ni ni-user-run"></i>
                             <span>Logout</span>
                         </a>
@@ -184,7 +184,7 @@
                                 <h6 class="text-overflow m-0">Selamat Datang!</h6>
                             </div>
                             <div class="dropdown-divider"></div>
-                            <a href="#!" class="dropdown-item">
+                            <a href="<?= base_url('login_controler/logout'); ?>" class="dropdown-item">
                                 <i class="ni ni-user-run"></i>
                                 <span>Logout</span>
                             </a>
@@ -304,7 +304,7 @@
                                             <div class="col-4">
                                                 <div class="form-group">
                                                     <label for="foto">Foto*</label>
-                                                    <input class="form-control" type="text" name="foto" value="<?php echo $pasien->foto ?>" placeholder="Nomor Asuransi Lainnya" />
+                                                    <input class="form-control" type="file" name="foto" value="<?php echo $pasien->foto ?>" placeholder="Nomor Asuransi Lainnya" />
                                                 </div>
                                             </div>
                                             <div class="col-4">

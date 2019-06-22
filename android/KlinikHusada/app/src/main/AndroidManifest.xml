@@ -11,7 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityNextRegis"></activity>
+        <activity android:name=".ActivityPasien"></activity>
+        <activity android:name=".ActivityAtrian" />
+        <activity android:name=".PendaftaranPasien" />
+        <activity
+            android:name=".ActivityDash"
+            android:label="@string/title_activity_dash" />
+        <activity android:name=".EditActivity" />
+        <activity android:name=".ActivityAtriana" />
+        <activity android:name=".ActivityAtrianb" />
+        <activity android:name=".ActivityAtrianc" />
+        <activity android:name=".InsertActivity" /> <!-- <activity android:name=".PasienAdapter" /> -->
+        <activity android:name=".ActivityNextRegis" />
         <activity android:name=".Model.PostPutDelPasien" />
         <activity android:name=".Model.GetPasien" />
         <activity android:name=".ActivityDashboard" />

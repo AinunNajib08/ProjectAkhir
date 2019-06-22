@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/linear">
 
     <TextView
         android:layout_marginTop="15dp"
@@ -45,18 +46,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <Button
-        android:layout_marginTop="63dp"
-        android:text="Mulai"
-        android:textSize="22dp"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        android:fontFamily="@font/robotoregular"
-        android:layout_gravity="center"
-        android:background="@drawable/buttondata"
-        android:layout_width="196dp"
-        android:layout_height="48dp"
-        android:onClick="kedua"/>
 
     <ImageView
         android:layout_gravity="center"

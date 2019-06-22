@@ -13,10 +13,12 @@ import android.content.SharedPreferences;
 
 public class SharedPrefManager {
 
-    public static final String SP_MAHASISWA_APP = "spMahasiswaApp";
+    public static final String SP_USER_PASIEN = "spUserPasien";
 
-    public static final String SP_NAMA = "spNama";
+    public static final String SP_USERNAMA = "spUsername";
+    public static final String SP_NO_RM = "spNorm";
     public static final String SP_EMAIL = "spEmail";
+    public static final String SP_POLI = "spPoli";
 
     public static final String SP_SUDAH_LOGIN = "spSudahLogin";
 
@@ -24,7 +26,7 @@ public class SharedPrefManager {
     SharedPreferences.Editor spEditor;
 
     public SharedPrefManager(Context context){
-        sp = context.getSharedPreferences(SP_MAHASISWA_APP, Context.MODE_PRIVATE);
+        sp = context.getSharedPreferences(SP_USER_PASIEN, Context.MODE_PRIVATE);
         spEditor = sp.edit();
     }
 
@@ -43,8 +45,14 @@ public class SharedPrefManager {
         spEditor.commit();
     }
 
-    public String getSPNama(){
-        return sp.getString(SP_NAMA, "");
+    public String getSpUsernama(){
+        return sp.getString(SP_USERNAMA, "");
+    }
+    public String getSpNoRm(){
+        return sp.getString(SP_NO_RM, "");
+    }
+    public String getSpPoli(){
+        return sp.getString(SP_POLI, "");
     }
 
     public String getSPEmail(){
