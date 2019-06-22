@@ -82,7 +82,7 @@ public class ActivityDashboard extends AppCompatActivity {
     }
 
     public void antrian(View view) {
-        Intent intent = new Intent(ActivityDashboard.this, ActivityAtrian.class);
+        Intent intent = new Intent(ActivityDashboard.this, ActivityAtriana.class);
         startActivity(intent);
     }
 }
