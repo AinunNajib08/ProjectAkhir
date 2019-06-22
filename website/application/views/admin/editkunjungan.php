@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
     <meta name="author" content="Creative Tim">
-    <title>Data Pasien</title>
+    <title>Edit Kunjungan Pasien</title>
     <!-- Favicon -->
     <link href="<?= base_url('assets/img/brand/icon.png'); ?>" rel="icon" type="image/png">
     <!-- Fonts -->
@@ -23,7 +23,8 @@
     <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
         <div class="container-fluid">
             <!-- Toggler -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main"
+                aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!-- Brand -->
@@ -33,10 +34,12 @@
             <!-- User -->
             <ul class="nav align-items-center d-md-none">
                 <li class="nav-item dropdown">
-                    <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
                         <i class="ni ni-bell-55"></i>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
+                    <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right"
+                        aria-labelledby="navbar-default_dropdown_1">
                         <a class="dropdown-item" href="#">Action</a>
                         <a class="dropdown-item" href="#">Another action</a>
                         <div class="dropdown-divider"></div>
@@ -44,10 +47,12 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
                         <div class="media align-items-center">
                             <span class="avatar avatar-sm rounded-circle">
-                                <img alt="Image placeholder" src="<?= base_url('assets/img/theme/team-1-800x800.jpg'); ?>">
+                                <img alt="Image placeholder"
+                                    src="<?= base_url('assets/img/theme/team-1-800x800.jpg'); ?>">
                             </span>
                         </div>
                     </a>
@@ -90,7 +95,9 @@
                             </a>
                         </div>
                         <div class="col-6 collapse-close">
-                            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
+                            <button type="button" class="navbar-toggler" data-toggle="collapse"
+                                data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false"
+                                aria-label="Toggle sidenav">
                                 <span></span>
                                 <span></span>
                             </button>
@@ -100,7 +107,8 @@
                 <!-- Form -->
                 <form class="mt-4 mb-3 d-md-none">
                     <div class="input-group input-group-rounded input-group-merge">
-                        <input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="Search" aria-label="Search">
+                        <input type="search" class="form-control form-control-rounded form-control-prepended"
+                            placeholder="Search" aria-label="Search">
                         <div class="input-group-prepend">
                             <div class="input-group-text">
                                 <span class="fa fa-search"></span>
@@ -169,13 +177,16 @@
                 <!-- User -->
                 <ul class="navbar-nav align-items-center d-none d-md-flex">
                     <li class="nav-item dropdown">
-                        <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
                             <div class="media align-items-center">
                                 <span class="avatar avatar-sm rounded-circle">
-                                    <img alt="Image placeholder" src="<?= base_url('assets/img/brand/usericon.png'); ?>">
+                                    <img alt="Image placeholder"
+                                        src="<?= base_url('assets/img/brand/usericon.png'); ?>">
                                 </span>
                                 <div class="media-body ml-2 d-none d-lg-block">
-                                    <span class="mb-0 text-sm  font-weight-bold"><?= $this->session->userdata('username'); ?></span>
+                                    <span
+                                        class="mb-0 text-sm  font-weight-bold"><?= $this->session->userdata('username'); ?></span>
                                 </div>
                             </div>
                         </a>
@@ -208,35 +219,42 @@
                         <div class="container-fluid">
 
                             <?php if ($this->session->flashdata('success')) : ?>
-                                <div class="alert alert-success" role="alert">
-                                    <?php echo $this->session->flashdata('success'); ?>
-                                </div>
+                            <div class="alert alert-success" role="alert">
+                                <?php echo $this->session->flashdata('success'); ?>
+                            </div>
                             <?php endif; ?>
 
                             <div class="card mb-3">
                                 <div class="card-header">
-                                    <a href="<?php echo site_url('admin/datakunjungan/') ?>"><i class="fas fa-arrow-left"></i> Back</a>
+                                    <a href="<?php echo site_url('admin/datakunjungan/') ?>"><i
+                                            class="fas fa-arrow-left"></i> Back</a>
                                 </div>
                                 <div class="card-body">
 
-                                    <form action="<?php base_url('admin/datakunjunganpasien/edit') ?>" method="post" enctype="multipart/form-data">
+                                    <form action="<?php base_url('admin/datakunjungan/edit') ?>" method="post"
+                                        enctype="multipart/form-data">
                                         <div class="row">
                                             <div class="col-4">
                                                 <div class="form-group">
                                                     <label for="id_kunjungan">Id Kunjungan*</label>
-                                                    <input class="form-control" type="text" name="id_kunjungan" value="<?php echo $kunjungan_pasien->id_kunjungan ?>" />
+                                                    <input class="form-control" type="text" name="id_kunjungan"
+                                                        value="<?php echo $kunjungan_pasien->id_kunjungan ?>" />
                                                 </div>
                                             </div>
                                             <div class="col-4">
                                                 <div class="form-group">
                                                     <label for="no_urutkunjungan">Nomor Urut Kunjungan*</label>
-                                                    <input class="form-control" type="text" name="no_urutkunjungan" placeholder="Nomor Urut Kunjungan" value="<?php echo $kunjungan_pasien->no_urutkunjungan ?>" />
+                                                    <input class="form-control" type="text" name="no_urutkunjungan"
+                                                        placeholder="Nomor Urut Kunjungan"
+                                                        value="<?php echo $kunjungan_pasien->no_urutkunjungan ?>" />
                                                 </div>
                                             </div>
                                             <div class=" col-4">
                                                 <div class="form-group">
                                                     <label for="tanggal">Tanggal*</label>
-                                                    <input class="form-control" type="text" name="tanggal" placeholder="Tanggal" value="<?php echo $kunjungan_pasien->tanggal ?>" />
+                                                    <input class="form-control" type="text" name="tanggal"
+                                                        placeholder="Tanggal"
+                                                        value="<?php echo $kunjungan_pasien->tanggal ?>" />
                                                 </div>
                                             </div>
                                         </div>
@@ -245,25 +263,33 @@
                                             <div class="col-3">
                                                 <div class="form-group">
                                                     <label for="no_antrian">Nomor Antrian*</label>
-                                                    <input class="form-control" type="text" name="no_antrian" placeholder="Nomor Antrian" value="<?php echo $kunjungan_pasien->no_antrian ?>" />
+                                                    <input class="form-control" type="text" name="no_antrian"
+                                                        placeholder="Nomor Antrian"
+                                                        value="<?php echo $kunjungan_pasien->no_antrian ?>" />
                                                 </div>
                                             </div>
                                             <div class="col-3">
                                                 <div class="form-group">
                                                     <label for="keluhan">Keluhan*</label>
-                                                    <input class="form-control" type="text" name="keluhan" placeholder="Keluhan" value="<?php echo $kunjungan_pasien->keluhan ?>" />
+                                                    <input class="form-control" type="text" name="keluhan"
+                                                        placeholder="Keluhan"
+                                                        value="<?php echo $kunjungan_pasien->keluhan ?>" />
                                                 </div>
                                             </div>
                                             <div class="col-3">
                                                 <div class="form-group">
                                                     <label for="jenis_kunjungan">Jenis Kunjungan*</label>
-                                                    <input class="form-control" type="text" name="jenis_kunjungan" placeholder="Jenis Kunjungan" value="<?php echo $kunjungan_pasien->jenis_kunjungan ?>" />
+                                                    <input class="form-control" type="text" name="jenis_kunjungan"
+                                                        placeholder="Jenis Kunjungan"
+                                                        value="<?php echo $kunjungan_pasien->jenis_kunjungan ?>" />
                                                 </div>
                                             </div>
                                             <div class="col-3">
                                                 <div class="form-group">
                                                     <label for="kode_tujuan">Kode Tujuan*</label>
-                                                    <input class="form-control" type="text" name="kode_tujuan" placeholder="Kode Tujuan" value="<?php echo $kunjungan_pasien->kode_tujuan ?>" />
+                                                    <input class="form-control" type="text" name="kode_tujuan"
+                                                        placeholder="Kode Tujuan"
+                                                        value="<?php echo $kunjungan_pasien->kode_tujuan ?>" />
                                                 </div>
                                             </div>
                                         </div>
@@ -271,7 +297,9 @@
                                             <div class="col-3">
                                                 <div class="form-group">
                                                     <label for="no_rm">Nomor Rekam Medik*</label>
-                                                    <input class="form-control" type="text" name="no_rm" placeholder="Nomor Rekam Medik" value="<?php echo $kunjungan_pasien->no_rm ?>" />
+                                                    <input class="form-control" type="text" name="no_rm"
+                                                        placeholder="Nomor Rekam Medik"
+                                                        value="<?php echo $kunjungan_pasien->no_rm ?>" />
                                                 </div>
                                             </div>
                                         </div>
@@ -317,7 +345,8 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
