@@ -19,7 +19,7 @@ import retrofit2.Response;
 
 
 public class InsertActivity extends AppCompatActivity {
-    EditText edtNama, edtNomor;
+    EditText editNama_Pasien, editUsia;
     Button btInsert, btBack;
     ApiInterface mApiInterface;
 
@@ -27,18 +27,18 @@ public class InsertActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert);
-        edtNama = (EditText) findViewById(R.id.edtNama);
-        edtNomor = (EditText) findViewById(R.id.edtNomor);
+        editNama_Pasien = (EditText) findViewById(R.id.edtNama);
+        editUsia = (EditText) findViewById(R.id.edtNomor);
         mApiInterface = ApiClient.getClient().create(ApiInterface.class);
         btInsert = (Button) findViewById(R.id.btInserting);
         btInsert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Call<PostPutDelPasien> postKontakCall = mApiInterface.postPasien(edtNama.getText().toString(), edtNomor.getText().toString());
+                Call<PostPutDelPasien> postKontakCall = mApiInterface.postPasien(editNama_Pasien.getText().toString(), editUsia.getText().toString());
                 postKontakCall.enqueue(new Callback<PostPutDelPasien>() {
                     @Override
                     public void onResponse(Call<PostPutDelPasien> call, Response<PostPutDelPasien> response) {
-                        PasienActivity.ma.refresh();
+                        ActivityPasien.ma.refresh();
                         finish();
                     }
 
@@ -54,7 +54,7 @@ public class InsertActivity extends AppCompatActivity {
         btBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PasienActivity.ma.refresh();
+                ActivityPasien.ma.refresh();
                 finish();
             }
         });

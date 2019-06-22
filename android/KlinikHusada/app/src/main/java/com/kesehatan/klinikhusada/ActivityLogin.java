@@ -76,7 +76,7 @@ public class ActivityLogin extends AppCompatActivity {
     }
 
     public void requestLogin(){
-            sharedPrefManager.saveSPBoolean(SharedPrefManager.SP_SUDAH_LOGIN, true);
+
             mbaseApiService.loginRequest(username.getText().toString(), password.getText().toString())
                     .enqueue(new Callback<ResponseBody>() {
                         @Override
@@ -99,6 +99,7 @@ public class ActivityLogin extends AppCompatActivity {
                                             Toast.makeText(mcontext, "BERHASIL LOGIN", Toast.LENGTH_SHORT).show();
                                             sharedPrefManager.saveSPString(SharedPrefManager.SP_USERNAMA, nama);
                                             sharedPrefManager.saveSPString(SharedPrefManager.SP_NO_RM, no_rm);
+                                            sharedPrefManager.saveSPBoolean(SharedPrefManager.SP_SUDAH_LOGIN, true);
                                             Intent intent = new Intent(mcontext, ActivityDashboard.class);
                                             intent.putExtra("hasil_nama", nama);
                                             startActivity(intent);
