@@ -110,6 +110,7 @@ public class PendaftaranPasien extends AppCompatActivity {
             sharedPrefManager = new SharedPrefManager(this);
             String no_rm = sharedPrefManager.getSpNoRm();
             sharedPrefManager.saveSPString(SharedPrefManager.SP_POLI, poli);
+            sharedPrefManager.saveSPString(SharedPrefManager.SP_KELUHAN, keluhan);
 
             ApiInterface api = ApiClient.getClient().create(ApiInterface.class);
             Call<StatusResponse> postItem = api.postItem(keluhan, jenis_kunjungan, poli, no_rm);

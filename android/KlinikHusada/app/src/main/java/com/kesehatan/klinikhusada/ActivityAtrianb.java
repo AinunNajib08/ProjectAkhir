@@ -3,11 +3,14 @@ package com.kesehatan.klinikhusada;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kesehatan.klinikhusada.Model.Item;
@@ -26,6 +29,19 @@ import retrofit2.Response;
 
 public class ActivityAtrianb extends AppCompatActivity {
 
+    //CountUP
+
+    private TextView mTextViewCountDown;
+
+    private CountDownTimer mCountDownTimer;
+
+    private boolean mTimerRunning;
+
+    private long mTimeLeftInMillis;
+    private long mEndTime;
+
+    //Insert
+
     private RecyclerView mRecycler;
     private AdapterItem mAdapter;
     private RecyclerView.LayoutManager mManager;
@@ -43,6 +59,11 @@ public class ActivityAtrianb extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atrianb);
+
+        //CountUP
+
+        mTextViewCountDown = findViewById(R.id.text_view_countdown);
+
 
         progressDialog = new ProgressDialog(ActivityAtrianb.this);
         mRecycler = findViewById(R.id.itemRecycler);

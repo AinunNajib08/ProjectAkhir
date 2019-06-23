@@ -26,6 +26,12 @@ public interface BaseApiService {
                                     @Field("email") String email,
                                     @Field("no_rm") String no_rm);
 
+    @FormUrlEncoded
+    @POST("antrian")
+    Call<ResponseBody> getAntrian(@Field("keluhan") String keluhan,
+                                    @Field("poli") String poli,
+                                    @Field("no_rm") String no_rm);
+
 
 
 }

@@ -16,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="635dp">
 
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
@@ -52,6 +53,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/test"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -62,16 +64,13 @@
                 android:textSize="19dp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textView2"
+            <Button
+                android:id="@+id/button_start_pause"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginRight="10dp"
-                android:text="No Rm :"
-                android:textSize="19dp"
-                android:textStyle="bold" />
+                android:layout_below="@+id/test"
+                android:layout_centerHorizontal="true"
+                android:text="start" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -86,7 +85,7 @@
                 android:textSize="70sp" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/text_view_countdown"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
