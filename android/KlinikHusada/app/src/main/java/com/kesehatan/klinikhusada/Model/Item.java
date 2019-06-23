@@ -8,17 +8,17 @@ import java.io.Serializable;
 
 public class Item implements Serializable {
 
-    String id_kunjungan;
+    String no_antrian;
     String keluhan;
     String jenis_kunjugan;
     String poli;
 
     public String getId_kunjungan() {
-        return id_kunjungan;
+        return no_antrian;
     }
 
-    public void setId_kunjungan(String id_kunjungan) {
-        this.id_kunjungan = id_kunjungan;
+    public void setId_kunjungan(String no_antrian) {
+        this.no_antrian = no_antrian;
     }
 
     public String getKeluhan() {

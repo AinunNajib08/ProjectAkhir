@@ -36,7 +36,6 @@ public class AdapterItem extends RecyclerView.Adapter<AdapterItem.ViewHolder> {
         Item dataItem = list.get(position);
         holder.id.setText(dataItem.getId_kunjungan());
         holder.nama.setText(dataItem.getKeluhan());
-        holder.harga.setText(dataItem.getJenis_kunjugan());
         holder.dataItem = dataItem;
     }
 
@@ -49,7 +48,6 @@ public class AdapterItem extends RecyclerView.Adapter<AdapterItem.ViewHolder> {
 
             id = (TextView) itemView.findViewById(R.id.tvId);
             nama = (TextView) itemView.findViewById(R.id.tvNama);
-            harga = (TextView) itemView.findViewById(R.id.tvHarga);
 
         }
     }

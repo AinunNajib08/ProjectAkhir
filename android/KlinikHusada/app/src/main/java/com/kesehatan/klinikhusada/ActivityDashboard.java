@@ -98,4 +98,11 @@ public class ActivityDashboard extends AppCompatActivity {
             startActivity(intent);
         }
     }
+
+    public void logut(View view) {
+        sharedPrefManager.saveSPBoolean(SharedPrefManager.SP_SUDAH_LOGIN, false);
+                startActivity(new Intent(ActivityDashboard.this, ActivityLogin.class)
+                        .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
+                finish();
+    }
 }

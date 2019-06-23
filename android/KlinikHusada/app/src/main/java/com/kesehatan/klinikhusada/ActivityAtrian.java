@@ -71,16 +71,6 @@ public class ActivityAtrian extends AppCompatActivity {
 
                 mAdapter = new AdapterItem(mItems);
                 mRecycler.setAdapter(mAdapter);
-                mRecycler.addOnItemTouchListener(new RecyclerItemClickListener(ActivityAtrian.this, new
-                        RecyclerItemClickListener.OnItemClickListener() {
-                            @Override
-                            public void onItemClick(View view, int position) {
-                                Item item = mAdapter.getItem(position);
-                                Intent intent = new Intent(ActivityAtrian.this, PendaftaranPasien.class);
-                                intent.putExtra("item", item);
-                                startActivityForResult(intent, REQUEST_CODE_EDIT);
-                            }
-                        }));
 
                 mAdapter.notifyDataSetChanged();
 
