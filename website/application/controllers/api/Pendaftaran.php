@@ -35,6 +35,7 @@ class Pendaftaran extends REST_Controller
 
         $antri = mysqli_query($aVar, "SELECT count(*) as total from kunjungan_pasien WHERE tanggal='$tanggal' AND poli='$poli'");
         $no_antrian = mysqli_fetch_assoc($antri);
+        $no_rm = $this->post('no_rm');
 
         $poli = $this->post('poli');
         $data = [
@@ -45,10 +46,16 @@ class Pendaftaran extends REST_Controller
             'keluhan' => $this->post('keluhan'),
             'jenis_kunjungan' => $this->post('jenis_kunjungan'),
             'poli' => $poli,
-            'no_rm' => $this->post('no_rm')
+            'no_rm' => $no_rm
         ];
 
-        $insert = $this->db->insert('kunjungan_pasien', $data);
+        $validasi = mysqli_query($aVar, "SELECT count(*) as total from kunjungan_pasien WHERE tanggal='$tanggal' AND no_rm='$no_rm'");
+        $validasireg = mysqli_fetch_assoc($validasi);
+
+        if ($validasireg['total'] == 0) {
+            $insert = $this->db->insert('kunjungan_pasien', $data);
+        }
+
 
         if ($insert) {
             $this->response(['status' => 'success'], 200);

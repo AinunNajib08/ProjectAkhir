@@ -116,14 +116,17 @@ public class PendaftaranPasien extends AppCompatActivity {
             postItem.enqueue(new Callback<StatusResponse>() {
                 @Override
                 public void onResponse(Call<StatusResponse> call, Response<StatusResponse> response) {
-                    progressDialog.hide();
+                    progressDialog.dismiss();
                     String status = response.body().getStatus();
 
                     if (status.equals("success")) {
                         Toast.makeText(PendaftaranPasien.this, "Data berhasil disimpan", Toast.LENGTH_SHORT).show();
                         finish();
-                    } else {
+                    } else if (status.equals("fail")){
                         Toast.makeText(PendaftaranPasien.this, "Data gagal disimpan", Toast
+                                .LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(PendaftaranPasien.this, "Data gagal diasdasdsimpan", Toast
                                 .LENGTH_SHORT).show();
                     }
 
