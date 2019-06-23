@@ -120,3 +120,62 @@ $app->post('/api/v1/login', function ($request, $response) {
         }
     }
 });
+
+/*
+    Regis
+*/
+
+
+/*
+API REGISTER
+ */
+$app->post('/api/v1/regis', function ($request, $response) {
+    $data = $request->getParsedBody();
+    $username = $data['username'];
+    $password = $data['password'];
+    $email = $data['email'];
+    $no_rm = $data['no_rm'];
+    /*
+    Melalukan pengecekan nama/jurusan/email/password jika kosong maka
+    proses simpan tidak akan dilakukan.
+     */
+    if (empty($username) || empty($password) || empty($email) || empty($no_rm)) {
+        $result = array(
+            "status" => false,
+            "message" => "Form tidak boleh kosong",
+            "data" => [],
+        );
+        return $response->withStatus(200)->withJson($result);
+    } else {
+        $user = new M_user();
+        $user->username = $username;
+        /*
+        passwordEncrypt ini berfungsi untuk meng-generate inputan password
+        yang ditulis oleh user menjadi hash password.
+        */
+        $passwordEncrypt = password_hash($password, PASSWORD_DEFAULT);
+        $user->password = $passwordEncrypt;
+        $user->email = $email;
+        $user->no_rm = $no_rm;
+        $aVar = mysqli_connect('localhost', 'root', '', 'klinik');
+        $result = mysqli_query($aVar, "SELECT count(*) as total from akun_user WHERE no_rm='$no_rm'");
+        $hasil = mysqli_fetch_assoc($result);
+
+        if ($hasil['total'] = 0) {
+            $user->save();
+            $result = array(
+                "status" => true,
+                "message" => "Registrasi Berhasil",
+                "data" => $user,
+            );
+        } else {
+            $result = array(
+                "status" => false,
+                "message" => "No Rekam Medik Sudah Terdaftar",
+                "data" => [],
+            );
+        }
+
+        return $response->withStatus(201)->withJson($result);
+    }
+});

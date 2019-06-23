@@ -26,4 +26,22 @@ class Datapasien extends REST_Controller
         }
         $this->response($pasien, 200);
     }
+
+    function index_post()
+    {
+        $password = $this->post('password');
+        $passwordEncrypt = password_hash($password, PASSWORD_DEFAULT);
+        $data = array(
+            'username'    => $this->post('username'),
+            'password' =>  $passwordEncrypt,
+            'email' => $this->post('email'),
+            'no_rm' => $this->post('no_rm')
+        );
+        $insert = $this->db->insert('akun_user', $data);
+        if ($insert) {
+            $this->response($data, 200);
+        } else {
+            $this->response(array('status' => 'fail', 502));
+        }
+    }
 }

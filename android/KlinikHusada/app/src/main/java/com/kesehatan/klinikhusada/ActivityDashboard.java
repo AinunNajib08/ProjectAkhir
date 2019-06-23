@@ -49,6 +49,7 @@ public class ActivityDashboard extends AppCompatActivity {
 
         String namasaya = sharedPrefManager.getSpUsernama();
 
+
         tvResultNama.setText(namasaya);
 //
 //        btnLogout.setOnClickListener(new View.OnClickListener() {

@@ -53,7 +53,7 @@ public class ActivityRegis extends AppCompatActivity {
         mcontext = this;
         mbaseApiService = UtilsApi.getAPIService();
 
-        dateFormatter = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
+        dateFormatter = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
 
         tanggal.setOnClickListener(new View.OnClickListener() {
             @Override

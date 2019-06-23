@@ -1,6 +1,7 @@
 package com.kesehatan.klinikhusada.Rest;
 import com.kesehatan.klinikhusada.Model.GetPasien;
 import com.kesehatan.klinikhusada.Model.PostPutDelPasien;
+import com.kesehatan.klinikhusada.Model.PostUser;
 import com.kesehatan.klinikhusada.apihelper.response.AntrianListResponse;
 import com.kesehatan.klinikhusada.apihelper.response.ItemListResponse;
 import com.kesehatan.klinikhusada.apihelper.response.StatusResponse;
@@ -50,4 +51,11 @@ public interface ApiInterface {
 
     @GET("antrian")
     Call<AntrianListResponse> getAntrian();
+
+    @FormUrlEncoded
+    @POST("Datapasien")
+    Call<PostUser> postRegis(@Field("username") String username,
+                             @Field("password") String password,
+                             @Field("email") String email,
+                             @Field("no_rm") String no_rm);
 }
