@@ -124,7 +124,6 @@
 
             <Button
                 android:id="@+id/buttonlog"
-                android:onClick="Simpan"
                 android:layout_marginLeft="-20dp"
                 android:layout_marginTop="20dp"
                 android:text="Lanjut"

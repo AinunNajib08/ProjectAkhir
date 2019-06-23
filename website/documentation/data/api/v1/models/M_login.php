@@ -2,13 +2,13 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class M_user extends Model
+class M_login extends Model
 {
     protected $table = 'pasien';
     public $timestamps = false;
     protected $fillable = [
         'no_rm',
-        'no_asuransi',
+        'no_asuransilain',
         'nama_pasien',
         'usia',
         'tanggal_lahir',

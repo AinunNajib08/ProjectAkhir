@@ -3,6 +3,7 @@
 /*
 API REGISTER
  */
+
 $app->post('/api/v1/register', function ($request, $response) {
     $data = $request->getParsedBody();
     $no_rm = $data['no_rm'];
@@ -14,7 +15,7 @@ $app->post('/api/v1/register', function ($request, $response) {
     if (empty($no_rm) || empty($tanggal_lahir)) {
         $result = array(
             "status" => false,
-            "message" => "Form tidak boleh kosong",
+            "message" => "Masukan Nomor Rekam Medik dan Tanggal Lahir",
             "data" => [],
         );
         return $response->withStatus(200)->withJson($result);
@@ -25,12 +26,12 @@ $app->post('/api/v1/register', function ($request, $response) {
         jika jumlah datanya 1 maka ada, jika jumlah datanya 0 maka kita asumsikan
         dengan tidak ada.
         */
-        $count = M_user::where('no_rm', $no_rm)->count();
+        $count = M_login::where('no_rm', $no_rm)->count();
         if ($count > 0) {
             /*
             Disini kita akan mengambil data berdasarkan kecocokan email.
             */
-            $users = M_user::where('no_rm', $no_rm)->take(1)->get();
+            $users = M_login::where('no_rm', $no_rm)->take(1)->get();
             foreach ($users as $user) {
                 $passwordHash = $user->tanggal_lahir;
                 if ($passwordHash == $tanggal_lahir) {
@@ -43,7 +44,7 @@ $app->post('/api/v1/register', function ($request, $response) {
                 } else {
                     $result = array(
                         "status" => false,
-                        "message" => "Password Salah",
+                        "message" => "Tanggal Lahir anda Tidak Valid dengan Nomor Rekam Medik",
                         "data" => []
                     );
                     return $response->withStatus(200)->withJson($result);
@@ -52,7 +53,7 @@ $app->post('/api/v1/register', function ($request, $response) {
         } else {
             $result = array(
                 "status" => false,
-                "message" => "Email belum terdaftar",
+                "message" => "Nomor Rekam Medik anda Salah",
                 "data" => [],
             );
             return $response->withStatus(200)->withJson($result);
