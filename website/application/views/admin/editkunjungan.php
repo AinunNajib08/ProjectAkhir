@@ -129,12 +129,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../examples/maps.html">
+                        <a class="nav-link" href="../">
                             <i class="ni ni-shop text-orange"></i> View Poliklinik
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../examples/profile.html">
+                    <a class="nav-link" href="../">
                             <i class="ni ni-single-02 text-yellow"></i> View Tujuan Pelayanan
                         </a>
                     </li>

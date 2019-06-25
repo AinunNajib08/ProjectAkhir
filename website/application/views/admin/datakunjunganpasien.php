@@ -126,7 +126,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../examples/profile.html">
+                        <a class="nav-link" href="../admin/datatujuan">
                             <i class="ni ni-single-02 text-yellow"></i> View Tujuan Pelayanan
                         </a>
                     </li>
