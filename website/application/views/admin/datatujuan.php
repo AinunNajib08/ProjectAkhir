@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
     <meta name="author" content="Creative Tim">
-    <title>Data Kunjungan</title>
+    <title>Data Tujuan Pelayanan</title>
     <!-- Favicon -->
     <link href="<?= base_url('assets/img/brand/icon.png'); ?>" rel="icon" type="image/png">
     <!-- Fonts -->
@@ -203,7 +203,7 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <h5 class="card-title text-uppercase text-muted mb-0">Data Kunjungan</h5>
+                                            <h5 class="card-title text-uppercase text-muted mb-0">Data Tujuan Pelayanan</h5>
                                             <span class="h2 font-weight-bold mb-0"></span>
                                         </div>
                                         <div class="col-auto">
@@ -294,7 +294,7 @@
               <div class="col">
                 <div class="card bg-default shadow">
                   <div class="card-header bg-transparent border-0">
-                    <h3 class="text-white mb-0">Tabel Poliklinik</h3>
+                    <h3 class="text-white mb-0">Tabel Tujuan Pelayanan</h3>
                   </div>
                   <div class="table-responsive">
                     <table class="table align-items-center table-dark table-flush">
@@ -304,15 +304,11 @@
                           <th scope="col">Tujuan Pelayanan</th>
                           <th scope="col">Nama Poli Tujuan</th>
                         </tr>
-                        <?php foreach ($poli as $poli) : ?>
+                        <?php foreach ($tujuan_pelayanan as $tujuan_pelayanan) : ?>
                           <tr>
-                            <td><?php echo $poli->id_poli ?></td>
-                            <td><?php echo $poli->poli ?></td>
-                            <td>
-                              <a href="<?php echo site_url('admin/Datapoli/edit/' . $poli->id_poli) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-                              <a href="<?php echo site_url('admin/datapoli/add/' . $poli->id_poli) ?>" class="btn btn-small"><i class="fas fa-plus-circle"></i> Tambah</a>
-                              <a onclick="deleteConfirm" href="<?php echo site_url('admin/Datapoli/delete/' . $poli->id_poli) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
-                            </td>
+                            <td><?php echo $tujuan_pelayanan->kode_tujuan ?></td>
+                            <td><?php echo $tujuan_pelayanan->$tujuan_pelayanan ?></td>
+                            <td><?php echo $tujuan_pelayanan->id_poli ?></td>
                           </tr>
                         <?php endforeach; ?>
                       </thead>
