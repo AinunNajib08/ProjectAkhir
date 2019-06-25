@@ -284,8 +284,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
             <!-- Table -->
             <!-- Dark table -->
             <br>
@@ -307,7 +305,7 @@
                         <?php foreach ($tujuan_pelayanan as $tujuan_pelayanan) : ?>
                           <tr>
                             <td><?php echo $tujuan_pelayanan->kode_tujuan ?></td>
-                            <td><?php echo $tujuan_pelayanan->$tujuan_pelayanan ?></td>
+                            <td><?php echo $tujuan_pelayanan->tujuan_pelayanan ?></td>
                             <td><?php echo $tujuan_pelayanan->id_poli ?></td>
                           </tr>
                         <?php endforeach; ?>
