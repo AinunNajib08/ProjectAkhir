@@ -2,23 +2,29 @@
 
 class Mdatatujuan extends CI_Model
 {
-    private $_table = "poli";
-    public $id_poli;
-    public $poli;
+    private $_table = "tujuan_pelayanan";
+    public $kode_tujuan;
+    public $tujuan_pelayanan;
 
     public function rules()
     {
         
         return [
             [
-                'field' => 'id_poli',
-                'label' => 'id_poli',
+                'field' => 'kode_tujuan',
+                'label' => 'kode_tujuan',
                 'rules' => 'required'
             ],
 
             [
-                'field' => 'poli',
-                'label' => 'poli',
+                'field' => 'tujuan_pelayanan',
+                'label' => 'tujuan_pelayanan',
+                'rules' => 'required'
+            ],
+
+            [
+                'field' => 'id_poli',
+                'label' => 'id_poli',
                 'rules' => 'required'
             ]
         ];
@@ -29,16 +35,17 @@ class Mdatatujuan extends CI_Model
         return $this->db->get($this->_table)->result();
     }
 
-    public function getById($id_poli)
+    public function getById($kode_tujuan)
     {
-        return $this->db->get_where($this->_table, ["id_poli" => $id_poli])->row();
+        return $this->db->get_where($this->_table, ["kode_tujuan" => $kode_tujuan])->row();
     }
 
     public function save()
     {
         $post = $this->input->post();
+        $this->kode_tujuan = $post["kode_tujuan"];
+        $this->tujuan_pelayanan = $post["tujuan_pelayanan"];
         $this->id_poli = $post["id_poli"];
-        $this->poli = $post["poli"];
 
         $this->db->insert($this->_table, $this);
     }
@@ -46,14 +53,15 @@ class Mdatatujuan extends CI_Model
     public function update()
     {
         $post = $this->input->post();
+        $this->kode_tujuan = $post["kode_tujuan"];
+        $this->tujuan_pelayanan = $post["tujuan_pelayanan"];
         $this->id_poli = $post["id_poli"];
-        $this->poli = $post["poli"];
 
-        $this->db->update($this->_table, $this, array('id_poli' => $post['id_poli']));
+        $this->db->update($this->_table, $this, array('kode_tujuan' => $post['kode_tujuan']));
     }
 
-    public function delete($id_poli)
+    public function delete($kode_tujuan)
     {
-        return $this->db->delete($this->_table, array("id_poli" => $id_poli));
+        return $this->db->delete($this->_table, array("kode_tujuan" => $kode_tujuan));
     }
 }
