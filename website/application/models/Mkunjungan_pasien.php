@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
 
 class Mkunjungan_pasien extends CI_Model
 {
@@ -16,37 +16,53 @@ class Mkunjungan_pasien extends CI_Model
     public function rules()
     {
         return [
-            ['field' => 'id_kunjungan',
-            'label' => 'id_kunjungan',
-            'rules' => 'required'],
+            [
+                'field' => 'id_kunjungan',
+                'label' => 'id_kunjungan',
+                'rules' => 'required'
+            ],
 
-            ['field' => 'no_urutkunjungan',
-            'label' => 'no_urutkunjungan',
-            'rules' => 'required'],
-            
-            ['field' => 'tanggal',
-            'label' => 'tanggal',
-            'rules' => 'required'],
+            [
+                'field' => 'no_urutkunjungan',
+                'label' => 'no_urutkunjungan',
+                'rules' => 'required'
+            ],
 
-            ['field' => 'no_antrian',
-            'label' => 'no_antrian',
-            'rules' => 'required'],
+            [
+                'field' => 'tanggal',
+                'label' => 'tanggal',
+                'rules' => 'required'
+            ],
 
-            ['field' => 'keluhan',
-            'label' => 'keluhan',
-            'rules' => 'required'],
+            [
+                'field' => 'no_antrian',
+                'label' => 'no_antrian',
+                'rules' => 'required'
+            ],
 
-            ['field' => 'jenis_kunjungan',
-            'label' => 'jenis_kunjungan',
-            'rules' => 'required'],
+            [
+                'field' => 'keluhan',
+                'label' => 'keluhan',
+                'rules' => 'required'
+            ],
 
-            ['field' => 'kede_tujuan',
-            'label' => 'kode_tujuan',
-            'rules' => 'required'],
-            
-            ['field' => 'no_rm',
-            'label' => 'no_rm',
-            'rules' => 'required']
+            [
+                'field' => 'jenis_kunjungan',
+                'label' => 'jenis_kunjungan',
+                'rules' => 'required'
+            ],
+
+            [
+                'field' => 'kede_tujuan',
+                'label' => 'kode_tujuan',
+                'rules' => 'required'
+            ],
+
+            [
+                'field' => 'no_rm',
+                'label' => 'no_rm',
+                'rules' => 'required'
+            ]
         ];
     }
 
@@ -54,7 +70,7 @@ class Mkunjungan_pasien extends CI_Model
     {
         return $this->db->get($this->_table)->result();
     }
-    
+
     public function getById($id_kunjungan)
     {
         return $this->db->get_where($this->_table, ["id_kunjungan" => $id_kunjungan])->row();
@@ -93,5 +109,12 @@ class Mkunjungan_pasien extends CI_Model
     public function delete($id_kunjungan)
     {
         return $this->db->delete($this->_table, array("id_kunjungan" => $id_kunjungan));
+    }
+
+    public function datakunjungantoday()
+    {
+        $kujungantoday = $this->db->query("SELECT kunjungan_pasien.id_kunjungan, kunjungan_pasien.no_rm,
+        kunjungan_pasien.no_urutkunjungan, kunjungan_pasien.tanggal, kunjungan_pasien.no_antrian, kunjungan_pasien.keluhan
+        kunjungan_pasien.jenis_kunjungan, kunjungan_pasien.kode_tujuan, poli.poli FROM kunjungan_pasien, poli");
     }
 }

@@ -116,7 +116,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../admin/datakunjungan">
+                        <a class="nav-link" href="/project/website/admin/datakunjungan">
                             <i class="ni ni-bullet-list-67 text-blue"></i> View Data Kunjungan Pasien
                         </a>
                     </li>
@@ -126,7 +126,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="../admin/datatujuan">
+                        <a class="nav-link" href="../admin/datatujuan">
                             <i class="ni ni-single-02 text-yellow"></i> View Tujuan Pelayanan
                         </a>
                     </li>
@@ -305,6 +305,7 @@
                                         <th>No Rekam Medis</th>
                                         <th>Nama Pasien</th>
                                         <th>Usia</th>
+                                        <th>Foto</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -314,6 +315,7 @@
                                             <td><?php echo $pasien->no_rm ?></td>
                                             <td><?php echo $pasien->nama_pasien ?></td>
                                             <td><?php echo $pasien->usia ?></td>
+                                            <td><?php echo $pasien->foto ?></td>
                                             <td>
                                                 <a href="<?php echo site_url('admin/datapasien/edit/' . $pasien->no_rm) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
                                                 <a onclick="deleteConfirm" href="<?php echo site_url('admin/datapasien/delete/' . $pasien->no_rm) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i>Hapus</a>

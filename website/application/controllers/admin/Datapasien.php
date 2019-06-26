@@ -61,7 +61,7 @@ class Datapasien extends CI_Controller
         if (!isset($no_rm)) show_404();
 
         if ($this->Mdatapasien->delete($no_rm)) {
-            redirect(site_url('admin/products'));
+            redirect(site_url('Datapasien'));
         }
     }
 }

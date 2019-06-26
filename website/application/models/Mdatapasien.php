@@ -16,7 +16,7 @@ class Mdatapasien extends CI_Model
     public $telepon;
     public $pekerjaan;
     public $tanggal_daftar;
-    public $foto = "default.jpg";
+    public $foto;
     public $email;
     public $orang_tua;
     public $status_kawin;
@@ -91,10 +91,10 @@ class Mdatapasien extends CI_Model
         $this->telepon = $post["telepon"];
         $this->pekerjaan = $post["pekerjaan"];
         $this->tanggal_daftar = date("Y-m-d");
-        if (!empty($_FILES["image"]["name"])) {
-            $this->image = $this->UploadFoto()();
+        if (!empty($_FILES["foto"]["name"])) {
+            $this->foto = $this->UploadFoto()();
         } else {
-            $this->image = $post["foto"];
+            $this->foto = $post["foto"];
         };
         $this->email = $post["email"];
         $this->orang_tua = $post["org_tua"];
