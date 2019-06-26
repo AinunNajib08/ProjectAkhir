@@ -16,7 +16,7 @@ class Mdatapasien extends CI_Model
     public $telepon;
     public $pekerjaan;
     public $tanggal_daftar;
-    public $foto;
+    public $foto = "default.jpg";
     public $email;
     public $orang_tua;
     public $status_kawin;
@@ -66,7 +66,7 @@ class Mdatapasien extends CI_Model
         $this->telepon = $post["telepon"];
         $this->pekerjaan = $post["pekerjaan"];
         $this->tanggal_daftar = date("Y-m-d");
-        $this->foto = $post["foto"];
+        $this->foto = $this->UploadFoto();
         $this->email = $post["email"];
         $this->orang_tua = $post["org_tua"];
         $this->status_kawin = $post["status_kawin"];
@@ -91,7 +91,11 @@ class Mdatapasien extends CI_Model
         $this->telepon = $post["telepon"];
         $this->pekerjaan = $post["pekerjaan"];
         $this->tanggal_daftar = date("Y-m-d");
-        $this->foto = $post["foto"];
+        if (!empty($_FILES["image"]["name"])) {
+            $this->image = $this->UploadFoto()();
+        } else {
+            $this->image = $post["foto"];
+        };
         $this->email = $post["email"];
         $this->orang_tua = $post["org_tua"];
         $this->status_kawin = $post["status_kawin"];
@@ -103,5 +107,21 @@ class Mdatapasien extends CI_Model
     public function delete($no_rm)
     {
         return $this->db->delete($this->_table, array("no_rm" => $no_rm));
+    }
+
+    private function UploadFoto()
+    {
+        $config['upload_path']          = '.upload/datapasien/';
+        $config['allowed_types']        = 'gif|png|jpg';
+        $config['file_name']            = $this->no_rm;
+        $config['overwrite']            = true;
+        $config['max_size']             = 1024;
+
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('foto')) {
+            return $this->upload->data('file_name');
+        }
+        return "default.jpg";
     }
 }
