@@ -291,6 +291,7 @@
         <div class="container-fluid mt--7">
             <!-- Table -->
             <!-- Dark table -->
+            <a class="btn btn-success" href="<?= site_url('admin/Datakunjungantoday'); ?>">Kunjungan Hari Ini</a>
             <div class="row mt-5">
                 <div class="col">
                     <div class="card bg-default shadow">

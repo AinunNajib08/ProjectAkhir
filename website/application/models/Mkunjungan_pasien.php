@@ -113,8 +113,8 @@ class Mkunjungan_pasien extends CI_Model
 
     public function datakunjungantoday()
     {
-        $kujungantoday = $this->db->query("SELECT kunjungan_pasien.id_kunjungan, kunjungan_pasien.no_rm,
-        kunjungan_pasien.no_urutkunjungan, kunjungan_pasien.tanggal, kunjungan_pasien.no_antrian, kunjungan_pasien.keluhan
-        kunjungan_pasien.jenis_kunjungan, kunjungan_pasien.kode_tujuan, poli.poli FROM kunjungan_pasien, poli");
+        $this->db->query("SELECT kunjungan_pasien.id_kunjungan, kunjungan_pasien.no_rm, kunjungan_pasien.no_urutkunjungan, kunjungan_pasien.tanggal, kunjungan_pasien.no_antrian, kunjungan_pasien.keluhan, kunjungan_pasien.jenis_kunjungan, kunjungan_pasien.kode_tujuan, poli.poli FROM kunjungan_pasien, poli");
+
+        return $kunjungantoday;
     }
 }

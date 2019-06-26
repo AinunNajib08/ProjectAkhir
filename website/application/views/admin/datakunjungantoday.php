@@ -314,19 +314,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($kunjungan_pasien as $kunjungan_pasien); ?>
+                                    <?php foreach ($kunjungantoday as $data); ?>
                                     <tr>
-                                        <td><?php echo $kunjungan_pasien->id_kunjungan ?></td>
-                                        <td><?php echo $kunjungan_pasien->no_urutkunjungan ?></td>
-                                        <td><?php echo $kunjungan_pasien->tanggal ?></td>
-                                        <td><?php echo $kunjungan_pasien->no_antrian ?></td>
-                                        <td><?php echo $kunjungan_pasien->keluhan ?></td>
-                                        <td><?php echo $kunjungan_pasien->jenis_kunjungan ?></td>
-                                        <td><?php echo $kunjungan_pasien->kode_tujuan ?></td>
-                                        <td><?php echo $kunjungan_pasien->no_rm ?></td>
+                                        <td><?php echo $data->id_kunjungan ?></td>
+                                        <td><?php echo $data->no_urutkunjungan ?></td>
+                                        <td><?php echo $data->tanggal ?></td>
+                                        <td><?php echo $data->no_antrian ?></td>
+                                        <td><?php echo $data->keluhan ?></td>
+                                        <td><?php echo $data->jenis_kunjungan ?></td>
+                                        <td><?php echo $data->kode_tujuan ?></td>
+                                        <td><?php echo $data->no_rm ?></td>
+                                        <td><?php echo $data->poli ?></td>
                                         <td>
-                                            <a href="<?php echo site_url('admin/Datakunjungan/edit/' . $kunjungan_pasien->id_kunjungan) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-                                            <a onclick="deleteConfirm" href="<?php echo site_url('admin/Datakunjungan/delete/' . $kunjungan_pasien->id_kunjungan) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i>Hapus</a>
+                                            <a href="<?php echo site_url('admin/Datakunjungantoday/edit/' . $kunjungan_pasien->id_kunjungan) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
+                                            <a onclick="deleteConfirm" href="<?php echo site_url('admin/Datakunjungantoday/delete/' . $kunjungan_pasien->id_kunjungan) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i>Hapus</a>
                                         </td>
                                     </tr>
                                 <tbody>
