@@ -161,7 +161,7 @@ $app->post('/api/v1/regis', function ($request, $response) {
         $result = mysqli_query($aVar, "SELECT count(*) as total from akun_user WHERE no_rm='$no_rm'");
         $hasil = mysqli_fetch_assoc($result);
 
-        if ($hasil['total'] = 0) {
+        if ($hasil['total'] == 0) {
             $user->save();
             $result = array(
                 "status" => true,
