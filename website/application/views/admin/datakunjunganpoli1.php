@@ -154,7 +154,7 @@
         <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
             <div class="container-fluid">
                 <!-- Brand -->
-                <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="../index.html">kunjungan pasien</a>
+                <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="../index.html">kunjungan pasien Poli Umum</a>
                 <!-- Form -->
                 <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
                     <div class="form-group mb-0">
@@ -301,20 +301,20 @@
                             <table class="table align-items-center table-dark table-flush">
                                 <thead class="thead-dark">
                                     <tr>
-                                        <th scope="col">Id_kunjungan</th>
-                                        <th scope="col">No_urutkunjungan</th>
-                                        <th scope="col">Tanggal</th>
-                                        <th scope="col">No_antrian</th>
-                                        <th scope="col">Keluhan</th>
-                                        <th scope="col">Jenis_kunjungan</th>
-                                        <th scope="col">Kode_tujuan</th>
-                                        <th scope="col">No_rm</th>
-                                        <th scope="col">Poli</th>
-                                        <th scope="col">Aksi</th>
+                                        <th>Id_kunjungan</th>
+                                        <th>No_urutkunjungan</th>
+                                        <th>Tanggal</th>
+                                        <th>No_antrian</th>
+                                        <th>Keluhan</th>
+                                        <th>Jenis_kunjungan</th>
+                                        <th>Kode_tujuan</th>
+                                        <th>No_rm</th>
+                                        <th>Poli</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($kunjungantoday as $data); ?>
+                                    <?php foreach ($kunjunganpoli1 as $data); ?>
                                     <tr>
                                         <td><?php echo $data->id_kunjungan ?></td>
                                         <td><?php echo $data->no_urutkunjungan ?></td>

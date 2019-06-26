@@ -12,6 +12,7 @@ class Mkunjungan_pasien extends CI_Model
     public $jenis_kunjungan;
     public $kode_tujuan;
     public $no_rm;
+    public $id_poli;
 
     public function rules()
     {
@@ -62,6 +63,11 @@ class Mkunjungan_pasien extends CI_Model
                 'field' => 'no_rm',
                 'label' => 'no_rm',
                 'rules' => 'required'
+            ],
+            [
+                'field' => 'id_poli',
+                'label' => 'id_poli',
+                'rules' => 'required'
             ]
         ];
     }
@@ -87,6 +93,7 @@ class Mkunjungan_pasien extends CI_Model
         $this->jenis_kunjungan = $post["jenis_kunjungan"];
         $this->kode_tujuan = $post["kode_tujuan"];
         $this->no_rm = $post["no_rm"];
+        $this->id_poli = $post["id_poli"];
 
         $this->db->insert($this->_table, $this);
     }
@@ -102,6 +109,7 @@ class Mkunjungan_pasien extends CI_Model
         $this->jenis_kunjungan = $post["jenis_kunjungan"];
         $this->kode_tujuan = $post["kode_tujuan"];
         $this->no_rm = $post["no_rm"];
+        $this->id_poli = $post["id_poli"];
 
         $this->db->update($this->_table, $this, array('id_kunjungan' => $post['id_kunjungan']));
     }
@@ -113,8 +121,7 @@ class Mkunjungan_pasien extends CI_Model
 
     public function datakunjunganpoli1()
     {
-
-        $kunjunganpoli1 = $this->db->query("SELECT kunjungan_pasien.id_kunjungan, kunjungan_pasien.no_rm, kunjungan_pasien.no_urutkunjungan, kunjungan_pasien.tanggal, kunjungan_pasien.no_antrian, kunjungan_pasien.keluhan, kunjungan_pasien.jenis_kunjungan, kunjungan_pasien.kode_tujuan, poli.id_poli, poli.poli FROM kunjungan_pasien, poli WHERE poli.id_poli=1 ")->result();
+        $kunjunganpoli1 = $this->db->query("SELECT kunjungan_pasien.id_kunjungan, kunjungan_pasien.no_rm, kunjungan_pasien.no_urutkunjungan, kunjungan_pasien.tanggal, kunjungan_pasien.no_antrian, kunjungan_pasien.keluhan, kunjungan_pasien.jenis_kunjungan, kunjungan_pasien.kode_tujuan, kunjungan_pasien.id_poli, poli.id_poli, poli.poli FROM kunjungan_pasien, poli WHERE poli.id_poli=kunjungan_pasien.id_poli AND kunjungan_pasien.id_poli=1 ")->result();
 
         return $kunjunganpoli1;
     }
