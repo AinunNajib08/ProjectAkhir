@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
     <meta name="author" content="Creative Tim">
-    <title>Data Kunjungan</title>
+    <title>Data Kunjungan poli umum</title>
     <!-- Favicon -->
     <link href="<?= base_url('assets/img/brand/icon.png'); ?>" rel="icon" type="image/png">
     <!-- Fonts -->
@@ -326,8 +326,9 @@
                                         <td><?php echo $data->no_rm ?></td>
                                         <td><?php echo $data->poli ?></td>
                                         <td>
-                                            <a href="<?php echo site_url('admin/Datakunjungantoday/edit/' . $kunjungan_pasien->id_kunjungan) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-                                            <a onclick="deleteConfirm" href="<?php echo site_url('admin/Datakunjungantoday/delete/' . $kunjungan_pasien->id_kunjungan) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i>Hapus</a>
+                                            <a href="<?php echo site_url('admin/Datakunjungantoday/edit/' . $data->id_kunjungan) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
+                                            <a href="" class="btn btn-disabled"><i class="fas fa-eject "></i> Reset</a>
+                                            <a onclick="deleteConfirm" href="<?php echo site_url('admin/Datakunjungantoday/delete/' . $data->id_kunjungan) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i>Hapus</a>
                                         </td>
                                     </tr>
                                 <tbody>

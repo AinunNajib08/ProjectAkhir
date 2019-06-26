@@ -2,7 +2,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Datakunjungantoday extends CI_Controller
+class Datakunjunganpoli1 extends CI_Controller
 {
     public function __construct()
     {
@@ -16,8 +16,8 @@ class Datakunjungantoday extends CI_Controller
 
     public function index()
     {
-        $data["kunjungantoday"] = $this->Mkunjungan_pasien->datakunjungantoday();
-        $this->load->view("admin/datakunjungantoday", $data);
+        $data["kunjungantoday"] = $this->Mkunjungan_pasien->datakunjunganpoli1();
+        $this->load->view("admin/datakunjunganpoli1", $data);
     }
 
     public function tambah()

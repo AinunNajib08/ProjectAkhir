@@ -111,10 +111,11 @@ class Mkunjungan_pasien extends CI_Model
         return $this->db->delete($this->_table, array("id_kunjungan" => $id_kunjungan));
     }
 
-    public function datakunjungantoday()
+    public function datakunjunganpoli1()
     {
-        $this->db->query("SELECT kunjungan_pasien.id_kunjungan, kunjungan_pasien.no_rm, kunjungan_pasien.no_urutkunjungan, kunjungan_pasien.tanggal, kunjungan_pasien.no_antrian, kunjungan_pasien.keluhan, kunjungan_pasien.jenis_kunjungan, kunjungan_pasien.kode_tujuan, poli.poli FROM kunjungan_pasien, poli");
 
-        return $kunjungantoday;
+        $kunjunganpoli1 = $this->db->query("SELECT kunjungan_pasien.id_kunjungan, kunjungan_pasien.no_rm, kunjungan_pasien.no_urutkunjungan, kunjungan_pasien.tanggal, kunjungan_pasien.no_antrian, kunjungan_pasien.keluhan, kunjungan_pasien.jenis_kunjungan, kunjungan_pasien.kode_tujuan, poli.id_poli, poli.poli FROM kunjungan_pasien, poli WHERE poli.id_poli=1 ")->result();
+
+        return $kunjunganpoli1;
     }
 }
