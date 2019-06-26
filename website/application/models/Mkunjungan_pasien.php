@@ -125,4 +125,11 @@ class Mkunjungan_pasien extends CI_Model
 
         return $kunjunganpoli1;
     }
+
+    public function datakunjunganpoli2()
+    {
+        $kunjunganpoli2 = $this->db->query("SELECT kunjungan_pasien.id_kunjungan, kunjungan_pasien.no_rm, kunjungan_pasien.no_urutkunjungan, kunjungan_pasien.tanggal, kunjungan_pasien.no_antrian, kunjungan_pasien.keluhan, kunjungan_pasien.jenis_kunjungan, kunjungan_pasien.kode_tujuan, kunjungan_pasien.id_poli, poli.id_poli, poli.poli FROM kunjungan_pasien, poli WHERE poli.id_poli=kunjungan_pasien.id_poli AND kunjungan_pasien.id_poli=2 ")->result();
+
+        return $kunjunganpoli2;
+    }
 }

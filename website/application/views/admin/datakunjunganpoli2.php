@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
     <meta name="author" content="Creative Tim">
-    <title>Data Kunjungan</title>
+    <title>Data Kunjungan poli umum</title>
     <!-- Favicon -->
     <link href="<?= base_url('assets/img/brand/icon.png'); ?>" rel="icon" type="image/png">
     <!-- Fonts -->
@@ -154,7 +154,7 @@
         <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
             <div class="container-fluid">
                 <!-- Brand -->
-                <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="../index.html">kunjungan pasien</a>
+                <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="../index.html">kunjungan pasien Poli Umum</a>
                 <!-- Form -->
                 <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
                     <div class="form-group mb-0">
@@ -291,44 +291,47 @@
         <div class="container-fluid mt--7">
             <!-- Table -->
             <!-- Dark table -->
-            <a class="btn btn-success" href="<?= site_url('admin/Datakunjunganpoli1'); ?>">Kunjungan Hari Ini</a>
+            <a class="btn btn-success" href="<?= site_url('admin/Datakunjunganpoli1'); ?>">Kunjungan poli Umum</a>
+            <a class="btn btn-success" href="<?= site_url('admin/Datakunjunganpoli3'); ?>">Kunjungan poli Mata</a>
+            <a class="btn btn-success" href="<?= site_url('admin/Datakunjunganpoli4'); ?>">Kunjungan poli Ibu dan Anak</a>
             <div class="row mt-5">
                 <div class="col">
                     <div class="card bg-default shadow">
                         <div class="card-header bg-transparent border-0">
-                            <h3 class="text-white mb-0">Tabel Data Kunjungan</h3>
+                            <h3 class="text-white mb-0">Tabel Data Kunjungan Poli Umum</h3>
                         </div>
                         <div class="table-responsive">
                             <table class="table align-items-center table-dark table-flush">
                                 <thead class="thead-dark">
                                     <tr>
-                                        <th scope="col">Id_kunjungan</th>
-                                        <th scope="col">No_urutkunjungan</th>
-                                        <th scope="col">Tanggal</th>
-                                        <th scope="col">No_antrian</th>
-                                        <th scope="col">Keluhan</th>
-                                        <th scope="col">Jenis_kunjungan</th>
-                                        <th scope="col">Kode_tujuan</th>
-                                        <th scope="col">No_rm</th>
-                                        <th scope="col">Id_Poli</th>
-                                        <th scope="col">Aksi</th>
+                                        <th>Id_kunjungan</th>
+                                        <th>No_urutkunjungan</th>
+                                        <th>Tanggal</th>
+                                        <th>No_antrian</th>
+                                        <th>Keluhan</th>
+                                        <th>Jenis_kunjungan</th>
+                                        <th>Kode_tujuan</th>
+                                        <th>No_rm</th>
+                                        <th>Poli</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($kunjungan_pasien as $kunjungan_pasien) : ?>
+                                    <?php foreach ($kunjunganpoli2 as $data) : ?>
                                         <tr>
-                                            <td><?php echo $kunjungan_pasien->id_kunjungan ?></td>
-                                            <td><?php echo $kunjungan_pasien->no_urutkunjungan ?></td>
-                                            <td><?php echo $kunjungan_pasien->tanggal ?></td>
-                                            <td><?php echo $kunjungan_pasien->no_antrian ?></td>
-                                            <td><?php echo $kunjungan_pasien->keluhan ?></td>
-                                            <td><?php echo $kunjungan_pasien->jenis_kunjungan ?></td>
-                                            <td><?php echo $kunjungan_pasien->kode_tujuan ?></td>
-                                            <td><?php echo $kunjungan_pasien->no_rm ?></td>
-                                            <td><?php echo $kunjungan_pasien->id_poli ?></td>
+                                            <td><?php echo $data->id_kunjungan ?></td>
+                                            <td><?php echo $data->no_urutkunjungan ?></td>
+                                            <td><?php echo $data->tanggal ?></td>
+                                            <td><?php echo $data->no_antrian ?></td>
+                                            <td><?php echo $data->keluhan ?></td>
+                                            <td><?php echo $data->jenis_kunjungan ?></td>
+                                            <td><?php echo $data->kode_tujuan ?></td>
+                                            <td><?php echo $data->no_rm ?></td>
+                                            <td><?php echo $data->poli ?></td>
                                             <td>
-                                                <a href="<?php echo site_url('admin/Datakunjungan/edit/' . $kunjungan_pasien->id_kunjungan) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-                                                <a onclick="deleteConfirm" href="<?php echo site_url('admin/Datakunjungan/delete/' . $kunjungan_pasien->id_kunjungan) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i>Hapus</a>
+                                                <a href="<?php echo site_url('admin/Datakunjungantoday/edit/' . $data->id_kunjungan) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
+                                                <a href="" class="btn btn-disabled"><i class="fas fa-eject "></i> Reset</a>
+                                                <a onclick="deleteConfirm" href="<?php echo site_url('admin/Datakunjungantoday/delete/' . $data->id_kunjungan) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i>Hapus</a>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>

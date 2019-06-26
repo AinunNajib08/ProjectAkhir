@@ -291,11 +291,14 @@
         <div class="container-fluid mt--7">
             <!-- Table -->
             <!-- Dark table -->
+            <a class="btn btn-success" href="<?= site_url('admin/Datakunjunganpoli2'); ?>">Kunjungan poli Gigi</a>
+            <a class="btn btn-success" href="<?= site_url('admin/Datakunjunganpoli3'); ?>">Kunjungan poli Mata</a>
+            <a class="btn btn-success" href="<?= site_url('admin/Datakunjunganpoli4'); ?>">Kunjungan poli Ibu dan Anak</a>
             <div class="row mt-5">
                 <div class="col">
                     <div class="card bg-default shadow">
                         <div class="card-header bg-transparent border-0">
-                            <h3 class="text-white mb-0">Tabel Data Kunjungan</h3>
+                            <h3 class="text-white mb-0">Tabel Data Kunjungan Poli Umum</h3>
                         </div>
                         <div class="table-responsive">
                             <table class="table align-items-center table-dark table-flush">
@@ -314,23 +317,24 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($kunjunganpoli1 as $data); ?>
-                                    <tr>
-                                        <td><?php echo $data->id_kunjungan ?></td>
-                                        <td><?php echo $data->no_urutkunjungan ?></td>
-                                        <td><?php echo $data->tanggal ?></td>
-                                        <td><?php echo $data->no_antrian ?></td>
-                                        <td><?php echo $data->keluhan ?></td>
-                                        <td><?php echo $data->jenis_kunjungan ?></td>
-                                        <td><?php echo $data->kode_tujuan ?></td>
-                                        <td><?php echo $data->no_rm ?></td>
-                                        <td><?php echo $data->poli ?></td>
-                                        <td>
-                                            <a href="<?php echo site_url('admin/Datakunjungantoday/edit/' . $data->id_kunjungan) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-                                            <a href="" class="btn btn-disabled"><i class="fas fa-eject "></i> Reset</a>
-                                            <a onclick="deleteConfirm" href="<?php echo site_url('admin/Datakunjungantoday/delete/' . $data->id_kunjungan) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i>Hapus</a>
-                                        </td>
-                                    </tr>
+                                    <?php foreach ($kunjunganpoli1 as $data) : ?>
+                                        <tr>
+                                            <td><?php echo $data->id_kunjungan ?></td>
+                                            <td><?php echo $data->no_urutkunjungan ?></td>
+                                            <td><?php echo $data->tanggal ?></td>
+                                            <td><?php echo $data->no_antrian ?></td>
+                                            <td><?php echo $data->keluhan ?></td>
+                                            <td><?php echo $data->jenis_kunjungan ?></td>
+                                            <td><?php echo $data->kode_tujuan ?></td>
+                                            <td><?php echo $data->no_rm ?></td>
+                                            <td><?php echo $data->poli ?></td>
+                                            <td>
+                                                <a href="<?php echo site_url('admin/Datakunjungantoday/edit/' . $data->id_kunjungan) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
+                                                <a href="" class="btn btn-disabled"><i class="fas fa-eject "></i> Reset</a>
+                                                <a onclick="deleteConfirm" href="<?php echo site_url('admin/Datakunjungantoday/delete/' . $data->id_kunjungan) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i>Hapus</a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
                                 <tbody>
                                 </tbody>
                             </table>
