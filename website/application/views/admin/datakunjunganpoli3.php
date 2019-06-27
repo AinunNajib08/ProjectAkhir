@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
     <meta name="author" content="Creative Tim">
-    <title>Data Kunjungan poli umum</title>
+    <title>Data Kunjungan poli mata</title>
     <!-- Favicon -->
     <link href="<?= base_url('assets/img/brand/icon.png'); ?>" rel="icon" type="image/png">
     <!-- Fonts -->
@@ -298,7 +298,7 @@
                 <div class="col">
                     <div class="card bg-default shadow">
                         <div class="card-header bg-transparent border-0">
-                            <h3 class="text-white mb-0">Tabel Data Kunjungan Poli Umum</h3>
+                            <h3 class="text-white mb-0">Tabel Data Kunjungan Poli Mata</h3>
                         </div>
                         <div class="table-responsive">
                             <table class="table align-items-center table-dark table-flush">
@@ -317,7 +317,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($kunjunganpoli1 as $data) : ?>
+                                    <?php foreach ($kunjunganpoli3 as $data) : ?>
                                         <tr>
                                             <td><?php echo $data->id_kunjungan ?></td>
                                             <td><?php echo $data->no_urutkunjungan ?></td>
