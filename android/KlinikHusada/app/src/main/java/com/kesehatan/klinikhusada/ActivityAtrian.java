@@ -86,15 +86,27 @@ public class ActivityAtrian extends AppCompatActivity {
 
         progressDialog = new ProgressDialog(ActivityAtrian.this);
         mRecycler = findViewById(R.id.itemRecycler);
+        mTextViewCountDown = findViewById(R.id.text_view_countdown);
+        mButtonStartPause = findViewById(R.id.button_start_pause);
+        mButtonReset = findViewById(R.id.button_reset);
         mManager = new LinearLayoutManager(ActivityAtrian.this, LinearLayoutManager.VERTICAL, false);
         mRecycler.setLayoutManager(mManager);
         sharedPrefManager = new SharedPrefManager(this);
 
         load();
         NgampilData();
-        mTextViewCountDown = findViewById(R.id.text_view_countdown);
+        if (mTimerRunning=true){
+            startTimer();
+        } else {
+            if (START_TIME_IN_MILLIS != 0){
+                resetTimer();
+                startTimer();
+            } else {
+                startTimer();
+            }
+        }
 
-        mButtonStartPause = findViewById(R.id.button_start_pause);
+        startTimer();
 
         mButtonStartPause.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,6 +116,13 @@ public class ActivityAtrian extends AppCompatActivity {
                 } else {
                     startTimer();
                 }
+            }
+        });
+
+        mButtonReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resetTimer();
             }
         });
     }
@@ -211,7 +230,7 @@ public class ActivityAtrian extends AppCompatActivity {
                 });
     }
 
-    private void startTimer() {
+    public void startTimer() {
         mEndTime = System.currentTimeMillis() + mTimeLeftInMillis;
 
         mCountDownTimer = new CountDownTimer(mTimeLeftInMillis, 1000) {
@@ -224,20 +243,24 @@ public class ActivityAtrian extends AppCompatActivity {
             @Override
             public void onFinish() {
                 mTimerRunning = false;
+                updateButtons();
             }
         }.start();
 
         mTimerRunning = true;
+        updateButtons();
     }
 
     private void pauseTimer() {
         mCountDownTimer.cancel();
         mTimerRunning = false;
+        updateButtons();
     }
 
-    private void resetTimer() {
+    public void resetTimer() {
         mTimeLeftInMillis = START_TIME_IN_MILLIS;
         updateCountDownText();
+        updateButtons();
     }
 
     private void updateCountDownText() {
@@ -247,6 +270,27 @@ public class ActivityAtrian extends AppCompatActivity {
         String timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
 
         mTextViewCountDown.setText(timeLeftFormatted);
+    }
+
+    private void updateButtons() {
+        if (mTimerRunning) {
+            mButtonReset.setVisibility(View.INVISIBLE);
+            mButtonStartPause.setText("Pause");
+        } else {
+            mButtonStartPause.setText("Start");
+
+            if (mTimeLeftInMillis < 1000) {
+                mButtonStartPause.setVisibility(View.INVISIBLE);
+            } else {
+                mButtonStartPause.setVisibility(View.VISIBLE);
+            }
+
+            if (mTimeLeftInMillis < START_TIME_IN_MILLIS) {
+                mButtonReset.setVisibility(View.VISIBLE);
+            } else {
+                mButtonReset.setVisibility(View.INVISIBLE);
+            }
+        }
     }
 
     @Override
@@ -277,6 +321,7 @@ public class ActivityAtrian extends AppCompatActivity {
         mTimerRunning = prefs.getBoolean("timerRunning", false);
 
         updateCountDownText();
+        updateButtons();
 
         if (mTimerRunning) {
             mEndTime = prefs.getLong("endTime", 0);
@@ -286,9 +331,11 @@ public class ActivityAtrian extends AppCompatActivity {
                 mTimeLeftInMillis = 0;
                 mTimerRunning = false;
                 updateCountDownText();
+                updateButtons();
             } else {
                 startTimer();
             }
         }
     }
+
 }

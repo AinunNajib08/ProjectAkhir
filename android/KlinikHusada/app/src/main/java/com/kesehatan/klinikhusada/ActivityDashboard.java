@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.kesehatan.klinikhusada.utils.SharedPrefManager;
+import com.kesehatan.klinikhusada.ActivityAtrian;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -23,6 +24,7 @@ public class ActivityDashboard extends AppCompatActivity {
 
     @BindView(R.id.tvResultNama)
     TextView tvResultNama;
+    ActivityAtrian activityAtrian;
 //    @BindView(R.id.btnLogout)
 //    Button btnLogout;
 //    @BindView(R.id.btnLihatDosen)
@@ -84,25 +86,35 @@ public class ActivityDashboard extends AppCompatActivity {
 
     public void antrian(View view) {
         String antrian = sharedPrefManager.getSpPoli();
-        if (antrian.equals("0")){
+        if (antrian.equals("0")) {
             Intent intent = new Intent(ActivityDashboard.this, ActivityAtrian.class);
             startActivity(intent);
-        } else if (antrian.equals("1")){
+        } else if (antrian.equals("1")) {
             Intent intent = new Intent(ActivityDashboard.this, ActivityAtriana.class);
             startActivity(intent);
-        } else if (antrian.equals("2")){
+        } else if (antrian.equals("2")) {
             Intent intent = new Intent(ActivityDashboard.this, ActivityAtrianb.class);
             startActivity(intent);
-        } else {
+        } else if (antrian.equals("3")) {
             Intent intent = new Intent(ActivityDashboard.this, ActivityAtrianc.class);
+            startActivity(intent);
+        } else {
+            Intent intent = new Intent(ActivityDashboard.this, ActivityNoAntrian.class);
             startActivity(intent);
         }
     }
 
     public void logut(View view) {
         sharedPrefManager.saveSPBoolean(SharedPrefManager.SP_SUDAH_LOGIN, false);
+        sharedPrefManager.saveSPString(SharedPrefManager.SP_POLI, "");
                 startActivity(new Intent(ActivityDashboard.this, ActivityLogin.class)
                         .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
                 finish();
+    }
+
+
+    public void reset(View view) {
+        activityAtrian = new ActivityAtrian();
+        activityAtrian.resetTimer();
     }
 }

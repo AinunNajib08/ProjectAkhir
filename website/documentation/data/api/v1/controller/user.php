@@ -276,7 +276,7 @@ $app->post('/api/v1/antrian', function ($request, $response) {
             $users = M_kunjungan::where('keluhan', $keluhan)->take(1)->get();
             foreach ($users as $user) {
                 $passwordHash = $user->tanggal_lahir;
-                if ($no_rm == $user->no_rm) {
+                if ($keluhan == $user->keluhan) {
                     $result = array(
                         "status" => true,
                         "message" => "Login Berhasil",

@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityPasien"></activity>
+        <activity android:name=".ActivityNoAntrian"></activity>
+        <activity android:name=".ActivityPasien" />
         <activity android:name=".ActivityAtrian" />
         <activity android:name=".PendaftaranPasien" />
         <activity

@@ -99,6 +99,8 @@ public class ActivityLogin extends AppCompatActivity {
                                             Toast.makeText(mcontext, "BERHASIL LOGIN", Toast.LENGTH_SHORT).show();
                                             sharedPrefManager.saveSPString(SharedPrefManager.SP_USERNAMA, nama);
                                             sharedPrefManager.saveSPString(SharedPrefManager.SP_NO_RM, no_rm);
+                                            sharedPrefManager.saveSPString(SharedPrefManager.SP_NO_HP, no_telepon);
+                                            sharedPrefManager.saveSPString(SharedPrefManager.SP_EMAIL, email);
                                             sharedPrefManager.saveSPBoolean(SharedPrefManager.SP_SUDAH_LOGIN, true);
                                             Intent intent = new Intent(mcontext, ActivityDashboard.class);
                                             intent.putExtra("hasil_nama", nama);
