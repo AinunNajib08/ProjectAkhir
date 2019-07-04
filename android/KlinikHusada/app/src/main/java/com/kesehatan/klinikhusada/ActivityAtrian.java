@@ -107,6 +107,7 @@ public class ActivityAtrian extends AppCompatActivity {
         }
 
         startTimer();
+        startTimer();
 
         mButtonStartPause.setOnClickListener(new View.OnClickListener() {
             @Override
