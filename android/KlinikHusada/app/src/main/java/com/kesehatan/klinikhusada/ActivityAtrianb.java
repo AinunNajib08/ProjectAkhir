@@ -61,8 +61,8 @@ public class ActivityAtrianb extends AppCompatActivity {
         setContentView(R.layout.activity_atrianb);
 
         //CountUP
-
-        mTextViewCountDown = findViewById(R.id.text_view_countdown);
+//
+//        mTextViewCountDown = findViewById(R.id.text_view_countdown);
 
 
         progressDialog = new ProgressDialog(ActivityAtrianb.this);

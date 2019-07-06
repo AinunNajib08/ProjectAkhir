@@ -113,8 +113,4 @@ public class ActivityDashboard extends AppCompatActivity {
     }
 
 
-    public void reset(View view) {
-        activityAtrian = new ActivityAtrian();
-        activityAtrian.resetTimer();
-    }
 }
