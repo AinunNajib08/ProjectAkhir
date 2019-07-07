@@ -8,7 +8,7 @@ class Mdatatujuan extends CI_Model
 
     public function rules()
     {
-        
+
         return [
             [
                 'field' => 'kode_tujuan',
@@ -45,7 +45,7 @@ class Mdatatujuan extends CI_Model
         $post = $this->input->post();
         $this->kode_tujuan = $post["kode_tujuan"];
         $this->tujuan_pelayanan = $post["tujuan_pelayanan"];
-        $this->id_poli = $post["id_poli"];
+        $this->id_poli = $post["poli"];
 
         $this->db->insert($this->_table, $this);
     }

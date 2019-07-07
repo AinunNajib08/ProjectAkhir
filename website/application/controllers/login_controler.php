@@ -17,10 +17,8 @@ class login_controler extends CI_Controller
 
 
 		if ($this->form_validation->run() == false) {
-			$this->load->view('admin/login/login');
+			$this->load->view('/admin/login');
 		} else {
-
-			//jika sudah tervalidasi
 			$this->_proses_login();
 		}
 	}
