@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class login_controler extends CI_Controller
+class Logincontroler extends CI_Controller
 {
 	public function __construct()
 	{
@@ -17,7 +17,7 @@ class login_controler extends CI_Controller
 
 
 		if ($this->form_validation->run() == false) {
-			$this->load->view('/admin/login');
+			$this->load->view('admin/login');
 		} else {
 			$this->_proses_login();
 		}
