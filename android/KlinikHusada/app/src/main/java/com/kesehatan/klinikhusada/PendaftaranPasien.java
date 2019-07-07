@@ -27,6 +27,7 @@ import com.kesehatan.klinikhusada.utils.SharedPrefManager;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -81,21 +82,18 @@ public class PendaftaranPasien extends AppCompatActivity {
 
         }else {
 
-            if (poli.getSelectedItem().toString().trim().equals("Poli Mata")) {
+            if (poli.getSelectedItem().toString().trim().equals("Poli Umum")) {
                 nyimpen.setText("0");
-            } else if (poli.getSelectedItem().toString().trim().equals("Poli Paru")) {
+            } else if (poli.getSelectedItem().toString().trim().equals("Poli Ibu dan Anak")) {
                 nyimpen.setText("1");
-            } else if (poli.getSelectedItem().toString().trim().equals("Poli Saraf")) {
+            } else if (poli.getSelectedItem().toString().trim().equals("Poli Gigi")) {
                 nyimpen.setText("2");
-            } else if (poli.getSelectedItem().toString().trim().equals("Poli Bedah")) {
+            } else if (poli.getSelectedItem().toString().trim().equals("Poli Mata")) {
                 nyimpen.setText("3");
             } else {
                 Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT);
             }
             String errors = nyimpen.getText().toString();
-
-
-            // Insert Data
 
             progressDialog.setMessage("Loading ...");
             progressDialog.setCancelable(false);
@@ -106,6 +104,7 @@ public class PendaftaranPasien extends AppCompatActivity {
             String keluhan = error.getText().toString();
             String jenis_kunjungan = error2.getText().toString();
             String poli = nyimpen.getText().toString();
+            String datapoli = ""+poli;
 
             sharedPrefManager = new SharedPrefManager(this);
             String no_rm = sharedPrefManager.getSpNoRm();
@@ -121,13 +120,10 @@ public class PendaftaranPasien extends AppCompatActivity {
                     String status = response.body().getStatus();
 
                     if (status.equals("success")) {
-                        Toast.makeText(PendaftaranPasien.this, "Data berhasil disimpan", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(PendaftaranPasien.this, "Terimakasih Sudah Mendaftar", Toast.LENGTH_SHORT).show();
                         finish();
-                    } else if (status.equals("fail")){
-                        Toast.makeText(PendaftaranPasien.this, "Data gagal disimpan", Toast
-                                .LENGTH_SHORT).show();
                     } else {
-                        Toast.makeText(PendaftaranPasien.this, "Data gagal diasdasdsimpan", Toast
+                        Toast.makeText(PendaftaranPasien.this, "Data gagal disimpan", Toast
                                 .LENGTH_SHORT).show();
                     }
 
@@ -135,6 +131,8 @@ public class PendaftaranPasien extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<StatusResponse> call, Throwable t) {
+                    Log.e("debug", "onFailure: ERROR > " + t.toString());
+                    progressDialog.dismiss();
 
                 }
             });

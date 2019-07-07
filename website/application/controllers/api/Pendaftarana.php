@@ -3,6 +3,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 
 require APPPATH . '/libraries/REST_Controller.php';
+
 use Restserver\Libraries\REST_Controller;
 
 class Pendaftarana extends REST_Controller
@@ -18,7 +19,8 @@ class Pendaftarana extends REST_Controller
 
     public function index_get()
     {
-        $item = $this->db->get_where('kunjungan_pasien', array('poli' => '1'))->result();
+        $tanggal = date('Y-m-d');
+        $item = $this->db->get_where('kunjungan_pasien', array('poli' => '0', 'tanggal' => $tanggal, 'selesai' => '0'))->result();
         $response['message'] = "success";
         $response['data'] = $item;
 
@@ -33,22 +35,63 @@ class Pendaftarana extends REST_Controller
         $result = mysqli_query($aVar, "SELECT count(*) as total from kunjungan_pasien WHERE tanggal='$tanggal'");
         $hasil = mysqli_fetch_assoc($result);
 
-        $antri = mysqli_query($aVar, "SELECT count(*) as total from kunjungan_pasien WHERE tanggal='$tanggal' AND poli='$poli'");
+        $antri = mysqli_query($aVar, "SELECT count(*) as total from kunjungan_pasien WHERE tanggal='$tanggal' AND poli='$poli' AND selesai = '0'");
         $no_antrian = mysqli_fetch_assoc($antri);
+        $no_rm = $this->post('no_rm');
+
+        $no_antriyan = mysqli_query($aVar, "SELECT count(*) as total from kunjungan_pasien WHERE tanggal='$tanggal' AND poli='$poli'");
+        $no_antrianyan = mysqli_fetch_assoc($no_antriyan);
+
+        $estimasi = 0;
+        if ($no_antrian['total'] == 1) {
+            $estimasi = 900000;
+        } else if ($no_antrian['total'] == 2) {
+            $estimasi = 1800000;
+        } else if ($no_antrian['total'] == 3) {
+            $estimasi = 2700000;
+        } else if ($no_antrian['total'] == 4) {
+            $estimasi = 3600000;
+        } else if ($no_antrian['total'] == 5) {
+            $estimasi = 4500000;
+        } else if ($no_antrian['total'] == 6) {
+            $estimasi = 5400000;
+        } else if ($no_antrian['total'] == 7) {
+            $estimasi = 6300000;
+        } else if ($no_antrian['total'] == 8) {
+            $estimasi = 7200000;
+        } else if ($no_antrian['total'] == 9) {
+            $estimasi = 8100000;
+        } else if ($no_antrian['total'] == 10) {
+            $estimasi = 9000000;
+        } else if ($no_antrian['total'] == 11) {
+            $estimasi = 99000000;
+        } else if ($no_antrian['total'] == 12) {
+            $estimasi = 11700000;
+        } else if ($no_antrian['total'] == 13) {
+            $estimasi = 12600000;
+        } else if ($no_antrian['total'] == 14) {
+            $estimasi = 13500000;
+        }
 
         $poli = $this->post('poli');
         $data = [
             'id_kunjungan' => "",
             'no_urutkunjungan' => $hasil['total'],
             'tanggal' => $tanggal,
-            'no_antrian' => $no_antrian['total'],
+            'no_antrian' => $no_antrianyan['total'],
             'keluhan' => $this->post('keluhan'),
             'jenis_kunjungan' => $this->post('jenis_kunjungan'),
             'poli' => $poli,
-            'no_rm' => $this->post('no_rm')
+            'no_rm' => $no_rm,
+            'estimasi' => $estimasi
         ];
 
+        $validasi = mysqli_query($aVar, "SELECT count(*) as total from kunjungan_pasien WHERE tanggal='$tanggal' AND no_rm='$no_rm'");
+        $validasireg = mysqli_fetch_assoc($validasi);
+
         $insert = $this->db->insert('kunjungan_pasien', $data);
+
+
 
         if ($insert) {
             $this->response(['status' => 'success'], 200);

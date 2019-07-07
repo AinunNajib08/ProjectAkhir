@@ -268,14 +268,12 @@ public class ActivityAtrian extends AppCompatActivity {
         progressDialog.show();
 
         ApiInterface api = ApiClient.getClient().create(ApiInterface.class);
-        Call<ItemListResponse> getItem = api.getItema();
+        Call<ItemListResponse> getItem = api.getItem();
         getItem.enqueue(new Callback<ItemListResponse>() {
             @Override
             public void onResponse(Call<ItemListResponse> call, Response<ItemListResponse> response) {
                 progressDialog.hide();
                 Log.d("Response", "onResponse: " + response.body().getData());
-
-                Toast.makeText(ActivityAtrian.this, "berhasil ambil data", Toast.LENGTH_SHORT).show();
 
                 mItems = response.body().getData();
 

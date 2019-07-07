@@ -16,5 +16,6 @@ public class ActivityNoAntrian extends AppCompatActivity {
     public void daftarac(View view) {
         Intent intent = new Intent(ActivityNoAntrian.this, PendaftaranPasien.class);
         startActivity(intent);
+        finish();
     }
 }

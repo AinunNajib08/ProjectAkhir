@@ -6,10 +6,10 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string-array name="planets_array">
+        <item>Poli Umum</item>
+        <item>Poli Ibu dan Anak</item>
+        <item>Poli Gigi</item>
         <item>Poli Mata</item>
-        <item>Poli Paru</item>
-        <item>Poli Saraf</item>
-        <item>Poli Bedah</item>
     </string-array>
 
     <string name="action_settings">Settings</string>
