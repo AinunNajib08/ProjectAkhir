@@ -20,9 +20,14 @@ class Pendaftarana extends REST_Controller
     public function index_get()
     {
         $tanggal = date('Y-m-d');
-        $item = $this->db->get_where('kunjungan_pasien', array('poli' => '0', 'tanggal' => $tanggal, 'selesai' => '0'))->result();
+        $this->db->select('*'); // <-- There is never any reason to write this line!
+        $this->db->from('kunjungan_pasien');
+        $array = array('poli' => '1', 'tanggal' => $tanggal, 'selesai' => '0');
+        $this->db->where($array);
+        $this->db->join('pasien', 'kunjungan_pasien.no_rm = pasien.no_rm');
+        $query = $this->db->get()->result();
         $response['message'] = "success";
-        $response['data'] = $item;
+        $response['data'] = $query;
 
         $this->response($response, 200);
     }

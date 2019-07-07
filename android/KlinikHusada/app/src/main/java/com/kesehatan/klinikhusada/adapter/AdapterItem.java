@@ -1,5 +1,6 @@
 package com.kesehatan.klinikhusada.adapter;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 
 import com.kesehatan.klinikhusada.R;
 import com.kesehatan.klinikhusada.Model.Item;
+import com.kesehatan.klinikhusada.utils.SharedPrefManager;
 
 import java.util.List;
 
@@ -18,7 +20,11 @@ import java.util.List;
 public class AdapterItem extends RecyclerView.Adapter<AdapterItem.ViewHolder> {
 
     private List<Item> list;
-
+    SharedPrefManager sharedPrefManager;
+    Context context;
+    public AdapterItem(Context context){
+        this.context = context;
+    }
     public AdapterItem(List<Item> list) {
         this.list = list;
     }
@@ -35,12 +41,20 @@ public class AdapterItem extends RecyclerView.Adapter<AdapterItem.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         Item dataItem = list.get(position);
         holder.id.setText(dataItem.getId_kunjungan());
-        holder.nama.setText(dataItem.getKeluhan());
+        holder.nama.setText(dataItem.getNama_pasien());
+        String done = "";
+        if (dataItem.getStatus()== "2") {
+            done = "Sedang Diperiksa";
+        } else {
+            done = "Belum Selesai";
+        }
+        holder.status.setText(done);
+
         holder.dataItem = dataItem;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView id, nama, harga;
+        TextView id, nama, harga, status;
         Item dataItem;
 
         public ViewHolder(View itemView) {
@@ -48,6 +62,7 @@ public class AdapterItem extends RecyclerView.Adapter<AdapterItem.ViewHolder> {
 
             id = (TextView) itemView.findViewById(R.id.tvId);
             nama = (TextView) itemView.findViewById(R.id.tvNama);
+            status = itemView.findViewById(R.id.tvStatus);
 
         }
     }

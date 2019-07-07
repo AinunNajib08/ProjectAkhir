@@ -108,19 +108,6 @@ public class ActivityAtriana extends AppCompatActivity {
             }
         });
 
-        TextView t = findViewById(R.id.name);
-        t.setText(Html.fromHtml(getString(R.string.hello)));
-        Button f = findViewById(R.id.follow);
-        f.setText(Html.fromHtml(getString(R.string.follow)));
-        f.setMovementMethod(LinkMovementMethod.getInstance());
-        f.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse("http://www.twitter.com/umanoapp"));
-                startActivity(i);
-            }
-        });
     }
 
     @Override
@@ -279,18 +266,6 @@ public class ActivityAtriana extends AppCompatActivity {
 
                 mAdapter = new AdapterItem(mItems);
                 mRecycler.setAdapter(mAdapter);
-                mRecycler.addOnItemTouchListener(new RecyclerItemClickListener(ActivityAtriana.this, new
-                        RecyclerItemClickListener.OnItemClickListener() {
-                            @Override
-                            public void onItemClick(View view, int position) {
-                                Item item = mAdapter.getItem(position);
-                                Intent intent = new Intent(ActivityAtriana.this, PendaftaranPasien.class);
-                                intent.putExtra("item", item);
-                                startActivityForResult(intent, REQUEST_CODE_EDIT);
-                            }
-                        }));
-
-                mAdapter.notifyDataSetChanged();
 
             }
 

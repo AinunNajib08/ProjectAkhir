@@ -7,9 +7,28 @@ import java.io.Serializable;
  */
 
 public class Item implements Serializable {
+    String nama_pasien;
+
+    public String getNama_pasien() {
+        return nama_pasien;
+    }
+
+    public void setNama_pasien(String nama_pasien) {
+        this.nama_pasien = nama_pasien;
+    }
 
     String no_antrian;
     String keluhan;
+    String status;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     String jenis_kunjugan;
     String poli;
 

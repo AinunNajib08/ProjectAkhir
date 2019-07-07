@@ -64,6 +64,7 @@ public class ActivityAtrian extends AppCompatActivity {
     Context mcontext;
     SharedPrefManager sharedPrefManager;
     TextView tvAntrian, tvTime;
+    TextView tvSilahkan;
 
     public ActivityAtrian() {
     }
@@ -80,6 +81,9 @@ public class ActivityAtrian extends AppCompatActivity {
 
         progressDialog = new ProgressDialog(ActivityAtrian.this);
         sharedPrefManager = new SharedPrefManager(this);
+        TextView tvUsername = findViewById(R.id.username);
+        tvSilahkan = findViewById(R.id.tvSil);
+        tvUsername.setText(sharedPrefManager.getSpUsernama());
         tvTime = findViewById(R.id.time);
         NgampilData();
 
@@ -108,19 +112,6 @@ public class ActivityAtrian extends AppCompatActivity {
             }
         });
 
-        TextView t = findViewById(R.id.name);
-        t.setText(Html.fromHtml(getString(R.string.hello)));
-        Button f = findViewById(R.id.follow);
-        f.setText(Html.fromHtml(getString(R.string.follow)));
-        f.setMovementMethod(LinkMovementMethod.getInstance());
-        f.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse("http://www.twitter.com/umanoapp"));
-                startActivity(i);
-            }
-        });
     }
 
     @Override
@@ -247,6 +238,7 @@ public class ActivityAtrian extends AppCompatActivity {
             @Override
             public void onFinish() {
                 tvTime.setText("Silahkan Datang");
+                tvSilahkan.setVisibility(View.VISIBLE);
             }
         };
         timer.start();
@@ -279,18 +271,6 @@ public class ActivityAtrian extends AppCompatActivity {
 
                 mAdapter = new AdapterItem(mItems);
                 mRecycler.setAdapter(mAdapter);
-                mRecycler.addOnItemTouchListener(new RecyclerItemClickListener(ActivityAtrian.this, new
-                        RecyclerItemClickListener.OnItemClickListener() {
-                            @Override
-                            public void onItemClick(View view, int position) {
-                                Item item = mAdapter.getItem(position);
-                                Intent intent = new Intent(ActivityAtrian.this, PendaftaranPasien.class);
-                                intent.putExtra("item", item);
-                                startActivityForResult(intent, REQUEST_CODE_EDIT);
-                            }
-                        }));
-
-                mAdapter.notifyDataSetChanged();
 
             }
 

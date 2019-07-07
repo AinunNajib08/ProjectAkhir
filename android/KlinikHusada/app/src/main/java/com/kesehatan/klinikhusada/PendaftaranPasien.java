@@ -104,7 +104,6 @@ public class PendaftaranPasien extends AppCompatActivity {
             String keluhan = error.getText().toString();
             String jenis_kunjungan = error2.getText().toString();
             String poli = nyimpen.getText().toString();
-            String datapoli = ""+poli;
 
             sharedPrefManager = new SharedPrefManager(this);
             String no_rm = sharedPrefManager.getSpNoRm();
@@ -123,7 +122,7 @@ public class PendaftaranPasien extends AppCompatActivity {
                         Toast.makeText(PendaftaranPasien.this, "Terimakasih Sudah Mendaftar", Toast.LENGTH_SHORT).show();
                         finish();
                     } else {
-                        Toast.makeText(PendaftaranPasien.this, "Data gagal disimpan", Toast
+                        Toast.makeText(PendaftaranPasien.this, "Anda Sudah Mencapai Limit Pendaftaran", Toast
                                 .LENGTH_SHORT).show();
                     }
 

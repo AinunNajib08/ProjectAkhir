@@ -1,13 +1,19 @@
 package com.kesehatan.klinikhusada;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
+import android.net.Uri;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,30 +23,28 @@ import com.kesehatan.klinikhusada.Model.Item;
 import com.kesehatan.klinikhusada.Rest.ApiClient;
 import com.kesehatan.klinikhusada.Rest.ApiInterface;
 import com.kesehatan.klinikhusada.adapter.AdapterItem;
+import com.kesehatan.klinikhusada.apihelper.BaseApiService;
+import com.kesehatan.klinikhusada.apihelper.UtilsApi;
 import com.kesehatan.klinikhusada.apihelper.response.ItemListResponse;
 import com.kesehatan.klinikhusada.utils.RecyclerItemClickListener;
+import com.kesehatan.klinikhusada.utils.SharedPrefManager;
+import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ActivityAtrianb extends AppCompatActivity {
-
-    //CountUP
-
-    private TextView mTextViewCountDown;
-
-    private CountDownTimer mCountDownTimer;
-
-    private boolean mTimerRunning;
-
-    private long mTimeLeftInMillis;
-    private long mEndTime;
-
-    //Insert
 
     private RecyclerView mRecycler;
     private AdapterItem mAdapter;
@@ -48,29 +52,201 @@ public class ActivityAtrianb extends AppCompatActivity {
     private List<Item> mItems = new ArrayList<>();
     ProgressDialog progressDialog;
 
-    private static final int REQUEST_CODE_ADD = 1;
     private static final int REQUEST_CODE_EDIT = 2;
 
+    private static final String TAG = "DemoActivity";
+    private SlidingUpPanelLayout mLayout;
+
+    private long   mTimeLeftInMillis;
+
+    BaseApiService mbaseApiService;
+    ProgressDialog loading;
+    Context mcontext;
+    SharedPrefManager sharedPrefManager;
+    TextView tvAntrian, tvTime;
+
     public ActivityAtrianb() {
-        // Required empty public constructor
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_atrianb);
+        setContentView(R.layout.activity_atrian);
 
-        //CountUP
-//
-//        mTextViewCountDown = findViewById(R.id.text_view_countdown);
-
+        tvAntrian = findViewById(R.id.no_antrian);
+        mbaseApiService = UtilsApi.getAPIService();
+        loading = new ProgressDialog(ActivityAtrianb.this);
+        mcontext = this;
 
         progressDialog = new ProgressDialog(ActivityAtrianb.this);
+        sharedPrefManager = new SharedPrefManager(this);
+        tvTime = findViewById(R.id.time);
+        NgampilData();
+
         mRecycler = findViewById(R.id.itemRecycler);
         mManager = new LinearLayoutManager(ActivityAtrianb.this, LinearLayoutManager.VERTICAL, false);
         mRecycler.setLayoutManager(mManager);
-
         load();
+
+
+        mLayout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
+        mLayout.addPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener() {
+            @Override
+            public void onPanelSlide(View panel, float slideOffset) {
+                Log.i(TAG, "onPanelSlide, offset " + slideOffset);
+            }
+
+            @Override
+            public void onPanelStateChanged(View panel, SlidingUpPanelLayout.PanelState previousState, SlidingUpPanelLayout.PanelState newState) {
+                Log.i(TAG, "onPanelStateChanged " + newState);
+            }
+        });
+        mLayout.setFadeOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+            }
+        });
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.demo, menu);
+        MenuItem item = menu.findItem(R.id.action_toggle);
+        if (mLayout != null) {
+            if (mLayout.getPanelState() == SlidingUpPanelLayout.PanelState.HIDDEN) {
+                item.setTitle(R.string.action_show);
+            } else {
+                item.setTitle(R.string.action_hide);
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.action_toggle: {
+                if (mLayout != null) {
+                    if (mLayout.getPanelState() != SlidingUpPanelLayout.PanelState.HIDDEN) {
+                        mLayout.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN);
+                        item.setTitle(R.string.action_show);
+                    } else {
+                        mLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+                        item.setTitle(R.string.action_hide);
+                    }
+                }
+                return true;
+            }
+            case R.id.action_anchor: {
+                if (mLayout != null) {
+                    if (mLayout.getAnchorPoint() == 1.0f) {
+                        mLayout.setAnchorPoint(0.7f);
+                        mLayout.setPanelState(SlidingUpPanelLayout.PanelState.ANCHORED);
+                        item.setTitle(R.string.action_anchor_disable);
+                    } else {
+                        mLayout.setAnchorPoint(1.0f);
+                        mLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+                        item.setTitle(R.string.action_anchor_enable);
+                    }
+                }
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (mLayout != null &&
+                (mLayout.getPanelState() == SlidingUpPanelLayout.PanelState.EXPANDED || mLayout.getPanelState() == SlidingUpPanelLayout.PanelState.ANCHORED)) {
+            mLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    public void NgampilData(){
+
+        String keluhan = sharedPrefManager.getSpKeluhan();
+        String poli = sharedPrefManager.getSpKeluhan();
+        String no_rm = sharedPrefManager.getSpNoRm();
+        loading = ProgressDialog.show(mcontext,null , "Harap Tunggu ...", true, false);
+        mbaseApiService.getAntrian(keluhan, poli, no_rm)
+                .enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        if (response.isSuccessful()){
+                            loading.dismiss();
+                            try {
+                                JSONObject jsonRESULTS = new JSONObject(response.body().string());
+                                if (jsonRESULTS.getString("status").equals("true")){
+                                    JSONArray data = jsonRESULTS.getJSONArray("data");
+                                    for (int i=0; i <data.length(); i++) {
+                                        JSONObject jsonObject = data.getJSONObject(i);
+                                        String waktu = jsonObject.getString("estimasi");
+                                        String antrian = jsonObject.getString("no_antrian");
+                                        int gae = Integer.parseInt(waktu);
+                                        mTimeLeftInMillis = gae;
+                                        tvAntrian.setText(antrian);
+                                        Timer();
+
+                                    }
+
+                                } else {
+                                    String error_message = jsonRESULTS.getString("message");
+                                    Toast.makeText(mcontext, error_message, Toast.LENGTH_SHORT).show();
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        } else {
+                            loading.dismiss();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+                        Log.e("debug", "onFailure: ERROR > " + t.toString());
+                        loading.dismiss();
+                    }
+                });
+    }
+
+    public void Timer(){
+
+        CountDownTimer timer = new CountDownTimer(mTimeLeftInMillis, 1000) {
+            @Override
+            public void onTick(final long millSecondsLeftToFinish) {
+                mTimeLeftInMillis = millSecondsLeftToFinish;
+                updateCountDownText();
+            }
+
+            @Override
+            public void onFinish() {
+                tvTime.setText("Silahkan Datang");
+            }
+        };
+        timer.start();
+    }
+
+    private void updateCountDownText() {
+        int hour = (int) (mTimeLeftInMillis / 1000) / 3600;
+        int minutes = (int) ((mTimeLeftInMillis / 1000) / 60) % 60;
+        int seconds = (int) (mTimeLeftInMillis / 1000) % 60;
+
+        String timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d:%02d", hour, minutes, seconds);
+
+        tvTime.setText(timeLeftFormatted);
     }
 
     private void load() {
@@ -86,24 +262,10 @@ public class ActivityAtrianb extends AppCompatActivity {
                 progressDialog.hide();
                 Log.d("Response", "onResponse: " + response.body().getData());
 
-                Toast.makeText(ActivityAtrianb.this, "berhasil ambil data", Toast.LENGTH_SHORT).show();
-
                 mItems = response.body().getData();
 
                 mAdapter = new AdapterItem(mItems);
                 mRecycler.setAdapter(mAdapter);
-                mRecycler.addOnItemTouchListener(new RecyclerItemClickListener(ActivityAtrianb.this, new
-                        RecyclerItemClickListener.OnItemClickListener() {
-                            @Override
-                            public void onItemClick(View view, int position) {
-                                Item item = mAdapter.getItem(position);
-                                Intent intent = new Intent(ActivityAtrianb.this, PendaftaranPasien.class);
-                                intent.putExtra("item", item);
-                                startActivityForResult(intent, REQUEST_CODE_EDIT);
-                            }
-                        }));
-
-                mAdapter.notifyDataSetChanged();
 
             }
 
@@ -118,28 +280,6 @@ public class ActivityAtrianb extends AppCompatActivity {
 
 
     }
-
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        switch (requestCode) {
-            case REQUEST_CODE_ADD: {
-                if (resultCode == RESULT_OK && null != data) {
-                    if (data.getStringExtra("refreshFlag").equals("1")) {
-                        load();
-                    }
-                }
-                break;
-            }
-            case REQUEST_CODE_EDIT: {
-                if (resultCode == RESULT_OK && null != data) {
-                    if (data.getStringExtra("refreshFlag").equals("1")) {
-                        load();
-                    }
-                }
-                break;
-            }
-        }
-    }
 }
+
+

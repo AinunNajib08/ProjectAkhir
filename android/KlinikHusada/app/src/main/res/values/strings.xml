@@ -20,4 +20,6 @@
     <string name="hello"><![CDATA[<b>The Awesome Sliding Up Panel</b><br/> Brought to you by<br/><a href="http://umanoapp.com">http://umanoapp.com</a>]]></string>
     <string name="follow"><![CDATA[Follow us<br/>on <a href="http://twitter.com/umanoapp">Twitter</a>]]></string>
     <string name="nomor_antrian_kamu">Nomor Antrian Kamu</string>
+    <string name="lihat_detail">Lihat Detail</string>
+    <string name="nama_disini">Nama disini</string>
 </resources>
