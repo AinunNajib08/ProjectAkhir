@@ -8,14 +8,14 @@
   <meta name="author" content="Creative Tim">
   <title>Login</title>
   <!-- Favicon -->
-  <link href="<?php echo base_url('assets/img/brand/icon.png');?>" rel="icon" type="image/png">
+  <link href="<?php echo base_url('assets/img/brand/icon.png'); ?>" rel="icon" type="image/png">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <!-- Icons -->
-  <link href="<?php echo base_url('assets/vendor/nucleo/css/nucleo.css');?>" rel="stylesheet">
-  <link href="<?php echo base_url('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css');?>" rel="stylesheet">
+  <link href="<?php echo base_url('assets/vendor/nucleo/css/nucleo.css'); ?>" rel="stylesheet">
+  <link href="<?php echo base_url('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css'); ?>" rel="stylesheet">
   <!-- Argon CSS -->
-  <link type="text/css" href="<?php echo base_url('assets/css/argon.css?v=1.0.0');?>" rel="stylesheet">
+  <link type="text/css" href="<?php echo base_url('assets/css/argon.css?v=1.0.0'); ?>" rel="stylesheet">
 </head>
 
 <body class="bg-default">
@@ -46,10 +46,10 @@
               </div>
             </div>
           </div>
-    </div>
-  </div>
-</nav>
-<div class="header bg-gradient-primary py-7 py-lg-8">
+        </div>
+      </div>
+    </nav>
+    <div class="header bg-gradient-primary py-7 py-lg-8">
       <div class="container">
         <div class="header-body text-center mb-7">
           <div class="row justify-content-center">
@@ -72,7 +72,7 @@
           <div class="card bg-secondary shadow border-0">
             <div class="card-body px-lg-5 py-lg-5">
               <?= $this->session->flashdata('message'); ?>
-              <form role="form" method="post" action="<?php echo site_url('login_controler/index'); ?>">
+              <form role="form" method="post" action="<?php echo site_url('Logincontroler/index'); ?>">
                 <div class="Login mb-5" style="margin-left: 40%;">
                   <h1>Login</h1>
                 </div>
@@ -81,7 +81,7 @@
                     <div class="input-gr oup-prepend">
                       <span class="input-group-text"><i class="ni ni-circle-08"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Username" type="username" id="username" name="username" >
+                    <input class="form-control" placeholder="Username" type="username" id="username" name="username">
                   </div>
                   <?php echo form_error('username', '<small class="text-danger-pl-3">', '</small>'); ?>
                 </div>
@@ -101,7 +101,7 @@
             </div>
           </div>
         </div>
-      </div>  
+      </div>
     </div>
   </div>
 
@@ -116,10 +116,10 @@
       </div>
     </div>
   </footer>
-  <script src="<?php echo base_url('assets/vendor/jquery/dist/jquery.min.js');?>"></script>
-  <script src="<?php echo base_url('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js');?>"></script>
+  <script src="<?php echo base_url('assets/vendor/jquery/dist/jquery.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js'); ?>"></script>
   <!-- Argon JS -->
-  <script src="<?php echo base_url('assets/js/argon.js?v=1.0.0');?>"></script>
+  <script src="<?php echo base_url('assets/js/argon.js?v=1.0.0'); ?>"></script>
 </body>
 
 </html>
