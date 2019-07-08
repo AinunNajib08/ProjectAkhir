@@ -19,7 +19,7 @@ class Datakunjungan extends CI_Controller
         $data["kunjungan_pasien"] = $this->Mkunjungan_pasien->getAll();
         $this->load->view("admin/datakunjunganpasien", $data);
     }
-
+    
     public function tambah()
     {
         $pasien = $this->Mkunjungan_pasien;
