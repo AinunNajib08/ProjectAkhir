@@ -127,6 +127,7 @@ class Mdatapasien extends CI_Model
 
     public function jumlahdatapasien()
     {
-        $jumblahdatapasien = $this->db->query("SELECT COUNT(no_rm) FROM pasien");
+        $jumlahdatapasien = $this->db->query("SELECT COUNT(no_rm) FROM pasien");
+        return $jumlahdatapasien;
     }
 }

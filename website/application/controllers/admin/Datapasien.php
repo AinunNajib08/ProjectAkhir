@@ -64,4 +64,9 @@ class Datapasien extends CI_Controller
             redirect(site_url('Datapasien'));
         }
     }
+
+    public function jumlah()
+    {
+        $jumlahpasien = $this->Mdatapasien->jumlahdatapasien();
+    }
 }
