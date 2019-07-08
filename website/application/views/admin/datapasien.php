@@ -124,7 +124,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../admin/datakunjunganpasien">
+                        <a class="nav-link" href="../admin/datakunjungan">
                             <i class="ni ni-bullet-list-67 text-blue"></i> View Data Kunjungan Pasien
                         </a>
                     </li>
