@@ -87,8 +87,16 @@ class Mkunjungan_pasien extends CI_Model
         $sql = "SELECT count(id_kunjungan) as count FROM kunjungan_pasien";
         $result = $this->db->query($sql);
         return $result->row()->count;
+
     }
 
+    public function get_count1()
+    {
+        $sql1 = "SELECT count(no_rm) as count FROM pasien";
+        $resultt = $this->db->query($sql1);
+        return $resultt->row()->count;
+    }
+    
     public function save()
     {
         $post = $this->input->post();

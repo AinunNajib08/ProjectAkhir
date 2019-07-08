@@ -18,6 +18,7 @@ class Datakunjungan extends CI_Controller
     {
         $data["kunjungan_pasien"] = $this->Mkunjungan_pasien->getAll();
         $data['count'] = $this->Mkunjungan_pasien->get_count();
+        $data['count1'] = $this->Mkunjungan_pasien->get_count1();
         $this->load->view("admin/datakunjunganpasien", $data);
     }
     
