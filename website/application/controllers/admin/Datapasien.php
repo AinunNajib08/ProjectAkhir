@@ -18,6 +18,7 @@ class Datapasien extends CI_Controller
     {
 
         $data["pasien"] = $this->Mdatapasien->getAll();
+        $data['no_rm'] = $this->Mdatapasien->jumlahdatapasien();
         $this->load->view("admin/datapasien", $data);
     }
 
@@ -63,10 +64,5 @@ class Datapasien extends CI_Controller
         if ($this->Mdatapasien->delete($no_rm)) {
             redirect(site_url('Datapasien'));
         }
-    }
-
-    public function jumlah()
-    {
-        $jumlahpasien = $this->Mdatapasien->jumlahdatapasien();
     }
 }
