@@ -124,4 +124,10 @@ class Mdatapasien extends CI_Model
         }
         return "default.jpg";
     }
+
+    public function jumlahdatapasien()
+    {
+        $jumlahdatapasien = $this->db->query("SELECT COUNT(no_rm) FROM pasien");
+        return $jumlahdatapasien;
+    }
 }
