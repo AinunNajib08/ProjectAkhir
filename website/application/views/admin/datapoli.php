@@ -130,18 +130,6 @@
                 <i class="ni ni-single-02 text-yellow"></i> View Tujuan Pelayanan
               </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="../examples/tables.html">
-              <i class="ni ni-bullet-list-67 text-red"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../examples/login.html">
-              <i class="ni ni-key-25 text-info"></i>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../examples/register.html">
-              <i class="ni ni-circle-08 text-pink"></i>
             </a>
           </li>
         </ul>
