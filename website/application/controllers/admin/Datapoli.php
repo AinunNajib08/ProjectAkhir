@@ -18,6 +18,7 @@ class Datapoli extends CI_Controller
     {
 
         $data["poli"] = $this->Mdatapoli->getAll();
+        $data['count'] = $this->Mdatapoli->get_count();
         $this->load->view("admin/datapoli", $data);
     }
 

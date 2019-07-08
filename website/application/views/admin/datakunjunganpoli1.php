@@ -10,6 +10,9 @@
     <!-- Favicon -->
     <link href="<?= base_url('assets/img/brand/icon.png'); ?>" rel="icon" type="image/png">
     <!-- Fonts -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
     <!-- Icons -->
     <link href="<?= base_url('assets/vendor/nucleo/css/nucleo.css'); ?>" rel="stylesheet">
@@ -304,34 +307,30 @@
                             <table class="table align-items-center table-dark table-flush">
                                 <thead class="thead-dark">
                                     <tr>
-                                        <th>Id_kunjungan</th>
-                                        <th>No_urutkunjungan</th>
+                                        <th>No</th>
+                                        <th>No RM</th>
                                         <th>Tanggal</th>
-                                        <th>No_antrian</th>
+                                        <th>No Antrian</th>
                                         <th>Keluhan</th>
-                                        <th>Jenis_kunjungan</th>
-                                        <th>Kode_tujuan</th>
-                                        <th>No_rm</th>
-                                        <th>Poli</th>
-                                        <th>Aksi</th>
+                                        <th>J. Kunjungan</th>
+                                        <th align="center">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+
                                     <?php foreach ($kunjunganpoli1 as $data) : ?>
                                         <tr>
                                             <td><?php echo $data->id_kunjungan ?></td>
-                                            <td><?php echo $data->no_urutkunjungan ?></td>
+                                            <td><?php echo $data->no_rm ?></td>
                                             <td><?php echo $data->tanggal ?></td>
                                             <td><?php echo $data->no_antrian ?></td>
                                             <td><?php echo $data->keluhan ?></td>
                                             <td><?php echo $data->jenis_kunjungan ?></td>
-                                            <td><?php echo $data->kode_tujuan ?></td>
-                                            <td><?php echo $data->no_rm ?></td>
-                                            <td><?php echo $data->poli ?></td>
                                             <td>
-                                                <a href="<?php echo site_url('admin/Datakunjungantoday/edit/' . $data->id_kunjungan) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-                                                <a href="" class="btn btn-disabled"><i class="fas fa-eject "></i> Reset</a>
-                                                <a onclick="deleteConfirm" href="<?php echo site_url('admin/Datakunjungantoday/delete/' . $data->id_kunjungan) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i>Hapus</a>
+                                                <a href="<?php echo site_url('admin/Datakunjungantoday/edit/' . $data->id_kunjungan) ?>" class="btn btn-small"><i class="fas fa-edit"></i></a>
+                                                <a href="" class="btn btn-disabled"><i class="fa fa-refresh"></i></a>
+                                                <a onclick="deleteConfirm" href="<?php echo site_url('admin/Datakunjungantoday/delete/' . $data->id_kunjungan) ?>" class="btn btn-small text-danger"><i class="fa fa-close"></i></a>
+                                                <a href="<?php echo site_url('admin/Datakunjungantoday/edit/' . $data->no_rm . '/' . $data->no_antrian . '/' . $data->poli) ?>" class="btn btn-small"><i class="fa fa-arrow-right"></i></a>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>

@@ -136,29 +136,29 @@ class Mkunjungan_pasien extends CI_Model
 
     public function datakunjunganpoli1()
     {
-        $kunjunganpoli1 = $this->db->query("SELECT kunjungan_pasien.id_kunjungan, kunjungan_pasien.no_rm, kunjungan_pasien.no_urutkunjungan, kunjungan_pasien.tanggal, kunjungan_pasien.no_antrian, kunjungan_pasien.keluhan, kunjungan_pasien.jenis_kunjungan, kunjungan_pasien.kode_tujuan, kunjungan_pasien.poli, poli.poli, poli.poli FROM kunjungan_pasien, poli WHERE poli.poli=kunjungan_pasien.poli AND kunjungan_pasien.poli=1 ")->result();
-
+        $tanggal = date('Y-m-d');
+        $kunjunganpoli1 = $this->db->query("SELECT kunjungan_pasien.id_kunjungan, kunjungan_pasien.no_rm, kunjungan_pasien.no_urutkunjungan, kunjungan_pasien.tanggal, kunjungan_pasien.no_antrian, kunjungan_pasien.keluhan, kunjungan_pasien.jenis_kunjungan, kunjungan_pasien.kode_tujuan, kunjungan_pasien.poli FROM kunjungan_pasien WHERE tanggal = '$tanggal' AND kunjungan_pasien.poli=0 AND selesai = '0' ")->result();
         return $kunjunganpoli1;
     }
 
     public function datakunjunganpoli2()
     {
-        $kunjunganpoli2 = $this->db->query("SELECT kunjungan_pasien.id_kunjungan, kunjungan_pasien.no_rm, kunjungan_pasien.no_urutkunjungan, kunjungan_pasien.tanggal, kunjungan_pasien.no_antrian, kunjungan_pasien.keluhan, kunjungan_pasien.jenis_kunjungan, kunjungan_pasien.kode_tujuan, kunjungan_pasien.poli, poli.poli, poli.poli FROM kunjungan_pasien, poli WHERE poli.poli=kunjungan_pasien.poli AND kunjungan_pasien.poli=2 ")->result();
-
+        $tanggal = date('Y-m-d');
+        $kunjunganpoli2 = $this->db->query("SELECT kunjungan_pasien.id_kunjungan, kunjungan_pasien.no_rm, kunjungan_pasien.no_urutkunjungan, kunjungan_pasien.tanggal, kunjungan_pasien.no_antrian, kunjungan_pasien.keluhan, kunjungan_pasien.jenis_kunjungan, kunjungan_pasien.kode_tujuan, kunjungan_pasien.poli FROM kunjungan_pasien WHERE tanggal = '$tanggal' AND kunjungan_pasien.poli=1 AND selesai = '0' ")->result();
         return $kunjunganpoli2;
     }
 
     public function datakunjunganpoli3()
     {
-        $kunjunganpoli3 = $this->db->query("SELECT kunjungan_pasien.id_kunjungan, kunjungan_pasien.no_rm, kunjungan_pasien.no_urutkunjungan, kunjungan_pasien.tanggal, kunjungan_pasien.no_antrian, kunjungan_pasien.keluhan, kunjungan_pasien.jenis_kunjungan, kunjungan_pasien.kode_tujuan, kunjungan_pasien.poli, poli.poli, poli.poli FROM kunjungan_pasien, poli WHERE poli.poli=kunjungan_pasien.poli AND kunjungan_pasien.poli=3 ")->result();
-
+        $tanggal = date('Y-m-d');
+        $kunjunganpoli3 = $this->db->query("SELECT kunjungan_pasien.id_kunjungan, kunjungan_pasien.no_rm, kunjungan_pasien.no_urutkunjungan, kunjungan_pasien.tanggal, kunjungan_pasien.no_antrian, kunjungan_pasien.keluhan, kunjungan_pasien.jenis_kunjungan, kunjungan_pasien.kode_tujuan, kunjungan_pasien.poli FROM kunjungan_pasien WHERE tanggal = '$tanggal' AND kunjungan_pasien.poli=2 AND selesai = '0' ")->result();
         return $kunjunganpoli3;
     }
 
     public function datakunjunganpoli4()
     {
         $tanggal = date('Y-m-d');
-        $kunjunganpoli4 = $this->db->query("SELECT kunjungan_pasien.id_kunjungan, kunjungan_pasien.no_rm, kunjungan_pasien.no_urutkunjungan, kunjungan_pasien.tanggal, kunjungan_pasien.no_antrian, kunjungan_pasien.keluhan, kunjungan_pasien.jenis_kunjungan, kunjungan_pasien.kode_tujuan, kunjungan_pasien.poli FROM kunjungan_pasien WHERE tanggal = '$tanggal' AND kunjungan_pasien.poli=3 ")->result();
+        $kunjunganpoli4 = $this->db->query("SELECT kunjungan_pasien.id_kunjungan, kunjungan_pasien.no_rm, kunjungan_pasien.no_urutkunjungan, kunjungan_pasien.tanggal, kunjungan_pasien.no_antrian, kunjungan_pasien.keluhan, kunjungan_pasien.jenis_kunjungan, kunjungan_pasien.kode_tujuan, kunjungan_pasien.poli FROM kunjungan_pasien WHERE tanggal = '$tanggal' AND kunjungan_pasien.poli=3 AND selesai = '0' ")->result();
         return $kunjunganpoli4;
     }
 }

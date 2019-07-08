@@ -204,7 +204,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <h5 class="card-title text-uppercase text-muted mb-0">Data Tujuan Pelayanan</h5>
-                                            <span class="h2 font-weight-bold mb-0"></span>
+                                            <span class="h2 font-weight-bold mb-0"><?php echo $count; ?></span>
                                         </div>
                                         <div class="col-auto">
                                             <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
@@ -212,10 +212,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <p class="mt-3 mb-0 text-muted text-sm">
-                                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i></span>
-                                        <span class="text-nowrap"></span>
-                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -233,10 +229,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <p class="mt-3 mb-0 text-muted text-sm">
-                                        <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i></span>
-                                        <span class="text-nowrap"></span>
-                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -254,10 +246,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <p class="mt-3 mb-0 text-muted text-sm">
-                                        <span class="text-warning mr-2"><i class="fas fa-arrow-down"></i></span>
-                                        <span class="text-nowrap"></span>
-                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -275,10 +263,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <p class="mt-3 mb-0 text-muted text-sm">
-                                        <span class="text-success mr-2"><i class="fas fa-arrow-up"></i></span>
-                                        <span class="text-nowrap"></span>
-                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -306,7 +290,7 @@
                           <tr>
                             <td><?php echo $tujuan_pelayanan->kode_tujuan ?></td>
                             <td><?php echo $tujuan_pelayanan->tujuan_pelayanan ?></td>
-                            <td><?php echo $tujuan_pelayanan->id_poli ?></td>
+                            <td><?php echo $tujuan_pelayanan->poli ?></td>
                           </tr>
                         <?php endforeach; ?>
                       </thead>
