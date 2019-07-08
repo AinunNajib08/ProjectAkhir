@@ -40,12 +40,6 @@ class Mdatatujuan extends CI_Model
         return $this->db->get_where($this->_table, ["kode_tujuan" => $kode_tujuan])->row();
     }
 
-    public function get_count()
-    {
-        $sql = "SELECT count(kode_tujuan) as count FROM tujuan_pelayanan";
-        $result = $this->db->query($sql);
-        return $result->row()->count;
-    }
 
 
     public function save()
@@ -71,5 +65,34 @@ class Mdatatujuan extends CI_Model
     public function delete($kode_tujuan)
     {
         return $this->db->delete($this->_table, array("kode_tujuan" => $kode_tujuan));
+    }
+
+    public function get_count()
+    {
+        $sql = "SELECT count(no_rm) as count FROM pasien";
+        $result = $this->db->query($sql);
+        return $result->row()->count;
+
+    }
+
+    public function get_count1()
+    {
+        $sql1 = "SELECT count(id_kunjungan) as count FROM kunjungan_pasien";
+        $resultt = $this->db->query($sql1);
+        return $resultt->row()->count;
+    }
+
+    public function get_count2()
+    {
+        $sql2 = "SELECT count(id_poli) as count FROM poli";
+        $results = $this->db->query($sql2);
+        return $results->row()->count;
+    }
+
+    public function get_count3()
+    {
+        $sql3 = "SELECT count(kode_tujuan) as count FROM tujuan_pelayanan";
+        $resulth = $this->db->query($sql3);
+        return $resulth->row()->count;
     }
 }
