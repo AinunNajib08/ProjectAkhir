@@ -222,7 +222,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <h5 class="card-title text-uppercase text-muted mb-0">Kunjungan Pasien</h5>
-                                            <span class="h2 font-weight-bold mb-0"><?php echo $count1; ?></span>
+                                            <span class="h1 font-weight-bold mb-0"><?php echo $count1; ?></span>
                                         </div>
                                         <div class="col-auto">
                                             <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
@@ -238,7 +238,7 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <h4 class="card-title text-uppercase text-muted mb-0">Data Poli</h5>
+                                            <h5 class="card-title text-uppercase text-muted mb-0">Data Poli</h5>
                                             <span class="h1 font-weight-bold mb-0"><?php echo $count2; ?></span>
                                         </div>
                                         <div class="col-auto">
