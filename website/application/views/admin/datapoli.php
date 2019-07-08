@@ -205,7 +205,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <h5 class="card-title text-uppercase text-muted mb-0">Data Pasien</h5>
-                                            <span class="h1 font-weight-bold mb-0"></span>
+                                            <span class="h1 font-weight-bold mb-0"><?php echo $count; ?></span>
                                         </div>
                                         <div class="col-auto">
                                             <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
@@ -222,7 +222,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <h5 class="card-title text-uppercase text-muted mb-0">Kunjungan Pasien</h5>
-                                            <span class="h2 font-weight-bold mb-0"></span>
+                                            <span class="h2 font-weight-bold mb-0"><?php echo $count1; ?></span>
                                         </div>
                                         <div class="col-auto">
                                             <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
@@ -239,7 +239,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <h4 class="card-title text-uppercase text-muted mb-0">Data Poli</h5>
-                                            <span class="h1 font-weight-bold mb-0"><?php echo $count; ?></span>
+                                            <span class="h1 font-weight-bold mb-0"><?php echo $count2; ?></span>
                                         </div>
                                         <div class="col-auto">
                                             <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
@@ -256,7 +256,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <h5 class="card-title text-uppercase text-muted mb-0">Tujuan Pelayanan</h5>
-                                            <span class="h1 font-weight-bold mb-0"></span>
+                                            <span class="h1 font-weight-bold mb-0"><?php echo $count3; ?></span>
                                         </div>
                                         <div class="col-auto">
                                             <div class="icon icon-shape bg-info text-white rounded-circle shadow">
