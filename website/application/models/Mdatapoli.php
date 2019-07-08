@@ -59,14 +59,31 @@ class Mdatapoli extends CI_Model
 
     public function get_count()
     {
-        $sql = "SELECT count(id_poli) as count FROM poli";
+        $sql = "SELECT count(no_rm) as count FROM pasien";
         $result = $this->db->query($sql);
         return $result->row()->count;
-        
-        $sql1 = "SELECT count(id_kunjungan) as count1 FROM kunjungan_pasien";
+
+    }
+
+    public function get_count1()
+    {
+        $sql1 = "SELECT count(id_kunjungan) as count FROM kunjungan_pasien";
         $resultt = $this->db->query($sql1);
-        return $resultt->row()->count1;
-        
+        return $resultt->row()->count;
+    }
+
+    public function get_count2()
+    {
+        $sql2 = "SELECT count(id_poli) as count FROM poli";
+        $results = $this->db->query($sql2);
+        return $results->row()->count;
+    }
+
+    public function get_count3()
+    {
+        $sql3 = "SELECT count(kode_tujuan) as count FROM tujuan_pelayanan";
+        $resulth = $this->db->query($sql3);
+        return $resulth->row()->count;
     }
 
 }
