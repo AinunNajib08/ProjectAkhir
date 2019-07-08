@@ -56,4 +56,12 @@ class Mdatapoli extends CI_Model
     {
         return $this->db->delete($this->_table, array("id_poli" => $id_poli));
     }
+
+    public function get_count()
+    {
+        $sql = "SELECT count(id_poli) as count FROM poli";
+        $result = $this->db->query($sql);
+        return $result->row()->count;
+    }
+
 }
