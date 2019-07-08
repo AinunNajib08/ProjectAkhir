@@ -16,6 +16,7 @@
     <link href="<?= base_url('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css'); ?>" rel="stylesheet">
     <!-- Argon CSS -->
     <link type="text/css" href="<?= base_url('assets/css/argon.css?v=1.0.0'); ?>" rel="stylesheet">
+
 </head>
 
 <body>
@@ -325,7 +326,7 @@
                                             <td><?php echo $kunjungan_pasien->jenis_kunjungan ?></td>
                                             <td><?php echo $kunjungan_pasien->kode_tujuan ?></td>
                                             <td><?php echo $kunjungan_pasien->no_rm ?></td>
-                                            <td><?php echo $kunjungan_pasien->id_poli ?></td>
+                                            <td><?php echo $kunjungan_pasien->poli ?></td>
                                             <td>
                                                 <a href="<?php echo site_url('admin/Datakunjungan/edit/' . $kunjungan_pasien->id_kunjungan) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
                                                 <a onclick="deleteConfirm" href="<?php echo site_url('admin/Datakunjungan/delete/' . $kunjungan_pasien->id_kunjungan) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i>Hapus</a>

@@ -44,11 +44,12 @@ class Pendaftaranc extends REST_Controller
         $no_antrian = mysqli_fetch_assoc($antri);
 
         $poli = $this->post('poli');
+        $no_antriannew = $no_antrian['total'] + 1;
         $data = [
             'id_kunjungan' => "",
             'no_urutkunjungan' => $hasil['total'],
             'tanggal' => $tanggal,
-            'no_antrian' => $no_antrian['total'],
+            'no_antrian' => $no_antriannew,
             'keluhan' => $this->post('keluhan'),
             'jenis_kunjungan' => $this->post('jenis_kunjungan'),
             'poli' => $poli,
