@@ -17,7 +17,7 @@ class Datakunjungantoday extends CI_Controller
 	{
 
 		$tanggal = date('Y-m-d');
-		$where = array('tanggal' => $tanggal, 'poli' => "3");
+		$where = array('tanggal' => $tanggal, 'poli' => $poli);
 		$this->db->select('no_rm, COUNT(no_rm) as total');
 		$this->db->from('kunjungan_pasien');
 		$this->db->where($where);
@@ -33,7 +33,7 @@ class Datakunjungantoday extends CI_Controller
 				$estimasi = 0;
 				$selesai = 1;
 			} else if ($no_antrian == 2) {
-				$estimasi = 900000;
+				$estimasi = 0;
 				$selesai = 0;
 			} else {
 				$estimasi = 90000;
@@ -41,5 +41,6 @@ class Datakunjungantoday extends CI_Controller
 			$this->db->query("UPDATE kunjungan_pasien SET no_antrian = '$no_antriannew' , estimasi = '$estimasi', selesai = '$selesai' WHERE tanggal ='$tanggal' AND poli = $poli AND no_antrian = '$no_antrian'");
 			++$no_antrian;
 		}
+		redirect('admin/datakunjungan');
 	}
 }

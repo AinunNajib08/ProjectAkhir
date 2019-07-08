@@ -327,10 +327,10 @@
                                             <td><?php echo $data->keluhan ?></td>
                                             <td><?php echo $data->jenis_kunjungan ?></td>
                                             <td>
-                                                <a href="<?php echo site_url('admin/Datakunjungantoday/edit/' . $data->id_kunjungan) ?>" class="btn btn-small"><i class="fa fa-arrow-left"></i></a>
+                                                <a href="<?php echo site_url('admin/Datakunjungantoday/edit/' . $data->id_kunjungan) ?>" class="btn btn-small"><i class="fas fa-edit"></i></a>
                                                 <a href="" class="btn btn-disabled"><i class="fa fa-refresh"></i></a>
                                                 <a onclick="deleteConfirm" href="<?php echo site_url('admin/Datakunjungantoday/delete/' . $data->id_kunjungan) ?>" class="btn btn-small text-danger"><i class="fa fa-close"></i></a>
-                                                <a href="<?php echo site_url('admin/Datakunjungantoday/edit/' . $data->id_kunjungan) ?>" class="btn btn-small"><i class="fa fa-arrow-right"></i></a>
+                                                <a href="<?php echo site_url('admin/Datakunjungantoday/edit/' . $data->no_rm . '/' . $data->no_antrian . '/' . $data->poli) ?>" class="btn btn-small"><i class="fa fa-arrow-right"></i></a>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
