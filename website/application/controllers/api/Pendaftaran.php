@@ -44,7 +44,7 @@ class Pendaftaran extends REST_Controller
         $no_antrian = mysqli_fetch_assoc($antri);
         $no_rm = $this->post('no_rm');
 
-        $no_antriyan = mysqli_query($aVar, "SELECT count(*) as total from kunjungan_pasien WHERE tanggal='$tanggal' AND poli='$poli'");
+        $no_antriyan = mysqli_query($aVar, "SELECT count(*) as total from kunjungan_pasien WHERE tanggal='$tanggal' AND poli='$poli' AND selesai = '0'");
         $no_antrianyan = mysqli_fetch_assoc($no_antriyan);
 
         $estimasi = 0;
@@ -79,11 +79,12 @@ class Pendaftaran extends REST_Controller
         }
 
         $poli = $this->post('poli');
+        $no_antrianyannew = $no_antrianyan['total'] + 1;
         $data = [
             'id_kunjungan' => "",
             'no_urutkunjungan' => $hasil['total'],
             'tanggal' => $tanggal,
-            'no_antrian' => $no_antrianyan['total'],
+            'no_antrian' => $no_antrianyannew,
             'keluhan' => $this->post('keluhan'),
             'jenis_kunjungan' => $this->post('jenis_kunjungan'),
             'poli' => $poli,
