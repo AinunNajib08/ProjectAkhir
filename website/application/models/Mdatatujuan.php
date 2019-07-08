@@ -40,12 +40,6 @@ class Mdatatujuan extends CI_Model
         return $this->db->get_where($this->_table, ["kode_tujuan" => $kode_tujuan])->row();
     }
 
-    public function get_count()
-    {
-        $sql = "SELECT count(kode_tujuan) as count FROM tujuan_pelayanan";
-        $result = $this->db->query($sql);
-        return $result->row()->count;
-    }
 
 
     public function save()

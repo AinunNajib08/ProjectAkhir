@@ -19,7 +19,6 @@ class Datatujuan extends CI_Controller
 
         $data["tujuan_pelayanan"] = $this->Mdatatujuan->getAll();
         $data['count'] = $this->Mdatatujuan->get_count();
-        $data['count'] = $this->Mdatatujuan->get_count();
         $data['count1'] = $this->Mdatatujuan->get_count1();
         $data['count2'] = $this->Mdatatujuan->get_count2();
         $data['count3'] = $this->Mdatatujuan->get_count3();  
