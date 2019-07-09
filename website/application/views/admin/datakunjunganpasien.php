@@ -120,22 +120,22 @@
                 <!-- Navigation -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="../admin/datapasien">
+                        <a class="nav-link" href="../datapasien">
                             <i class="ni ni-tv-2 text-primary"></i> View Data Pasien
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../admin/datakunjungan">
+                        <a class="nav-link" href="../datakunjungan">
                             <i class="ni ni-bullet-list-67 text-blue"></i> View Data Kunjungan Pasien
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../admin/datapoli">
+                        <a class="nav-link" href="../datapoli">
                             <i class="ni ni-shop text-orange"></i> View Poliklinik
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../admin/datatujuan">
+                        <a class="nav-link" href="../datatujuan">
                             <i class="ni ni-single-02 text-yellow"></i> View Tujuan Pelayanan
                         </a>
                     </li>
