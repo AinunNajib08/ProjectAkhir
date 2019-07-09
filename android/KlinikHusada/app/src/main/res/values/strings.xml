@@ -22,5 +22,11 @@
     <string name="nomor_antrian_kamu">Nomor Antrian Kamu</string>
     <string name="lihat_detail">Lihat Detail</string>
     <string name="nama_disini">Nama disini</string>
-    <string name="nama_pasien">Nama Pasien</string>
+    <string name="nama_pasien">Ainun Najib</string>
+    <string name="no_rm">No RM        </string>
+    <string name="jenis_kelamin">Jenis Kelamin</string>
+    <string name="tempat_tgl_lahir">TTL  </string>
+    <string name="alamat">Alamat   </string>
+    <string name="email">Email   </string>
+    <string name="no_telepon">No Telepon</string>
 </resources>

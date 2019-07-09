@@ -9,71 +9,113 @@
     tools:context=".ActivityProfile">
 
 
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="158dp"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:src="@drawable/profile" />
+
 
     <TextView
         android:id="@+id/nama_pasien"
         android:layout_width="wrap_content"
         android:layout_height="33dp"
         android:layout_gravity="center"
-        android:textStyle="bold"
         android:text="@string/nama_pasien"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/NoRM"
-        android:layout_width="220dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:text="No RM"
+        android:layout_marginTop="20dp"
+        android:text="@string/no_rm"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/NoRM_user"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:text=": 123456789"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/jenis_kelamin"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/jenis_kelamin"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/jenis_kelamin_user"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:text=": Laki-Laki"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tempat_tgl_lahir"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/tempat_tgl_lahir"
         android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/tempat_tgl_lahir"
-        android:layout_width="220dp"
-        android:layout_height="35dp"
+        android:id="@+id/alamat"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
-        android:text="Jenis Kelamin"
+        android:text="@string/alamat"
         android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/tempat_tgl_lahir"
-        android:layout_width="220dp"
-        android:layout_height="35dp"
+        android:id="@+id/email_user"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
-        android:text="TTL"
+        android:text="@string/email"
         android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/tempat_tgl_lahir"
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
+        android:id="@+id/no_telepon"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
-        android:text="No RM"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/tempat_tgl_lahir"
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:text="No RM"
+        android:text="@string/no_telepon"
         android:textSize="20sp"
         android:textStyle="bold" />
 
