@@ -266,6 +266,7 @@
             <br>
             <br>
             <br>
+            <br>            <br>
             <br>
             <a class="btn btn-success" href="<?= site_url('admin/Datapasien/add'); ?>">Tambah Data Pasien</a>
             <div class="row mt-5">
