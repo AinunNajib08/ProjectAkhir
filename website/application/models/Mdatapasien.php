@@ -130,7 +130,6 @@ class Mdatapasien extends CI_Model
         $sql = "SELECT count(no_rm) as count FROM pasien";
         $result = $this->db->query($sql);
         return $result->row()->count;
-
     }
 
     public function get_count1()
@@ -152,5 +151,14 @@ class Mdatapasien extends CI_Model
         $sql3 = "SELECT count(kode_tujuan) as count FROM tujuan_pelayanan";
         $resulth = $this->db->query($sql3);
         return $resulth->row()->count;
+    }
+
+    public function searchpasien($keywoard)
+    {
+        $this->db->SELECT('*');
+        $this->db->FROM('pasien');
+        $this->db->LIKE('no_rm', $keywoard);
+        $this->db->or_like('tanggal_lahir', $keywoard);
+        return $this->db->get()->result();
     }
 }

@@ -21,7 +21,7 @@ class Datapasien extends CI_Controller
         $data['count'] = $this->Mdatapasien->get_count();
         $data['count1'] = $this->Mdatapasien->get_count1();
         $data['count2'] = $this->Mdatapasien->get_count2();
-        $data['count3'] = $this->Mdatapasien->get_count3(); 
+        $data['count3'] = $this->Mdatapasien->get_count3();
         $this->load->view("admin/datapasien", $data);
     }
 
@@ -67,5 +67,12 @@ class Datapasien extends CI_Controller
         if ($this->Mdatapasien->delete($no_rm)) {
             redirect(site_url('Datapasien'));
         }
+    }
+
+    public function pencarian()
+    {
+        $keywoard = $this->input->post('keywoard');
+        $data['pasien'] = $this->Mdatapasien->searchpasien($keywoard);
+        $this->load->view('pencarian', $data);
     }
 }

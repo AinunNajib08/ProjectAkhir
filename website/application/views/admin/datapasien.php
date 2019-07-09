@@ -149,7 +149,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-search"></i></span>
                             </div>
-                            <input class="form-control" placeholder="Search" type="text">
+                            <input class="form-control" placeholder="Search" type="search" name="keywoard">
                         </div>
                     </div>
                 </form>
@@ -184,8 +184,8 @@
         <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
             <div class="container-fluid">
                 <div class="header-body">
- <!-- Card stats -->
- <div class="row">
+                    <!-- Card stats -->
+                    <div class="row">
                         <div class="col-xl-3 col-lg-6">
                             <div class="card card-stats mb-4 mb-xl-0">
                                 <div class="card-body">
@@ -257,71 +257,71 @@
                     </div>
                 </div>
             </div>
-          <!-- Page content -->
-        <div class="container-fluid mt--7">
-            <!-- Table -->
-            <!-- Dark table -->
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>            <br>
-            <br>
-            <a class="btn btn-success" href="<?= site_url('admin/Datapasien/add'); ?>">Tambah Data Pasien</a>
-            <div class="row mt-5">
-                <div class="col">
-                    <div class="card bg-default shadow">
-                        <div class="card-header bg-transparent border-0">
-                            <h3 class="text-white mb-0">Tabel Data Pasien ;</h3>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table align-items-center table-dark table-flush">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th>No Rekam Medis</th>
-                                        <th>Nama Pasien</th>
-                                        <th>Usia</th>
-                                        <th>Foto</th>
-                                        <th>Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($pasien as $pasien) : ?>
+            <!-- Page content -->
+            <div class="container-fluid mt--7">
+                <!-- Table -->
+                <!-- Dark table -->
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br> <br>
+                <br>
+                <a class="btn btn-success" href="<?= site_url('admin/Datapasien/add'); ?>">Tambah Data Pasien</a>
+                <div class="row mt-5">
+                    <div class="col">
+                        <div class="card bg-default shadow">
+                            <div class="card-header bg-transparent border-0">
+                                <h3 class="text-white mb-0">Tabel Data Pasien ;</h3>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table align-items-center table-dark table-flush">
+                                    <thead class="thead-dark">
                                         <tr>
-                                            <td><?php echo $pasien->no_rm ?></td>
-                                            <td><?php echo $pasien->nama_pasien ?></td>
-                                            <td><?php echo $pasien->usia ?></td>
-                                            <td><?php echo $pasien->foto ?></td>
-                                            <td>
-                                                <a href="<?php echo site_url('admin/datapasien/edit/' . $pasien->no_rm) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-                                                <a onclick="deleteConfirm" href="<?php echo site_url('admin/datapasien/delete/' . $pasien->no_rm) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i>Hapus</a>
-                                            </td>
+                                            <th>No Rekam Medis</th>
+                                            <th>Nama Pasien</th>
+                                            <th>Usia</th>
+                                            <th>Foto</th>
+                                            <th>Aksi</th>
                                         </tr>
-                                    <?php endforeach; ?>
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($pasien as $pasien) : ?>
+                                            <tr>
+                                                <td><?php echo $pasien->no_rm ?></td>
+                                                <td><?php echo $pasien->nama_pasien ?></td>
+                                                <td><?php echo $pasien->usia ?></td>
+                                                <td><?php echo $pasien->foto ?></td>
+                                                <td>
+                                                    <a href="<?php echo site_url('admin/datapasien/edit/' . $pasien->no_rm) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
+                                                    <a onclick="deleteConfirm" href="<?php echo site_url('admin/datapasien/delete/' . $pasien->no_rm) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i>Hapus</a>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Footer -->
-            <footer class="footer mt-5">
-                <div class="row align-items-center justify-content-xl-between">
-                    <div class="col">
-                        <div class="copyright text-center text-xl-left text-muted">
-                            &copy; 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">The Hoax Team</a>
+                <!-- Footer -->
+                <footer class="footer mt-5">
+                    <div class="row align-items-center justify-content-xl-between">
+                        <div class="col">
+                            <div class="copyright text-center text-xl-left text-muted">
+                                &copy; 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">The Hoax Team</a>
+                            </div>
                         </div>
-                    </div>
-            </footer>
+                </footer>
+            </div>
         </div>
-    </div>
-    <!-- Argon Scripts -->
-    <!-- Core -->
-    <script src="<?= base_url('assets/vendor/jquery/dist/jquery.min.js'); ?>"></script>
-    <script src="<?= base_url('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js'); ?>"></script>
-    <!-- Argon JS -->
-    <script src="<?= base_url('assets/js/argon.js?v=1.0.0'); ?>"></script>
+        <!-- Argon Scripts -->
+        <!-- Core -->
+        <script src="<?= base_url('assets/vendor/jquery/dist/jquery.min.js'); ?>"></script>
+        <script src="<?= base_url('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js'); ?>"></script>
+        <!-- Argon JS -->
+        <script src="<?= base_url('assets/js/argon.js?v=1.0.0'); ?>"></script>
 </body>
 
 </html>
