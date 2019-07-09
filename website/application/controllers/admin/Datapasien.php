@@ -18,7 +18,10 @@ class Datapasien extends CI_Controller
     {
 
         $data["pasien"] = $this->Mdatapasien->getAll();
-        $data['no_rm'] = $this->Mdatapasien->jumlahdatapasien();
+        $data['count'] = $this->Mdatapasien->get_count();
+        $data['count1'] = $this->Mdatapasien->get_count1();
+        $data['count2'] = $this->Mdatapasien->get_count2();
+        $data['count3'] = $this->Mdatapasien->get_count3(); 
         $this->load->view("admin/datapasien", $data);
     }
 
