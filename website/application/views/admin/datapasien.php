@@ -266,8 +266,6 @@
                 <br>
                 <br>
                 <br>
-                <br> <br>
-                <br>
                 <a class="btn btn-success" href="<?= site_url('admin/Datapasien/add'); ?>">Tambah Data Pasien</a>
                 <div class="row mt-5">
                     <div class="col">
@@ -305,6 +303,15 @@
                         </div>
                     </div>
                 </div>
+                <<<<<<< HEAD=======<!-- Footer -->
+                    <footer class="footer mt-5">
+                        <div class="row align-items-center justify-content-xl-between">
+                            <div class="col">
+                                <div class="copyright text-center text-xl-left text-muted">
+                                    &copy; 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">The Hoax Team</a>
+                                </div>
+                            </div>
+                    </footer>
             </div>
         </div>
         <!-- Footer -->
