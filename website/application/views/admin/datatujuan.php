@@ -151,19 +151,9 @@
         <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
             <div class="container-fluid">
                 <!-- Brand -->
-                <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="../index.html">Tujuan 
-                Pelayanan</a>
+                <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="../index.html">Tujuan
+                    Pelayanan</a>
                 <!-- Form -->
-                <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
-                    <div class="form-group mb-0">
-                        <div class="input-group input-group-alternative">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-search"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="Search" type="search" name="keywoard">
-                        </div>
-                    </div>
-                </form>
                 <!-- User -->
                 <ul class="navbar-nav align-items-center d-none d-md-flex">
                     <li class="nav-item dropdown">
@@ -281,44 +271,45 @@
                 <br>
                 <br>
                 <div class="row mt-5">
-              <div class="col">
-                <div class="card bg-default shadow">
-                  <div class="card-header bg-transparent border-0">
-                    <h3 class="text-white mb-0">Tabel Tujuan Pelayanan</h3>
-                  </div>
-                  <div class="table-responsive">
-                    <table class="table align-items-center table-dark table-flush">
-                      <thead class="thead-dark">
-                        <tr>
-                          <th scope="col">Kode Tujuan</th>
-                          <th scope="col">Tujuan Pelayanan</th>
-                          <th scope="col">Nama Poli Tujuan</th>
-                        </tr>
-                        <?php foreach ($tujuan_pelayanan as $tujuan_pelayanan) : ?>
-                          <tr>
-                            <td><?php echo $tujuan_pelayanan->kode_tujuan ?></td>
-                            <td><?php echo $tujuan_pelayanan->tujuan_pelayanan ?></td>
-                            <td><?php echo $tujuan_pelayanan->poli ?></td>
-                          </tr>
-                        <?php endforeach; ?>
-                      </thead>
-                      <tbody>
-                        <tr>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <div class="col">
+                        <div class="card bg-default shadow">
+                            <div class="card-header bg-transparent border-0">
+                                <h3 class="text-white mb-0">Tabel Tujuan Pelayanan</h3>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table align-items-center table-dark table-flush">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">Kode Tujuan</th>
+                                            <th scope="col">Tujuan Pelayanan</th>
+                                            <th scope="col">Nama Poli Tujuan</th>
+                                        </tr>
+                                        <?php foreach ($tujuan_pelayanan as $tujuan_pelayanan) : ?>
+                                        <tr>
+                                            <td><?php echo $tujuan_pelayanan->kode_tujuan ?></td>
+                                            <td><?php echo $tujuan_pelayanan->tujuan_pelayanan ?></td>
+                                            <td><?php echo $tujuan_pelayanan->poli ?></td>
+                                        </tr>
+                                        <?php endforeach; ?>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
         <!-- Footer -->
         <footer class="footer bg-dark">
             <div class="row align-items-center justify-content-xl-between">
                 <div class="col">
                     <div class="copyright text-center my-auto text-white">
-                        &copy; 2019 <a href="https://www.youtube.com/channel/UCZo1dcj-RKSl2oLqpxJFI8A" class="font-weight-bold ml-1" target="_blank">The Hoax Team</a>
+                        &copy; 2019 <a href="https://www.youtube.com/channel/UCZo1dcj-RKSl2oLqpxJFI8A"
+                            class="font-weight-bold ml-1" target="_blank">The Hoax Team</a>
                     </div>
                 </div>
         </footer>
