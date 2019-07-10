@@ -12,6 +12,7 @@ class Datapasien extends CI_Controller
         }
         $this->load->model("Mdatapasien");
         $this->load->library('form_validation');
+        $this->load->helper('url');
     }
 
     public function index()
