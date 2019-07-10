@@ -151,7 +151,7 @@
             <div class="container-fluid">
                 <!-- Brand -->
                 <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="../index.html">Kunjungan
-                Pasien Poli Umum</a>
+                    Pasien Poli Umum</a>
                 <!-- Form -->
                 <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
                     <div class="form-group mb-0">
@@ -205,7 +205,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <h5 class="card-title text-uppercase text-muted mb-0">Data Pasien</h5>
-                                            <span class="h1 font-weight-bold mb-0"><?php echo $count; ?></span>
+                                            <span class="h1 font-weight-bold mb-0"><?php echo $count4; ?></span>
                                         </div>
                                         <div class="col-auto">
                                             <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
@@ -222,7 +222,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <h5 class="card-title text-uppercase text-muted mb-0">Kunjungan Pasien</h5>
-                                            <span class="h1 font-weight-bold mb-0"><?php echo $count1; ?></span>
+                                            <span class="h1 font-weight-bold mb-0"><?php echo $count5; ?></span>
                                         </div>
                                         <div class="col-auto">
                                             <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
@@ -239,7 +239,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <h5 class="card-title text-uppercase text-muted mb-0">Data Poli</h5>
-                                            <span class="h1 font-weight-bold mb-0"><?php echo $count2; ?></span>
+                                            <span class="h1 font-weight-bold mb-0"><?php echo $count6; ?></span>
                                         </div>
                                         <div class="col-auto">
                                             <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
@@ -256,7 +256,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <h5 class="card-title text-uppercase text-muted mb-0">Tujuan Pelayanan</h5>
-                                            <span class="h1 font-weight-bold mb-0"><?php echo $count3; ?></span>
+                                            <span class="h1 font-weight-bold mb-0"><?php echo $count7; ?></span>
                                         </div>
                                         <div class="col-auto">
                                             <div class="icon icon-shape bg-info text-white rounded-circle shadow">
@@ -280,65 +280,66 @@
                 <br>
                 <br>
                 <a class="btn btn-success" href="<?= site_url('admin/Datakunjunganpoli2'); ?>">Kunjungan poli Gigi</a>
-            <a class="btn btn-success" href="<?= site_url('admin/Datakunjunganpoli3'); ?>">Kunjungan poli Mata</a>
-            <a class="btn btn-success" href="<?= site_url('admin/Datakunjunganpoli4'); ?>">Kunjungan poli Ibu dan
-                Anak</a>
-            <div class="row mt-5">
-                <div class="col">
-                    <div class="card bg-default shadow">
-                        <div class="card-header bg-transparent border-0">
-                            <h3 class="text-white mb-0">Tabel Data Kunjungan Poli Umum</h3>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table align-items-center table-dark table-flush">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th>No</th>
-                                        <th>No RM</th>
-                                        <th>Tanggal</th>
-                                        <th>No Antrian</th>
-                                        <th>Keluhan</th>
-                                        <th>J. Kunjungan</th>
-                                        <th align="center">Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+                <a class="btn btn-success" href="<?= site_url('admin/Datakunjunganpoli3'); ?>">Kunjungan poli Mata</a>
+                <a class="btn btn-success" href="<?= site_url('admin/Datakunjunganpoli4'); ?>">Kunjungan poli Ibu dan
+                    Anak</a>
+                <div class="row mt-5">
+                    <div class="col">
+                        <div class="card bg-default shadow">
+                            <div class="card-header bg-transparent border-0">
+                                <h3 class="text-white mb-0">Tabel Data Kunjungan Poli Umum</h3>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table align-items-center table-dark table-flush">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th>No</th>
+                                            <th>No RM</th>
+                                            <th>Tanggal</th>
+                                            <th>No Antrian</th>
+                                            <th>Keluhan</th>
+                                            <th>J. Kunjungan</th>
+                                            <th align="center">Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
 
-                                    <?php foreach ($kunjunganpoli1 as $data) : ?>
-                                    <tr>
-                                        <td><?php echo $data->id_kunjungan ?></td>
-                                        <td><?php echo $data->no_rm ?></td>
-                                        <td><?php echo $data->tanggal ?></td>
-                                        <td><?php echo $data->no_antrian ?></td>
-                                        <td><?php echo $data->keluhan ?></td>
-                                        <td><?php echo $data->jenis_kunjungan ?></td>
-                                        <td>
-                                            <a href="<?php echo site_url('admin/Datakunjungantoday/edit/' . $data->id_kunjungan) ?>"
-                                                class="btn btn-small"><i class="fas fa-edit"></i></a>
-                                            <a href="" class="btn btn-disabled"><i class="fa fa-refresh"></i></a>
-                                            <a onclick="deleteConfirm"
-                                                href="<?php echo site_url('admin/Datakunjungantoday/delete/' . $data->id_kunjungan) ?>"
-                                                class="btn btn-small text-danger"><i class="fa fa-close"></i></a>
-                                            <a href="<?php echo site_url('admin/Datakunjungantoday/edit/' . $data->no_rm . '/' . $data->no_antrian . '/' . $data->poli) ?>"
-                                                class="btn btn-small"><i class="fa fa-arrow-right"></i></a>
-                                        </td>
-                                    </tr>
-                                    <?php endforeach; ?>
-                                <tbody>
-                                </tbody>
-                            </table>
+                                        <?php foreach ($kunjunganpoli1 as $data) : ?>
+                                        <tr>
+                                            <td><?php echo $data->id_kunjungan ?></td>
+                                            <td><?php echo $data->no_rm ?></td>
+                                            <td><?php echo $data->tanggal ?></td>
+                                            <td><?php echo $data->no_antrian ?></td>
+                                            <td><?php echo $data->keluhan ?></td>
+                                            <td><?php echo $data->jenis_kunjungan ?></td>
+                                            <td>
+                                                <a href="<?php echo site_url('admin/Datakunjungantoday/edit/' . $data->id_kunjungan) ?>"
+                                                    class="btn btn-small"><i class="fas fa-edit"></i></a>
+                                                <a href="" class="btn btn-disabled"><i class="fa fa-refresh"></i></a>
+                                                <a onclick="deleteConfirm"
+                                                    href="<?php echo site_url('admin/Datakunjungantoday/delete/' . $data->id_kunjungan) ?>"
+                                                    class="btn btn-small text-danger"><i class="fa fa-close"></i></a>
+                                                <a href="<?php echo site_url('admin/Datakunjungantoday/edit/' . $data->no_rm . '/' . $data->no_antrian . '/' . $data->poli) ?>"
+                                                    class="btn btn-small"><i class="fa fa-arrow-right"></i></a>
+                                            </td>
+                                        </tr>
+                                        <?php endforeach; ?>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
         <!-- Footer -->
         <footer class="footer bg-dark">
             <div class="row align-items-center justify-content-xl-between">
                 <div class="col">
                     <div class="copyright text-center my-auto text-white">
-                        &copy; 2019 <a href="https://www.youtube.com/channel/UCZo1dcj-RKSl2oLqpxJFI8A" class="font-weight-bold ml-1" target="_blank">The Hoax Team</a>
+                        &copy; 2019 <a href="https://www.youtube.com/channel/UCZo1dcj-RKSl2oLqpxJFI8A"
+                            class="font-weight-bold ml-1" target="_blank">The Hoax Team</a>
                     </div>
                 </div>
         </footer>

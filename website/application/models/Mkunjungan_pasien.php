@@ -111,6 +111,38 @@ class Mkunjungan_pasien extends CI_Model
         return $resulth->row()->count;
     }
     
+    public function get_count4()
+    {
+        $tanggal = date('Y-m-d');
+        $sql4 = "SELECT count(id_kunjungan) as count FROM kunjungan_pasien WHERE tanggal = '$tanggal' AND kunjungan_pasien.poli=0 AND selesai = '0'";
+        $resulth = $this->db->query($sql4);
+        return $resulth->row()->count;
+    }
+
+    public function get_count5()
+    {
+        $tanggal = date('Y-m-d');
+        $sql5 = "SELECT count(id_kunjungan) as count FROM kunjungan_pasien WHERE tanggal = '$tanggal' AND kunjungan_pasien.poli=1 AND selesai = '0'";
+        $resulth = $this->db->query($sql5);
+        return $resulth->row()->count;
+    }
+
+    public function get_count6()
+    {
+        $tanggal = date('Y-m-d');
+        $sql6 = "SELECT count(id_kunjungan) as count FROM kunjungan_pasien WHERE tanggal = '$tanggal' AND kunjungan_pasien.poli=2 AND selesai = '0'";
+        $resulth = $this->db->query($sql6);
+        return $resulth->row()->count;
+    }
+
+    public function get_count7()
+    {
+        $tanggal = date('Y-m-d');
+        $sql7 = "SELECT count(id_kunjungan) as count FROM kunjungan_pasien WHERE tanggal = '$tanggal' AND kunjungan_pasien.poli=3 AND selesai = '0'";
+        $resulth = $this->db->query($sql7);
+        return $resulth->row()->count;
+    }
+
     public function save()
     {
         $post = $this->input->post();
