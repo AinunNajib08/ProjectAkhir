@@ -35,7 +35,7 @@ class Datakunjungantoday extends CI_Controller
 			} else if ($no_antrian == 2) {
 				$estimasi = 0;
 				$selesai = 0;
-			} else {
+			} else if ($no_antrian == 3) {
 				$estimasi = 90000;
 			}
 			$this->db->query("UPDATE kunjungan_pasien SET no_antrian = '$no_antriannew' , estimasi = '$estimasi', selesai = '$selesai' WHERE tanggal ='$tanggal' AND poli = $poli AND no_antrian = '$no_antrian'");
