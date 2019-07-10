@@ -17,10 +17,10 @@ class Datakunjunganpoli3 extends CI_Controller
     public function index()
     {
         $data["kunjunganpoli3"] = $this->Mkunjungan_pasien->datakunjunganpoli3();
-        $data['count'] = $this->Mkunjungan_pasien->get_count();
-        $data['count1'] = $this->Mkunjungan_pasien->get_count1();
-        $data['count2'] = $this->Mkunjungan_pasien->get_count2();
-        $data['count3'] = $this->Mkunjungan_pasien->get_count3();
+        $data['count4'] = $this->Mkunjungan_pasien->get_count4();
+        $data['count5'] = $this->Mkunjungan_pasien->get_count5();
+        $data['count6'] = $this->Mkunjungan_pasien->get_count6();
+        $data['count7'] = $this->Mkunjungan_pasien->get_count7();;
         $this->load->view("admin/datakunjunganpoli3", $data);
     }
 
