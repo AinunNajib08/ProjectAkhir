@@ -101,15 +101,13 @@ public class PendaftaranPasien extends AppCompatActivity {
 
             refreshFlag = "1";
 
-            String keluhan = error.getText().toString();
-            String jenis_kunjungan = error2.getText().toString();
-            String poli = nyimpen.getText().toString();
+
 
             sharedPrefManager = new SharedPrefManager(this);
             String no_rm = sharedPrefManager.getSpNoRm();
-            sharedPrefManager.saveSPString(SharedPrefManager.SP_POLI, poli);
-            sharedPrefManager.saveSPString(SharedPrefManager.SP_KELUHAN, keluhan);
-
+            String keluhan = error.getText().toString();
+            String jenis_kunjungan = error2.getText().toString();
+            String poli = nyimpen.getText().toString();
             ApiInterface api = ApiClient.getClient().create(ApiInterface.class);
             Call<StatusResponse> postItem = api.postItem(keluhan, jenis_kunjungan, poli, no_rm);
             postItem.enqueue(new Callback<StatusResponse>() {
@@ -119,6 +117,11 @@ public class PendaftaranPasien extends AppCompatActivity {
                     String status = response.body().getStatus();
 
                     if (status.equals("success")) {
+                        String keluhan = error.getText().toString();
+                        String jenis_kunjungan = error2.getText().toString();
+                        String poli = nyimpen.getText().toString();
+                        sharedPrefManager.saveSPString(SharedPrefManager.SP_POLI, poli);
+                        sharedPrefManager.saveSPString(SharedPrefManager.SP_KELUHAN, keluhan);
                         Toast.makeText(PendaftaranPasien.this, "Terimakasih Sudah Mendaftar", Toast.LENGTH_SHORT).show();
                         finish();
                     } else {

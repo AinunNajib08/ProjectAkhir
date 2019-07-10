@@ -110,7 +110,7 @@
             android:text="Lupa Password ?"
             android:textColor="@android:color/darker_gray"
             android:fontFamily="@font/robotoregular"
-            android:textSize="12dp"
+            android:textSize="12sp"
             android:layout_marginRight="5dp"
             android:textStyle="bold|italic"
             android:layout_marginLeft="50dp"
@@ -121,25 +121,10 @@
 
     <Button
         android:id="@+id/buttonlog"
-        android:layout_marginLeft="-20dp"
+        android:layout_marginStart="-20dp"
         android:layout_marginTop="20dp"
-        android:text="Masuk"
-        android:textSize="22dp"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        android:fontFamily="@font/robotoregular"
-        android:layout_gravity="center"
-        android:background="@drawable/buttondata"
-        android:layout_width="196dp"
-        android:layout_height="48dp" />
-
-    <Button
-        android:id="@+id/buttonwik"
-        android:layout_marginLeft="-20dp"
-        android:layout_marginTop="20dp"
-        android:text="Bawik"
-        android:onClick="bawik"
-        android:textSize="22dp"
+        android:text="@string/masuk"
+        android:textSize="22sp"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:fontFamily="@font/robotoregular"

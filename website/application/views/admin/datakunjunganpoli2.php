@@ -25,8 +25,7 @@
     <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
         <div class="container-fluid">
             <!-- Toggler -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main"
-                aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!-- Brand -->
@@ -36,12 +35,10 @@
             <!-- User -->
             <ul class="nav align-items-center d-md-none">
                 <li class="nav-item dropdown">
-                    <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">
+                    <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="ni ni-bell-55"></i>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right"
-                        aria-labelledby="navbar-default_dropdown_1">
+                    <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
                         <a class="dropdown-item" href="#">Action</a>
                         <a class="dropdown-item" href="#">Another action</a>
                         <div class="dropdown-divider"></div>
@@ -49,12 +46,10 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">
+                    <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="media align-items-center">
                             <span class="avatar avatar-sm rounded-circle">
-                                <img alt="Image placeholder"
-                                    src="<?= base_url('assets/img/theme/team-1-800x800.jpg'); ?>">
+                                <img alt="Image placeholder" src="<?= base_url('assets/img/theme/team-1-800x800.jpg'); ?>">
                             </span>
                         </div>
                     </a>
@@ -97,9 +92,7 @@
                             </a>
                         </div>
                         <div class="col-6 collapse-close">
-                            <button type="button" class="navbar-toggler" data-toggle="collapse"
-                                data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false"
-                                aria-label="Toggle sidenav">
+                            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
                                 <span></span>
                                 <span></span>
                             </button>
@@ -109,8 +102,7 @@
                 <!-- Form -->
                 <form class="mt-4 mb-3 d-md-none">
                     <div class="input-group input-group-rounded input-group-merge">
-                        <input type="search" class="form-control form-control-rounded form-control-prepended"
-                            placeholder="Search" aria-label="Search">
+                        <input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="Search" aria-label="Search">
                         <div class="input-group-prepend">
                             <div class="input-group-text">
                                 <span class="fa fa-search"></span>
@@ -151,7 +143,7 @@
             <div class="container-fluid">
                 <!-- Brand -->
                 <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="../index.html">Kunjungan
-                Pasien</a>
+                    Pasien</a>
                 <!-- Form -->
                 <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
                     <div class="form-group mb-0">
@@ -166,16 +158,13 @@
                 <!-- User -->
                 <ul class="navbar-nav align-items-center d-none d-md-flex">
                     <li class="nav-item dropdown">
-                        <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
+                        <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="media align-items-center">
                                 <span class="avatar avatar-sm rounded-circle">
-                                    <img alt="Image placeholder"
-                                        src="<?= base_url('assets/img/brand/usericon.png'); ?>">
+                                    <img alt="Image placeholder" src="<?= base_url('assets/img/brand/usericon.png'); ?>">
                                 </span>
                                 <div class="media-body ml-2 d-none d-lg-block">
-                                    <span
-                                        class="mb-0 text-sm  font-weight-bold"><?= $this->session->userdata('username'); ?></span>
+                                    <span class="mb-0 text-sm  font-weight-bold"><?= $this->session->userdata('username'); ?></span>
                                 </div>
                             </div>
                         </a>
@@ -280,58 +269,54 @@
                 <br>
                 <br>
                 <a class="btn btn-success" href="<?= site_url('admin/Datakunjunganpoli1'); ?>">Kunjungan poli Umum</a>
-            <a class="btn btn-success" href="<?= site_url('admin/Datakunjunganpoli3'); ?>">Kunjungan poli Mata</a>
-            <a class="btn btn-success" href="<?= site_url('admin/Datakunjunganpoli4'); ?>">Kunjungan poli Ibu dan
-                Anak</a>
-            <div class="row mt-5">
-                <div class="col">
-                    <div class="card bg-default shadow">
-                        <div class="card-header bg-transparent border-0">
-                            <h3 class="text-white mb-0">Tabel Data Kunjungan Poli gigi</h3>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table align-items-center table-dark table-flush">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th>No</th>
-                                        <th>No RM</th>
-                                        <th>Tanggal</th>
-                                        <th>No Antrian</th>
-                                        <th>Keluhan</th>
-                                        <th>J. Kunjungan</th>
-                                        <th align="center">Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+                <a class="btn btn-success" href="<?= site_url('admin/Datakunjunganpoli3'); ?>">Kunjungan poli Mata</a>
+                <a class="btn btn-success" href="<?= site_url('admin/Datakunjunganpoli4'); ?>">Kunjungan poli Ibu dan
+                    Anak</a>
+                <div class="row mt-5">
+                    <div class="col">
+                        <div class="card bg-default shadow">
+                            <div class="card-header bg-transparent border-0">
+                                <h3 class="text-white mb-0">Tabel Data Kunjungan Poli gigi</h3>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table align-items-center table-dark table-flush">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th>No</th>
+                                            <th>No RM</th>
+                                            <th>Tanggal</th>
+                                            <th>No Antrian</th>
+                                            <th>Keluhan</th>
+                                            <th>J. Kunjungan</th>
+                                            <th align="center">Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
 
-                                    <?php foreach ($kunjunganpoli4 as $data) : ?>
-                                    <tr>
-                                        <td><?php echo $data->id_kunjungan ?></td>
-                                        <td><?php echo $data->no_rm ?></td>
-                                        <td><?php echo $data->tanggal ?></td>
-                                        <td><?php echo $data->no_antrian ?></td>
-                                        <td><?php echo $data->keluhan ?></td>
-                                        <td><?php echo $data->jenis_kunjungan ?></td>
-                                        <td>
-                                            <a href="<?php echo site_url('admin/Datakunjungantoday/edit/' . $data->id_kunjungan) ?>"
-                                                class="btn btn-small"><i class="fas fa-edit"></i></a>
-                                            <a href="" class="btn btn-disabled"><i class="fa fa-refresh"></i></a>
-                                            <a onclick="deleteConfirm"
-                                                href="<?php echo site_url('admin/Datakunjungantoday/delete/' . $data->id_kunjungan) ?>"
-                                                class="btn btn-small text-danger"><i class="fa fa-close"></i></a>
-                                            <a href="<?php echo site_url('admin/Datakunjungantoday/edit/' . $data->no_rm . '/' . $data->no_antrian . '/' . $data->poli) ?>"
-                                                class="btn btn-small"><i class="fa fa-arrow-right"></i></a>
-                                        </td>
-                                    </tr>
-                                    <?php endforeach; ?>
-                                <tbody>
-                                </tbody>
-                            </table>
+                                        <?php foreach ($kunjunganpoli2 as $data) : ?>
+                                            <tr>
+                                                <td><?php echo $data->id_kunjungan ?></td>
+                                                <td><?php echo $data->no_rm ?></td>
+                                                <td><?php echo $data->tanggal ?></td>
+                                                <td><?php echo $data->no_antrian ?></td>
+                                                <td><?php echo $data->keluhan ?></td>
+                                                <td><?php echo $data->jenis_kunjungan ?></td>
+                                                <td>
+                                                    <a href="<?php echo site_url('admin/Datakunjungantoday/edit/' . $data->id_kunjungan) ?>" class="btn btn-small"><i class="fas fa-edit"></i></a>
+                                                    <a href="" class="btn btn-disabled"><i class="fa fa-refresh"></i></a>
+                                                    <a onclick="deleteConfirm" href="<?php echo site_url('admin/Datakunjungantoday/delete/' . $data->id_kunjungan) ?>" class="btn btn-small text-danger"><i class="fa fa-close"></i></a>
+                                                    <a href="<?php echo site_url('admin/Datakunjungantoday/edit/' . $data->no_rm . '/' . $data->no_antrian . '/' . $data->poli) ?>" class="btn btn-small"><i class="fa fa-arrow-right"></i></a>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
         <!-- Footer -->
         <footer class="footer bg-dark">
