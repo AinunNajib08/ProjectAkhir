@@ -153,12 +153,11 @@ class Mdatapasien extends CI_Model
         return $resulth->row()->count;
     }
 
-    public function searchpasien($keywoard)
+    public function searchpasien($no_rm)
     {
-        $this->db->SELECT('*');
-        $this->db->FROM('pasien');
-        $this->db->LIKE('no_rm', $keywoard);
-        $this->db->or_like('tanggal_lahir', $keywoard);
-        return $this->db->get()->result();
+        $this->db->SELECT("*");
+        $this->db->from("pasien");
+        $this->db->LIKE($no_rm);
+        return $this->db->get($this->_table)->result();
     }
 }

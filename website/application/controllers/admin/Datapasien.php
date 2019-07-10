@@ -13,6 +13,7 @@ class Datapasien extends CI_Controller
         $this->load->model("Mdatapasien");
         $this->load->library('form_validation');
         $this->load->helper('url');
+        $this->load->helper('form');
     }
 
     public function index()
@@ -72,8 +73,11 @@ class Datapasien extends CI_Controller
 
     public function pencarian()
     {
-        $keywoard = $this->input->post('keywoard');
-        $data['pasien'] = $this->Mdatapasien->searchpasien($keywoard);
-        $this->load->view('pencarian', $data);
+        $keyword = $this->input->post('keyword');
+        $this->db->like('no_rm', $keyword);
+        $this->db->or_like('nama_pasien', $keyword);
+        $this->db->or_like('usia', $keyword);
+        $query['pasien'] = $this->db->get('pasien')->result();
+        $this->load->view('admin/datapasien', $query);
     }
 }

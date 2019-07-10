@@ -143,10 +143,7 @@
                 <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="../index.html">data
                     pasien</a>
                 <!-- Form -->
-                <form class="form-inline" style="margin-left:45%;" method="post" action="<?php echo site_url("Datapasien/pencarian"); ?>">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" name="keywoard" aria-label="Search">
-                    <button class="btn btn-success my-2 my-sm-0" value="cari" type="submit">Search</button>
-                </form>
+
                 <!-- User -->
                 <ul class="navbar-nav align-items-center d-none d-md-flex">
                     <li class="nav-item dropdown">
