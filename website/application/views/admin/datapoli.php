@@ -270,8 +270,9 @@
             <!-- Page content -->
             <div class="container-fluid mt--7">
                 <!-- Table -->
-<!-- Dark table -->
-<br>
+                <!-- Dark table -->
+                <br>
+                <br>
                 <br>
                 <br>
                 <br>
@@ -311,13 +312,12 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-</body>
+        </div>
         <!-- Footer -->
         <footer class="footer bg-dark">
             <div class="row align-items-center justify-content-xl-between">
