@@ -65,7 +65,7 @@ class Datakunjungan extends CI_Controller
         if (!isset($id_kunjungan)) show_404();
 
         if ($this->Mkunjungan_pasien->delete($id_kunjungan)) {
-            redirect(site_url('Datakunjungan'));
+            redirect(site_url('admin/Datakunjungan'));
         }
     }
 }
