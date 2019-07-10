@@ -11,6 +11,9 @@
     <link href="<?= base_url('assets/img/brand/icon.png'); ?>" rel="icon" type="image/png">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- Icons -->
     <link href="<?= base_url('assets/vendor/nucleo/css/nucleo.css'); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css'); ?>" rel="stylesheet">
@@ -283,8 +286,8 @@
                                                 <td><?php echo $pasien->usia ?></td>
                                                 <td><?php echo $pasien->foto ?></td>
                                                 <td>
-                                                    <a href="<?php echo site_url('admin/datapasien/edit/' . $pasien->no_rm) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-                                                    <a onclick="deleteConfirm" href="<?php echo site_url('admin/datapasien/delete/' . $pasien->no_rm) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i>Hapus</a>
+                                                    <a href="<?php echo site_url('admin/datapasien/edit/' . $pasien->no_rm) ?>" class="btn btn-small"><i class="fas fa-edit"></i></a>
+                                                    <a onclick="deleteConfirm" href="<?php echo site_url('admin/datapasien/delete/' . $pasien->no_rm) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i></a>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>

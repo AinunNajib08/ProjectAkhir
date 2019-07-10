@@ -11,6 +11,9 @@
     <link href="<?= base_url('assets/img/brand/icon.png'); ?>" rel="icon" type="image/png">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- Icons -->
     <link href="<?= base_url('assets/vendor/nucleo/css/nucleo.css'); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css'); ?>" rel="stylesheet">
@@ -284,10 +287,10 @@
                                                 <td><?php echo $poli->id_poli ?></td>
                                                 <td><?php echo $poli->poli ?></td>
                                                 <td>
-                                                    <a href="<?php echo site_url('admin/Datapoli/edit/' . $poli->id_poli) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-                                                    <a href="<?php echo site_url('admin/datapoli/add/' . $poli->id_poli) ?>" class="btn btn-small"><i class="fas fa-plus-circle"></i> Tambah</a>
+                                                    <a href="<?php echo site_url('admin/Datapoli/edit/' . $poli->id_poli) ?>" class="btn btn-small"><i class="fas fa-edit"></i></a>
+                                                    <a href="<?php echo site_url('admin/datapoli/add/' . $poli->id_poli) ?>" class="btn btn-small"><i class="fa fa-plus"></i></a>
                                                     <a onclick="deleteConfirm" href="<?php echo site_url('admin/Datapoli/delete/' . $poli->id_poli) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i>
-                                                        Hapus</a>
+                                                </a>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>

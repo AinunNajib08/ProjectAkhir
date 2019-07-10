@@ -17,6 +17,10 @@ class Datakunjunganpoli1 extends CI_Controller
     public function index()
     {
         $data["kunjunganpoli1"] = $this->Mkunjungan_pasien->datakunjunganpoli1();
+        $data['count4'] = $this->Mkunjungan_pasien->get_count4();
+        $data['count5'] = $this->Mkunjungan_pasien->get_count5();
+        $data['count6'] = $this->Mkunjungan_pasien->get_count6();
+        $data['count7'] = $this->Mkunjungan_pasien->get_count7();
         $this->load->view("admin/datakunjunganpoli1", $data);
     }
 

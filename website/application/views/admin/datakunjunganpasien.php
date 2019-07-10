@@ -314,10 +314,10 @@
                                         <td><?php echo $kunjungan_pasien->poli ?></td>
                                         <td>
                                             <a href="<?php echo site_url('admin/Datakunjungan/edit/' . $kunjungan_pasien->id_kunjungan) ?>"
-                                                class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
+                                                class="btn btn-small"><i class="fas fa-edit"></i></a>
                                             <a onclick="deleteConfirm"
                                                 href="<?php echo site_url('admin/Datakunjungan/delete/' . $kunjungan_pasien->id_kunjungan) ?>"
-                                                class="btn btn-small text-danger"><i class="fas fa-trash"></i>Hapus</a>
+                                                class="btn btn-small text-danger"><i class="fas fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     <?php endforeach; ?>

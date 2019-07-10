@@ -29,4 +29,5 @@
     <string name="alamat">Alamat   </string>
     <string name="email">Email   </string>
     <string name="no_telepon">No Telepon</string>
+    <string name="masuk">Masuk</string>
 </resources>
