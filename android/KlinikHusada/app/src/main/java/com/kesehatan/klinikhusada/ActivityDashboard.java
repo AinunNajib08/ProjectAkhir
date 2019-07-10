@@ -53,30 +53,6 @@ public class ActivityDashboard extends AppCompatActivity {
 
 
         tvResultNama.setText(namasaya);
-//
-//        btnLogout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                sharedPrefManager.saveSPBoolean(SharedPrefManager.SP_SUDAH_LOGIN, false);
-//                startActivity(new Intent(ActivityDashboard.this, ActivityLogin.class)
-//                        .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
-//                finish();
-//            }
-//        });
-//
-//        btnLihatDosen.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(ActivityDashboard.this, MainActivity.class));
-//            }
-//        });
-//
-//        btnLihatMatkul.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(ActivityDashboard.this, MainActivity.class));
-//            }
-//        });
     }
 
     public void daftar(View view) {
@@ -113,4 +89,8 @@ public class ActivityDashboard extends AppCompatActivity {
     }
 
 
+    public void infopasien(View view) {
+        Intent intent = new Intent(ActivityDashboard.this, ActivityProfile.class);
+        startActivity(intent);
+    }
 }
