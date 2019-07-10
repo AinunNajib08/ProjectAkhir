@@ -10,10 +10,9 @@
     <!-- Favicon -->
     <link href="<?= base_url('assets/img/brand/icon.png'); ?>" rel="icon" type="image/png">
     <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
     <!-- Icons -->
     <link href="<?= base_url('assets/vendor/nucleo/css/nucleo.css'); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css'); ?>" rel="stylesheet">
@@ -143,8 +142,8 @@
         <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
             <div class="container-fluid">
                 <!-- Brand -->
-                <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="../index.html">kunjungan
-                    pasien Poli mata</a>
+                <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="../index.html">Kunjungan
+                    Pasien poli mata</a>
                 <!-- Form -->
                 <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
                     <div class="form-group mb-0">
@@ -152,7 +151,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-search"></i></span>
                             </div>
-                            <input class="form-control" placeholder="Search" type="text">
+                            <input class="form-control" placeholder="Search" type="search" name="keywoard">
                         </div>
                     </div>
                 </form>
@@ -194,19 +193,15 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <h5 class="card-title text-uppercase text-muted mb-0">Data Kunjungan</h5>
-                                            <span class="h2 font-weight-bold mb-0"></span>
+                                            <h5 class="card-title text-uppercase text-muted mb-0">Data Pasien</h5>
+                                            <span class="h1 font-weight-bold mb-0"><?php echo $count; ?></span>
                                         </div>
                                         <div class="col-auto">
                                             <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
-                                                <i class="fas fa-chart-bar"></i>
+                                                <i class="ni ni-tv-2 text-white"></i>
                                             </div>
                                         </div>
                                     </div>
-                                    <p class="mt-3 mb-0 text-muted text-sm">
-                                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i></span>
-                                        <span class="text-nowrap"></span>
-                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -215,19 +210,15 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <h5 class="card-title text-uppercase text-muted mb-0"></h5>
-                                            <span class="h2 font-weight-bold mb-0"></span>
+                                            <h5 class="card-title text-uppercase text-muted mb-0">Kunjungan Pasien</h5>
+                                            <span class="h1 font-weight-bold mb-0"><?php echo $count1; ?></span>
                                         </div>
                                         <div class="col-auto">
                                             <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
-                                                <i class="fas fa-chart-pie"></i>
+                                                <i class="ni ni-bullet-list-67 text-white"></i>
                                             </div>
                                         </div>
                                     </div>
-                                    <p class="mt-3 mb-0 text-muted text-sm">
-                                        <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i></span>
-                                        <span class="text-nowrap"></span>
-                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -236,19 +227,15 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <h5 class="card-title text-uppercase text-muted mb-0"></h5>
-                                            <span class="h2 font-weight-bold mb-0"></span>
+                                            <h5 class="card-title text-uppercase text-muted mb-0">Data Poli</h5>
+                                            <span class="h1 font-weight-bold mb-0"><?php echo $count2; ?></span>
                                         </div>
                                         <div class="col-auto">
                                             <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
-                                                <i class="fas fa-users"></i>
+                                                <i class="ni ni-shop text-white"></i>
                                             </div>
                                         </div>
                                     </div>
-                                    <p class="mt-3 mb-0 text-muted text-sm">
-                                        <span class="text-warning mr-2"><i class="fas fa-arrow-down"></i></span>
-                                        <span class="text-nowrap"></span>
-                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -257,31 +244,31 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <h5 class="card-title text-uppercase text-muted mb-0"></h5>
-                                            <span class="h2 font-weight-bold mb-0"></span>
+                                            <h5 class="card-title text-uppercase text-muted mb-0">Tujuan Pelayanan</h5>
+                                            <span class="h1 font-weight-bold mb-0"><?php echo $count3; ?></span>
                                         </div>
                                         <div class="col-auto">
                                             <div class="icon icon-shape bg-info text-white rounded-circle shadow">
-                                                <i class="fas fa-percent"></i>
+                                                <i class="ni ni-single-02 text-white"></i>
                                             </div>
                                         </div>
                                     </div>
-                                    <p class="mt-3 mb-0 text-muted text-sm">
-                                        <span class="text-success mr-2"><i class="fas fa-arrow-up"></i></span>
-                                        <span class="text-nowrap"></span>
-                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Page content -->
-        <div class="container-fluid mt--7">
-            <!-- Table -->
-            <!-- Dark table -->
-            <a class="btn btn-success" href="<?= site_url('admin/Datakunjunganpoli1'); ?>">Kunjungan poli Umum</a>
+            <!-- Page content -->
+            <div class="container-fluid mt--7">
+                <!-- Table -->
+                <!-- Dark table -->
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <a class="btn btn-success" href="<?= site_url('admin/Datakunjunganpoli1'); ?>">Kunjungan poli Umum</a>
             <a class="btn btn-success" href="<?= site_url('admin/Datakunjunganpoli2'); ?>">Kunjungan poli Gigi</a>
             <a class="btn btn-success" href="<?= site_url('admin/Datakunjunganpoli4'); ?>">Kunjungan poli Ibu dan
                 Anak</a>
@@ -325,27 +312,27 @@
                                 <tbody>
                                 </tbody>
                             </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Footer -->
-            <footer class="footer mt-5">
-                <div class="row align-items-center justify-content-xl-between">
-                    <div class="col">
-                        <div class="copyright text-center text-xl-left text-muted">
-                            &copy; 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">The Hoax Team</a>
-                        </div>
-                    </div>
-            </footer>
         </div>
-    </div>
-    <!-- Argon Scripts -->
-    <!-- Core -->
-    <script src="<?= base_url('assets/vendor/jquery/dist/jquery.min.js'); ?>"></script>
-    <script src="<?= base_url('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js'); ?>"></script>
-    <!-- Argon JS -->
-    <script src="<?= base_url('assets/js/argon.js?v=1.0.0'); ?>"></script>
+        <!-- Footer -->
+        <footer class="footer bg-dark">
+            <div class="row align-items-center justify-content-xl-between">
+                <div class="col">
+                    <div class="copyright text-center my-auto text-white">
+                        &copy; 2019 <a href="https://www.youtube.com/channel/UCZo1dcj-RKSl2oLqpxJFI8A" class="font-weight-bold ml-1" target="_blank">The Hoax Team</a>
+                    </div>
+                </div>
+        </footer>
+        <!-- Argon Scripts -->
+        <!-- Core -->
+        <script src="<?= base_url('assets/vendor/jquery/dist/jquery.min.js'); ?>"></script>
+        <script src="<?= base_url('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js'); ?>"></script>
+        <!-- Argon JS -->
+        <script src="<?= base_url('assets/js/argon.js?v=1.0.0'); ?>"></script>
 </body>
 
 </html>

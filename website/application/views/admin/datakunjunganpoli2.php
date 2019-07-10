@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
     <meta name="author" content="Creative Tim">
-    <title>Data Kunjungan poli mata</title>
+    <title>Data Kunjungan poli gigi</title>
     <!-- Favicon -->
     <link href="<?= base_url('assets/img/brand/icon.png'); ?>" rel="icon" type="image/png">
     <!-- Fonts -->
