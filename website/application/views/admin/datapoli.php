@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
     <meta name="author" content="Creative Tim">
-    <title>Daftar Poliklinik</title>
+    <title>Data Poliklinik</title>
     <!-- Favicon -->
     <link href="<?= base_url('assets/img/brand/icon.png'); ?>" rel="icon" type="image/png">
     <!-- Fonts -->
@@ -77,7 +77,7 @@
                             <span>Support</span>
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a href="<?= base_url('login_controler/logout'); ?>" class="dropdown-item">
+                        <a href="#!" class="dropdown-item">
                             <i class="ni ni-user-run"></i>
                             <span>Logout</span>
                         </a>
@@ -138,8 +138,6 @@
                             <i class="ni ni-single-02 text-yellow"></i> View Tujuan Pelayanan
                         </a>
                     </li>
-                    </a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -150,8 +148,7 @@
         <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
             <div class="container-fluid">
                 <!-- Brand -->
-                <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block"
-                    href="../index.html">Poliklinik</a>
+                <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="../index.html">Poliklinik</a>
                 <!-- Form -->
                 <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
                     <div class="form-group mb-0">
@@ -159,7 +156,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-search"></i></span>
                             </div>
-                            <input class="form-control" placeholder="Search" type="text">
+                            <input class="form-control" placeholder="Search" type="search" name="keywoard">
                         </div>
                     </div>
                 </form>
@@ -273,8 +270,8 @@
             <!-- Page content -->
             <div class="container-fluid mt--7">
                 <!-- Table -->
-                <!-- Dark table -->
-                <br>
+<!-- Dark table -->
+<br>
                 <br>
                 <br>
                 <br>
@@ -320,28 +317,22 @@
                 </div>
             </div>
         </div>
-    </div>
-    </div>
 </body>
-<!-- Footer -->
-<!-- Footer -->
-<footer class="footer bg-white">
-    <div class="row align-items-center justify-content-xl-between">
-        <div class="col">
-            <div class="copyright text-center my-auto">
-                &copy; 2019 <a href="https://www.youtube.com/channel/UCZo1dcj-RKSl2oLqpxJFI8A"
-                    class="font-weight-bold ml-1" target="_blank">The Hoax Team</a>
-            </div>
-        </div>
-</footer>
-<!-- End of Footer -->
-
-<!-- Argon Scripts -->
-<!-- Core -->
-<script src="<?= base_url('assets/vendor/jquery/dist/jquery.min.js'); ?>"></script>
-<script src="<?= base_url('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js'); ?>"></script>
-<!-- Argon JS -->
-<script src="<?= base_url('assets/js/argon.js?v=1.0.0'); ?>"></script>
-
+        <!-- Footer -->
+        <footer class="footer bg-dark">
+            <div class="row align-items-center justify-content-xl-between">
+                <div class="col">
+                    <div class="copyright text-center my-auto text-white">
+                        &copy; 2019 <a href="https://www.youtube.com/channel/UCZo1dcj-RKSl2oLqpxJFI8A" class="font-weight-bold ml-1" target="_blank">The Hoax Team</a>
+                    </div>
+                </div>
+        </footer>
+        <!-- Argon Scripts -->
+        <!-- Core -->
+        <script src="<?= base_url('assets/vendor/jquery/dist/jquery.min.js'); ?>"></script>
+        <script src="<?= base_url('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js'); ?>"></script>
+        <!-- Argon JS -->
+        <script src="<?= base_url('assets/js/argon.js?v=1.0.0'); ?>"></script>
+</body>
 
 </html>
