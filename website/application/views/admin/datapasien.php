@@ -143,15 +143,9 @@
                 <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="../index.html">data
                     pasien</a>
                 <!-- Form -->
-                <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
-                    <div class="form-group mb-0">
-                        <div class="input-group input-group-alternative">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-search"></i></span>
-                            </div>
-                            <input class="form-control" placeholder="Search" type="search" name="keywoard">
-                        </div>
-                    </div>
+                <form class="form-inline ml-4">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
                 <!-- User -->
                 <ul class="navbar-nav align-items-center d-none d-md-flex">
