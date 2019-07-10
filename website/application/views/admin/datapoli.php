@@ -324,12 +324,15 @@
     </div>
 </body>
 <!-- Footer -->
-<footer class="sticky-footer bg-white mt-3">
-    <div class="container my-auto">
-        <div class="copyright text-center my-auto">
-            <span>Copyright &copy; The Hoax Team 2019</span>
+<!-- Footer -->
+<footer class="footer bg-white">
+    <div class="row align-items-center justify-content-xl-between">
+        <div class="col">
+            <div class="copyright text-center my-auto">
+                &copy; 2019 <a href="https://www.youtube.com/channel/UCZo1dcj-RKSl2oLqpxJFI8A"
+                    class="font-weight-bold ml-1" target="_blank">The Hoax Team</a>
+            </div>
         </div>
-    </div>
 </footer>
 <!-- End of Footer -->
 

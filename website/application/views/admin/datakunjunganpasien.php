@@ -329,7 +329,7 @@
         <footer class="footer bg-white">
             <div class="row align-items-center justify-content-xl-between">
                 <div class="col">
-                    <div class="copyright text-center text-xl-left text-muted mr-3">
+                    <div class="copyright text-center my-auto">
                         &copy; 2019 <a href="https://www.youtube.com/channel/UCZo1dcj-RKSl2oLqpxJFI8A"
                             class="font-weight-bold ml-1" target="_blank">The Hoax Team</a>
                     </div>
