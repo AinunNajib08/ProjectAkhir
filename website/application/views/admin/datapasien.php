@@ -23,7 +23,8 @@
     <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
         <div class="container-fluid">
             <!-- Toggler -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main"
+                aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!-- Brand -->
@@ -33,10 +34,12 @@
             <!-- User -->
             <ul class="nav align-items-center d-md-none">
                 <li class="nav-item dropdown">
-                    <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
                         <i class="ni ni-bell-55"></i>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
+                    <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right"
+                        aria-labelledby="navbar-default_dropdown_1">
                         <a class="dropdown-item" href="#">Action</a>
                         <a class="dropdown-item" href="#">Another action</a>
                         <div class="dropdown-divider"></div>
@@ -44,10 +47,12 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
                         <div class="media align-items-center">
                             <span class="avatar avatar-sm rounded-circle">
-                                <img alt="Image placeholder" src="<?= base_url('assets/img/theme/team-1-800x800.jpg'); ?>">
+                                <img alt="Image placeholder"
+                                    src="<?= base_url('assets/img/theme/team-1-800x800.jpg'); ?>">
                             </span>
                         </div>
                     </a>
@@ -90,7 +95,9 @@
                             </a>
                         </div>
                         <div class="col-6 collapse-close">
-                            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
+                            <button type="button" class="navbar-toggler" data-toggle="collapse"
+                                data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false"
+                                aria-label="Toggle sidenav">
                                 <span></span>
                                 <span></span>
                             </button>
@@ -100,7 +107,8 @@
                 <!-- Form -->
                 <form class="mt-4 mb-3 d-md-none">
                     <div class="input-group input-group-rounded input-group-merge">
-                        <input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="Search" aria-label="Search">
+                        <input type="search" class="form-control form-control-rounded form-control-prepended"
+                            placeholder="Search" aria-label="Search">
                         <div class="input-group-prepend">
                             <div class="input-group-text">
                                 <span class="fa fa-search"></span>
@@ -156,13 +164,16 @@
                 <!-- User -->
                 <ul class="navbar-nav align-items-center d-none d-md-flex">
                     <li class="nav-item dropdown">
-                        <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
                             <div class="media align-items-center">
                                 <span class="avatar avatar-sm rounded-circle">
-                                    <img alt="Image placeholder" src="<?= base_url('assets/img/brand/usericon.png'); ?>">
+                                    <img alt="Image placeholder"
+                                        src="<?= base_url('assets/img/brand/usericon.png'); ?>">
                                 </span>
                                 <div class="media-body ml-2 d-none d-lg-block">
-                                    <span class="mb-0 text-sm  font-weight-bold"><?= $this->session->userdata('username'); ?></span>
+                                    <span
+                                        class="mb-0 text-sm  font-weight-bold"><?= $this->session->userdata('username'); ?></span>
                                 </div>
                             </div>
                         </a>
@@ -286,16 +297,20 @@
                                     </thead>
                                     <tbody>
                                         <?php foreach ($pasien as $pasien) : ?>
-                                            <tr>
-                                                <td><?php echo $pasien->no_rm ?></td>
-                                                <td><?php echo $pasien->nama_pasien ?></td>
-                                                <td><?php echo $pasien->usia ?></td>
-                                                <td><?php echo $pasien->foto ?></td>
-                                                <td>
-                                                    <a href="<?php echo site_url('admin/datapasien/edit/' . $pasien->no_rm) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-                                                    <a onclick="deleteConfirm" href="<?php echo site_url('admin/datapasien/delete/' . $pasien->no_rm) ?>" class="btn btn-small text-danger"><i class="fas fa-trash"></i>Hapus</a>
-                                                </td>
-                                            </tr>
+                                        <tr>
+                                            <td><?php echo $pasien->no_rm ?></td>
+                                            <td><?php echo $pasien->nama_pasien ?></td>
+                                            <td><?php echo $pasien->usia ?></td>
+                                            <td><?php echo $pasien->foto ?></td>
+                                            <td>
+                                                <a href="<?php echo site_url('admin/datapasien/edit/' . $pasien->no_rm) ?>"
+                                                    class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
+                                                <a onclick="deleteConfirm"
+                                                    href="<?php echo site_url('admin/datapasien/delete/' . $pasien->no_rm) ?>"
+                                                    class="btn btn-small text-danger"><i
+                                                        class="fas fa-trash"></i>Hapus</a>
+                                            </td>
+                                        </tr>
                                         <?php endforeach; ?>
                                     </tbody>
                                 </table>
@@ -303,23 +318,15 @@
                         </div>
                     </div>
                 </div>
-                <<<<<<< HEAD=======<!-- Footer -->
-                    <footer class="footer mt-5">
-                        <div class="row align-items-center justify-content-xl-between">
-                            <div class="col">
-                                <div class="copyright text-center text-xl-left text-muted">
-                                    &copy; 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">The Hoax Team</a>
-                                </div>
-                            </div>
-                    </footer>
             </div>
         </div>
         <!-- Footer -->
-        <footer class="footer bg-light">
+        <footer class="footer bg-white">
             <div class="row align-items-center justify-content-xl-between">
                 <div class="col">
                     <div class="copyright text-center text-xl-left text-muted mr-3">
-                        &copy; 2019 <a href="https://www.youtube.com/channel/UCZo1dcj-RKSl2oLqpxJFI8A" class="font-weight-bold ml-1" target="_blank">The Hoax Team</a>
+                        &copy; 2019 <a href="https://www.youtube.com/channel/UCZo1dcj-RKSl2oLqpxJFI8A"
+                            class="font-weight-bold ml-1" target="_blank">The Hoax Team</a>
                     </div>
                 </div>
         </footer>
