@@ -193,8 +193,8 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <h5 class="card-title text-uppercase text-muted mb-0">Data Pasien</h5>
-                                            <span class="h1 font-weight-bold mb-0"><?php echo $count; ?></span>
+                                            <h5 class="card-title text-uppercase text-muted mb-0">Poli Umum</h5>
+                                            <span class="h1 font-weight-bold mb-0"><?php echo $count4; ?></span>
                                         </div>
                                         <div class="col-auto">
                                             <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
@@ -210,8 +210,8 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <h5 class="card-title text-uppercase text-muted mb-0">Kunjungan Pasien</h5>
-                                            <span class="h1 font-weight-bold mb-0"><?php echo $count1; ?></span>
+                                            <h5 class="card-title text-uppercase text-muted mb-0">Poli Gigi</h5>
+                                            <span class="h1 font-weight-bold mb-0"><?php echo $count5; ?></span>
                                         </div>
                                         <div class="col-auto">
                                             <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
@@ -227,8 +227,8 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <h5 class="card-title text-uppercase text-muted mb-0">Data Poli</h5>
-                                            <span class="h1 font-weight-bold mb-0"><?php echo $count2; ?></span>
+                                            <h5 class="card-title text-uppercase text-muted mb-0">Poli Mata</h5>
+                                            <span class="h1 font-weight-bold mb-0"><?php echo $count6; ?></span>
                                         </div>
                                         <div class="col-auto">
                                             <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
@@ -244,8 +244,8 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
-                                            <h5 class="card-title text-uppercase text-muted mb-0">Tujuan Pelayanan</h5>
-                                            <span class="h1 font-weight-bold mb-0"><?php echo $count3; ?></span>
+                                            <h5 class="card-title text-uppercase text-muted mb-0">Poli Ibu & Anak</h5>
+                                            <span class="h1 font-weight-bold mb-0"><?php echo $count7; ?></span>
                                         </div>
                                         <div class="col-auto">
                                             <div class="icon icon-shape bg-info text-white rounded-circle shadow">
