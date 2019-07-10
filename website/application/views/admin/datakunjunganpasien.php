@@ -16,7 +16,6 @@
     <link href="<?= base_url('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css'); ?>" rel="stylesheet">
     <!-- Argon CSS -->
     <link type="text/css" href="<?= base_url('assets/css/argon.css?v=1.0.0'); ?>" rel="stylesheet">
-
 </head>
 
 <body>
@@ -149,8 +148,8 @@
         <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
             <div class="container-fluid">
                 <!-- Brand -->
-                <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="../index.html">kunjungan
-                    pasien</a>
+                <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="../index.html">Kunjungan
+                Pasien</a>
                 <!-- Form -->
                 <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
                     <div class="form-group mb-0">
@@ -158,7 +157,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-search"></i></span>
                             </div>
-                            <input class="form-control" placeholder="Search" type="text">
+                            <input class="form-control" placeholder="Search" type="search" name="keywoard">
                         </div>
                     </div>
                 </form>
@@ -269,12 +268,16 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Page content -->
-        <div class="container-fluid mt--7">
-            <!-- Table -->
-            <!-- Dark table -->
-            <a class="btn btn-success" href="<?= site_url('admin/Datakunjunganpoli1'); ?>">Kunjungan Hari Ini</a>
+            <!-- Page content -->
+            <div class="container-fluid mt--7">
+                <!-- Table -->
+                <!-- Dark table -->
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <a class="btn btn-success" href="<?= site_url('admin/Datakunjunganpoli1'); ?>">Kunjungan Hari Ini</a>
             <div class="row mt-5">
                 <div class="col">
                     <div class="card bg-default shadow">
@@ -318,31 +321,29 @@
                                         </td>
                                     </tr>
                                     <?php endforeach; ?>
-                                <tbody>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Footer -->
-            <footer class="footer mt-5">
-                <div class="row align-items-center justify-content-xl-between">
-                    <div class="col">
-                        <div class="copyright text-center text-xl-left text-muted">
-                            &copy; 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1"
-                                target="_blank">The Hoax Team</a>
-                        </div>
-                    </div>
-            </footer>
         </div>
-    </div>
-    <!-- Argon Scripts -->
-    <!-- Core -->
-    <script src="<?= base_url('assets/vendor/jquery/dist/jquery.min.js'); ?>"></script>
-    <script src="<?= base_url('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js'); ?>"></script>
-    <!-- Argon JS -->
-    <script src="<?= base_url('assets/js/argon.js?v=1.0.0'); ?>"></script>
+        </div>
+        <!-- Footer -->
+        <footer class="footer bg-dark">
+            <div class="row align-items-center justify-content-xl-between">
+                <div class="col">
+                    <div class="copyright text-center my-auto text-white">
+                        &copy; 2019 <a href="https://www.youtube.com/channel/UCZo1dcj-RKSl2oLqpxJFI8A" class="font-weight-bold ml-1" target="_blank">The Hoax Team</a>
+                    </div>
+                </div>
+        </footer>
+        <!-- Argon Scripts -->
+        <!-- Core -->
+        <script src="<?= base_url('assets/vendor/jquery/dist/jquery.min.js'); ?>"></script>
+        <script src="<?= base_url('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js'); ?>"></script>
+        <!-- Argon JS -->
+        <script src="<?= base_url('assets/js/argon.js?v=1.0.0'); ?>"></script>
 </body>
 
 </html>

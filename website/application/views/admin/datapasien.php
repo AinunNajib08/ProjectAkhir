@@ -303,22 +303,13 @@
                         </div>
                     </div>
                 </div>
-                <<<<<<< HEAD=======<!-- Footer -->
-                    <footer class="footer mt-5">
-                        <div class="row align-items-center justify-content-xl-between">
-                            <div class="col">
-                                <div class="copyright text-center text-xl-left text-muted">
-                                    &copy; 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">The Hoax Team</a>
-                                </div>
-                            </div>
-                    </footer>
             </div>
         </div>
         <!-- Footer -->
-        <footer class="footer bg-light">
+        <footer class="footer bg-dark">
             <div class="row align-items-center justify-content-xl-between">
                 <div class="col">
-                    <div class="copyright text-center text-xl-left text-muted mr-3">
+                    <div class="copyright text-center my-auto text-white">
                         &copy; 2019 <a href="https://www.youtube.com/channel/UCZo1dcj-RKSl2oLqpxJFI8A" class="font-weight-bold ml-1" target="_blank">The Hoax Team</a>
                     </div>
                 </div>

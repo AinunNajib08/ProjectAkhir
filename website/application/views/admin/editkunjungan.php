@@ -134,7 +134,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="../">
+                        <a class="nav-link" href="../">
                             <i class="ni ni-single-02 text-yellow"></i> View Tujuan Pelayanan
                         </a>
                     </li>
@@ -289,18 +289,11 @@
                                                 </div>
                                             </div>
                                         </div>
-
-
-
                                         <input class="btn btn-success" type="submit" name="btn" value="Save" />
                                     </form>
-
                                 </div>
-
-
                             </div>
                             <!-- /.container-fluid -->
-
                         </div>
                     </div>
                 </div>
